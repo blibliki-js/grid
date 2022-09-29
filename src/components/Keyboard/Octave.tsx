@@ -1,7 +1,7 @@
+import { Note } from "@blibliki/engine";
 import styled from "@emotion/styled";
 
 import { useAppSelector } from "hooks";
-import Note from "Engine/Note";
 import Key from "./Key";
 
 const toneWidth = 25.3;

@@ -1,4 +1,4 @@
-import { updateModule } from "Engine/Module/modulesSlice";
+import { updateModule } from "./modulesSlice";
 import { useAppDispatch } from "hooks";
 
 import Oscillator from "components/audio_modules/Oscillator";

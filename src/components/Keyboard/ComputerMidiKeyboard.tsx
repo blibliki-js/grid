@@ -1,7 +1,6 @@
-import { useEffect } from "react";
+import Engine, { Note } from "@blibliki/engine";
 
-import Engine from "Engine";
-import Note from "Engine/Note";
+import { useEffect } from "react";
 
 const MAP_KEYS: { [key: string]: Note } = {
   a: new Note("C3"),

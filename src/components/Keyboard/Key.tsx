@@ -1,8 +1,7 @@
+import Engine, { Note } from "@blibliki/engine";
+
 import { useMemo } from "react";
 import styled from "@emotion/styled";
-
-import Engine from "Engine";
-import Note from "Engine/Note";
 
 interface StyleProps {
   toneWidth: number;

@@ -7,11 +7,12 @@ import {
 } from "@reduxjs/toolkit";
 
 import { RootState } from "store";
-import Engine from "Engine";
-import { ModuleType, PolyModuleType } from "Engine/Module";
+import Engine, { ModuleType, PolyModuleType } from "@blibliki/engine";
 
 interface ModuleInterface extends AddModuleInterface {
   id: string;
+  inputs: any[];
+  outputs: any[];
 }
 
 interface AddModuleInterface {
@@ -33,7 +34,6 @@ export const modulesSlice = createSlice({
     ) => {
       const { name, code, type, props } = action.payload;
       const payload = Engine.registerModule(name, code, type, props);
-
       return modulesAdapter.addOne(state, payload);
     },
     updateModule: (state: EntityState<any>, update: PayloadAction<any>) => {
@@ -42,7 +42,6 @@ export const modulesSlice = createSlice({
         changes: { props: changedProps },
       } = update.payload;
       const { props } = Engine.updatePropsModule(id, changedProps);
-
       return modulesAdapter.updateOne(state, {
         id,
         changes: { props },

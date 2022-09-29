@@ -1,8 +1,11 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import {
+  MidiDevice,
+  MidiDeviceManager,
+  MidiDeviceInterface,
+} from "@blibliki/engine";
 
 import { RootState, AppDispatch } from "store";
-import MidiDeviceManager from "Engine/MidiDeviceManager";
-import MidiDevice, { MidiDeviceInterface } from "Engine/MidiDevice";
 
 const devicesAdapter = createEntityAdapter<MidiDeviceInterface>({});
 
