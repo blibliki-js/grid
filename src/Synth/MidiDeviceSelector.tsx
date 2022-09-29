@@ -1,6 +1,7 @@
+import { ModuleType } from "@blibliki/engine";
+
 import { useModules } from "hooks";
 import AudioModule from "components/audio_modules";
-import { ModuleType } from "Engine/Module";
 
 const INITIAL_MODULE_PROPS = [
   {

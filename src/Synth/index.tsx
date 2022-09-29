@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Transport, Context, setContext } from "tone";
 import styled from "@emotion/styled";
 
-import Engine from "Engine";
+import Engine from "@blibliki/engine";
 
 import Keyboard from "components/Keyboard";
 
@@ -36,14 +35,16 @@ export default function Synth() {
   useEffect(() => {
     if (!enabled) return;
 
-    const context = new Context({
-      latencyHint: "interactive",
-      lookAhead: 0.01,
+    Engine.initialize({
+      context: {
+        latencyHint: "interactive",
+        lookAhead: 0.01,
+      },
     });
-    setContext(context);
-    Transport.start();
 
-    return () => Engine.dispose();
+    return () => {
+      Engine.dispose();
+    };
   }, [enabled]);
 
   if (!enabled) return <button onClick={() => setEnabled(true)}>Start</button>;

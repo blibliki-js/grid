@@ -1,7 +1,11 @@
 import { useEffect } from "react";
+import { ModuleType, PolyModuleType } from "@blibliki/engine";
+
 import { useAppSelector, useAppDispatch } from "hooks";
-import { addModule, selectModulesByCodes } from "Engine/Module/modulesSlice";
-import { ModuleType, PolyModuleType } from "Engine/Module";
+import {
+  addModule,
+  selectModulesByCodes,
+} from "components/audio_modules/modulesSlice";
 
 interface UseModuleProps {
   name: string;
