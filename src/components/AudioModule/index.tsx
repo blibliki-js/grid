@@ -1,12 +1,12 @@
 import { updateModule } from "./modulesSlice";
 import { useAppDispatch } from "hooks";
 
-import Oscillator from "components/audio_modules/Oscillator";
-import Envelope from "components/audio_modules/Envelope";
-import Filter from "components/audio_modules/Filter";
-import Volume from "components/audio_modules/Volume";
-import MidiDeviceSelector from "components/MidiDeviceSelector";
-import VoiceScheduler from "components/VoiceScheduler";
+import Oscillator from "./Oscillator";
+import Envelope from "./Envelope";
+import Filter from "./Filter";
+import Volume from "./Volume";
+import MidiDeviceSelector from "./MidiDeviceSelector";
+import VoiceScheduler from "./VoiceScheduler";
 
 interface AudioModuleProps {
   id: string;

@@ -5,7 +5,7 @@ import { useAppSelector, useAppDispatch } from "hooks";
 import {
   addModule,
   selectModulesByCodes,
-} from "components/audio_modules/modulesSlice";
+} from "components/AudioModule/modulesSlice";
 
 interface UseModuleProps {
   name: string;

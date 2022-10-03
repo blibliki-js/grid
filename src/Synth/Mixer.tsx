@@ -1,6 +1,6 @@
 import { useAppSelector } from "hooks";
-import AudioModule from "components/audio_modules";
-import { selectModulesByType } from "components/audio_modules/modulesSlice";
+import AudioModule from "components/AudioModule";
+import { selectModulesByType } from "components/AudioModule/modulesSlice";
 
 export default function Mixer() {
   const oscillators = useAppSelector((state) =>
