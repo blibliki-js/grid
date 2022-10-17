@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import Fader, { MarkProps } from "components/Fader";
+import Name from "../attributes/Name";
 
 const Center: MarkProps[] = [{ value: 0, label: "-" }];
 
@@ -59,7 +60,9 @@ export default function Oscillator(props: {
 
   return (
     <OscillatorContainer>
-      <Title>{title}</Title>
+      <Title>
+        <Name id={id} value={title} />
+      </Title>
 
       <FaderContainer>
         <Fader

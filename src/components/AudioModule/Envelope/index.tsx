@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import Fader from "components/Fader";
+import Name from "../attributes/Name";
 
 const EnvelopeContainer = styled.div`
   padding: 5px;
@@ -37,7 +38,9 @@ export default function Envelope(props: EnvelopeProps) {
 
   return (
     <EnvelopeContainer>
-      <Title>{name}</Title>
+      <Title>
+        <Name id={id} value={name} />
+      </Title>
 
       <FaderContainer>
         <Fader name="A" onChange={updateProp("attack")} value={attack} />

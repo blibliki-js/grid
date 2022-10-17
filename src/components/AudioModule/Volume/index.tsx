@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import Fader from "components/Fader";
+import Name from "../attributes/Name";
 
 interface VolumeProps {
   id: string;
@@ -35,7 +36,9 @@ export default function Volume(props: VolumeProps) {
 
   return (
     <VolumeContainer>
-      <Title>Volume</Title>
+      <Title>
+        <Name id={id} value={name} />
+      </Title>
 
       <Fader
         name={name || ""}

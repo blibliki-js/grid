@@ -77,6 +77,18 @@ export const modulesSlice = createSlice({
         changes: { props },
       });
     },
+    updateModuleName: (
+      state: EntityState<any>,
+      update: PayloadAction<{ id: string; name: string }>
+    ) => {
+      const { id, name } = update.payload;
+      const { name: newName } = Engine.updateNameModule(id, name);
+
+      return modulesAdapter.updateOne(state, {
+        id,
+        changes: { name: newName },
+      });
+    },
   },
 });
 
@@ -98,6 +110,7 @@ export const selectModulesByType = createSelector(
     modules.filter((m) => m.type === type)
 );
 
-export const { addModule, updateModule } = modulesSlice.actions;
+export const { addModule, updateModule, updateModuleName } =
+  modulesSlice.actions;
 
 export default modulesSlice.reducer;
