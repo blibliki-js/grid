@@ -13,7 +13,6 @@ import { initialize, devicesSelector } from "./midiDevicesSlice";
 
 export default function MidiDeviceSelector(props: {
   id: string;
-  code: string;
   name: string;
   props: { selectedId: string };
   updateProps: Function;

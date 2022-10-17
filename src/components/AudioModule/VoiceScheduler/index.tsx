@@ -10,7 +10,6 @@ const VOICE_SELECTIONS = [1, 2, 3, 4, 5, 6];
 
 export default function VoiceScheduler(props: {
   id: string;
-  code: string;
   name: string;
   props: { numberOfVoices: number };
   updateProps: Function;

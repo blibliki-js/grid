@@ -3,9 +3,7 @@ import styled from "@emotion/styled";
 import Fader from "components/Fader";
 
 const EnvelopeContainer = styled.div`
-  border: 1px solid;
   padding: 5px;
-  width: 150px;
 `;
 
 const Title = styled.div`
@@ -21,7 +19,6 @@ const FaderContainer = styled.div`
 interface EnvelopeProps {
   id: string;
   name: string;
-  code: string;
   updateProps: Function;
   props: { attack: number; decay: number; sustain: number; release: number };
 }

@@ -9,20 +9,46 @@ import {
 import { RootState } from "store";
 import Engine, { ModuleType, PolyModuleType } from "@blibliki/engine";
 
-interface ModuleInterface extends AddModuleInterface {
-  id: string;
-  inputs: any;
-  outputs: any;
-}
-
-interface AddModuleInterface {
+interface ModuleInterface {
   name: string;
-  code: string;
   type: ModuleType | PolyModuleType;
-  props?: any;
+  props?: { [key: string]: any };
 }
 
-const modulesAdapter = createEntityAdapter<ModuleInterface>({});
+interface ModuleProps extends AddModuleInterface {
+  id: string;
+  inputs: any[];
+  outputs: any[];
+}
+
+interface AddModuleInterface extends ModuleInterface {
+  layoutId: string;
+}
+
+export const AvailableModules: { [key: string]: ModuleInterface } = {
+  oscillator: { name: "Oscilator", type: PolyModuleType.Oscillator },
+  ampEnvelope: {
+    name: "Amp Envelope",
+    type: PolyModuleType.AmpEnvelope,
+  },
+  freqEnvelope: {
+    name: "Frequency Envelope",
+    type: PolyModuleType.FreqEnvelope,
+  },
+  filter: { name: "Filter", type: PolyModuleType.Filter },
+  volume: { name: "Volume", type: PolyModuleType.Volume },
+  midiSelector: {
+    name: "Midi Selector",
+    type: ModuleType.MidiSelector,
+  },
+  voiceScheduler: {
+    name: "Voice Scheduler",
+    type: PolyModuleType.VoiceScheduler,
+    props: { numberOfVoices: 1 },
+  },
+};
+
+const modulesAdapter = createEntityAdapter<ModuleProps>({});
 
 export const modulesSlice = createSlice({
   name: "modules",
@@ -32,9 +58,13 @@ export const modulesSlice = createSlice({
       state: EntityState<any>,
       action: PayloadAction<AddModuleInterface>
     ) => {
-      const { name, code, type, props } = action.payload;
-      const payload = Engine.registerModule(name, code, type, props);
-      return modulesAdapter.addOne(state, payload);
+      const { name: initialName, props: initialProps } =
+        AvailableModules[action.payload.type];
+      const { name = initialName, layoutId, type } = action.payload;
+      const props = { ...initialProps, ...action.payload.props };
+
+      const payload = Engine.registerModule(name, type, props);
+      return modulesAdapter.addOne(state, { ...payload, layoutId });
     },
     updateModule: (state: EntityState<any>, update: PayloadAction<any>) => {
       const {
@@ -54,18 +84,18 @@ export const modulesSelector = modulesAdapter.getSelectors(
   (state: RootState) => state.modules
 );
 
+export const selectModuleByLayoutId = createSelector(
+  (state: RootState) => modulesSelector.selectAll(state),
+  (_: RootState, layoutId: string) => layoutId,
+  (modules: ModuleProps[], layoutId: string) =>
+    modules.find((m) => m.layoutId === layoutId)
+);
+
 export const selectModulesByType = createSelector(
   (state: RootState) => modulesSelector.selectAll(state),
   (_: RootState, type: string) => type,
-  (modules: ModuleInterface[], type: string) =>
+  (modules: ModuleProps[], type: string) =>
     modules.filter((m) => m.type === type)
-);
-
-export const selectModulesByCodes = createSelector(
-  (state: RootState) => modulesSelector.selectAll(state),
-  (_: RootState, codes: string[]) => codes,
-  (modules: ModuleInterface[], codes: string[]) =>
-    modules.filter((m) => codes.includes(m.code))
 );
 
 export const { addModule, updateModule } = modulesSlice.actions;

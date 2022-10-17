@@ -5,13 +5,11 @@ import Fader from "components/Fader";
 interface VolumeProps {
   id: string;
   name: string;
-  code: string;
   updateProps: Function;
   props: any;
 }
 
 const VolumeContainer = styled.div`
-  border: 1px solid;
   padding: 5px;
   display: flex;
   flex-direction: column;
