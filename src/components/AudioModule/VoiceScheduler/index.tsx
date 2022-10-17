@@ -5,12 +5,12 @@ import {
   SelectChangeEvent,
   MenuItem,
 } from "@mui/material";
+import Name from "../attributes/Name";
 
 const VOICE_SELECTIONS = [1, 2, 3, 4, 5, 6];
 
 export default function VoiceScheduler(props: {
   id: string;
-  code: string;
   name: string;
   props: { numberOfVoices: number };
   updateProps: Function;
@@ -29,7 +29,9 @@ export default function VoiceScheduler(props: {
 
   return (
     <FormControl fullWidth>
-      <InputLabel id="voice-select">{name}</InputLabel>
+      <InputLabel id="voice-select">
+        <Name id={id} value={name} />
+      </InputLabel>
       <Select
         labelId="voice-select"
         id="voice-select"

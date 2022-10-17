@@ -1,43 +1,39 @@
 import { updateModule } from "./modulesSlice";
 import { useAppDispatch } from "hooks";
 
-import Oscillator from "components/audio_modules/Oscillator";
-import Envelope from "components/audio_modules/Envelope";
-import Filter from "components/audio_modules/Filter";
-import Volume from "components/audio_modules/Volume";
-import MidiDeviceSelector from "components/MidiDeviceSelector";
-import VoiceScheduler from "components/VoiceScheduler";
+import Oscillator from "./Oscillator";
+import Envelope from "./Envelope";
+import Filter from "./Filter";
+import Volume from "./Volume";
+import MidiDeviceSelector from "./MidiDeviceSelector";
+import VoiceScheduler from "./VoiceScheduler";
 
-interface AudioModuleProps {
+export interface AudioModuleProps {
   id: string;
   name: string;
-  code: string;
   type: string;
   props?: any;
 }
 
 export default function AudioModule(audioModuleProps: {
-  module: AudioModuleProps;
+  audioModule: AudioModuleProps;
   componentType?: string;
 }) {
   const dispatch = useAppDispatch();
-  const { id, code, name, type, props } = audioModuleProps.module;
 
-  const componentType =
-    audioModuleProps.componentType || audioModuleProps.module.type;
+  const { id, name, type, props } = audioModuleProps.audioModule;
+
   let Component;
 
   const updateProps = (id: string, props: any) => {
     dispatch(updateModule({ id, changes: { props } }));
   };
 
-  switch (componentType) {
+  switch (type) {
     case "oscillator":
-    case "monoOscillator":
       Component = Oscillator;
       break;
     case "filter":
-    case "monoFilter":
       Component = Filter;
       break;
     case "volume":
@@ -46,9 +42,6 @@ export default function AudioModule(audioModuleProps: {
     case "envelope":
     case "ampEnvelope":
     case "freqEnvelope":
-    case "monoEnvelope":
-    case "monoAmpEnvelope":
-    case "monoFreqEnvelope":
       Component = Envelope;
       break;
     case "midiSelector":
@@ -62,12 +55,6 @@ export default function AudioModule(audioModuleProps: {
   }
 
   return (
-    <Component
-      id={id}
-      code={code}
-      name={name}
-      props={props}
-      updateProps={updateProps}
-    />
+    <Component id={id} name={name} props={props} updateProps={updateProps} />
   );
 }

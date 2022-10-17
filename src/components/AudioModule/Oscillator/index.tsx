@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
 
 import Fader, { MarkProps } from "components/Fader";
+import Name from "../attributes/Name";
 
 const Center: MarkProps[] = [{ value: 0, label: "-" }];
 
 const OscillatorContainer = styled.div`
-  border: 1px solid;
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
 `;
 
 const FaderContainer = styled.div`
@@ -35,7 +38,6 @@ const RANGES: MarkProps[] = [
 
 export default function Oscillator(props: {
   id: string;
-  code: string;
   name: string;
   props: { range: number; coarse: number; fine: number; wave: string };
   updateProps: Function;
@@ -58,7 +60,9 @@ export default function Oscillator(props: {
 
   return (
     <OscillatorContainer>
-      <Title>{title}</Title>
+      <Title>
+        <Name id={id} value={title} />
+      </Title>
 
       <FaderContainer>
         <Fader

@@ -10,10 +10,10 @@ import {
 import { useAppSelector, useAppDispatch } from "hooks";
 
 import { initialize, devicesSelector } from "./midiDevicesSlice";
+import Name from "../attributes/Name";
 
 export default function MidiDeviceSelector(props: {
   id: string;
-  code: string;
   name: string;
   props: { selectedId: string };
   updateProps: Function;
@@ -38,7 +38,9 @@ export default function MidiDeviceSelector(props: {
 
   return (
     <FormControl fullWidth>
-      <InputLabel id="midi-select">{name}</InputLabel>
+      <InputLabel id="midi-select">
+        <Name id={id} value={name} />
+      </InputLabel>
       <Select
         labelId="midi-select"
         id="midi-select"

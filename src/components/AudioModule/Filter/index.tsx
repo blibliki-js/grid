@@ -1,17 +1,16 @@
 import styled from "@emotion/styled";
 
 import Fader, { MarkProps } from "components/Fader";
+import Name from "../attributes/Name";
 
 interface FilterProps {
   id: string;
   name: string;
-  code: string;
   updateProps: Function;
   props: { cutoff: number; resonance: number; envelopeAmount: number };
 }
 
 const FilterContainer = styled.div`
-  border: 1px solid;
   padding: 5px;
 `;
 
@@ -43,7 +42,9 @@ export default function Filter(props: FilterProps) {
 
   return (
     <FilterContainer>
-      <Title>{title}</Title>
+      <Title>
+        <Name id={id} value={title} />
+      </Title>
 
       <FaderContainer>
         <Fader

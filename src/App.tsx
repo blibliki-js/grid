@@ -3,15 +3,13 @@ import { Provider, useDispatch } from "react-redux";
 import styled from "@emotion/styled";
 import { StyledEngineProvider } from "@mui/material/styles";
 
+import "App.scss";
+
 import { store } from "./store";
 import { initialize } from "./globalSlice";
-import Synth from "./Synth";
+import Grid from "./Grid";
 
-const Main = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+const Main = styled.div``;
 
 export default function ProviderApp() {
   return (
@@ -31,7 +29,7 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <Main>
-        <Synth />
+        <Grid />
       </Main>
     </StyledEngineProvider>
   );
