@@ -3,6 +3,7 @@ import globalReducer from "globalSlice";
 import midiDevicesReducer from "components/AudioModule/MidiDeviceSelector/midiDevicesSlice";
 import modulesReducer from "components/AudioModule/modulesSlice";
 import layoutsReducer from "Grid/layoutsSlice";
+import routesReducer from "Routes/routesSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     midiDevices: midiDevicesReducer,
     modules: modulesReducer,
     layouts: layoutsReducer,
+    routes: routesReducer,
   },
 });
 

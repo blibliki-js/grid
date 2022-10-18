@@ -7,7 +7,7 @@ import {
 } from "@reduxjs/toolkit";
 
 import { RootState } from "store";
-import Engine, { ModuleType, PolyModuleType } from "@blibliki/engine";
+import Engine, { ModuleType, PolyModuleType, IOProps } from "@blibliki/engine";
 
 interface ModuleInterface {
   name: string;
@@ -15,14 +15,14 @@ interface ModuleInterface {
   props?: { [key: string]: any };
 }
 
-interface ModuleProps extends AddModuleInterface {
-  id: string;
-  inputs: any[];
-  outputs: any[];
-}
-
 interface AddModuleInterface extends ModuleInterface {
   layoutId: string;
+}
+
+export interface ModuleProps extends AddModuleInterface {
+  id: string;
+  inputs: IOProps[];
+  outputs: IOProps[];
 }
 
 export const AvailableModules: { [key: string]: ModuleInterface } = {
@@ -54,6 +54,15 @@ export const modulesSlice = createSlice({
   name: "modules",
   initialState: modulesAdapter.getInitialState(),
   reducers: {
+    addMaster: (
+      state: EntityState<any>,
+      action: PayloadAction<ModuleProps>
+    ) => {
+      const { payload } = action;
+      if (!payload.id || payload.type !== "master") return;
+
+      return modulesAdapter.addOne(state, action.payload);
+    },
     addModule: (
       state: EntityState<any>,
       action: PayloadAction<AddModuleInterface>
@@ -71,10 +80,10 @@ export const modulesSlice = createSlice({
         id,
         changes: { props: changedProps },
       } = update.payload;
-      const { props } = Engine.updatePropsModule(id, changedProps);
+      const audioModule = Engine.updatePropsModule(id, changedProps);
       return modulesAdapter.updateOne(state, {
         id,
-        changes: { props },
+        changes: audioModule,
       });
     },
     updateModuleName: (
@@ -82,11 +91,11 @@ export const modulesSlice = createSlice({
       update: PayloadAction<{ id: string; name: string }>
     ) => {
       const { id, name } = update.payload;
-      const { name: newName } = Engine.updateNameModule(id, name);
+      const audioModule = Engine.updateNameModule(id, name);
 
       return modulesAdapter.updateOne(state, {
         id,
-        changes: { name: newName },
+        changes: audioModule,
       });
     },
   },
@@ -110,7 +119,7 @@ export const selectModulesByType = createSelector(
     modules.filter((m) => m.type === type)
 );
 
-export const { addModule, updateModule, updateModuleName } =
+export const { addModule, addMaster, updateModule, updateModuleName } =
   modulesSlice.actions;
 
 export default modulesSlice.reducer;
