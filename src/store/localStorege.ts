@@ -26,6 +26,8 @@ export function loadPatch() {
 
 export function getInitialMasterId() {
   const { modules } = JSON.parse(localStorage.getItem(KEY) || "{}");
+  if (!modules) return "";
+
   const master = (Object.values(modules.entities) as ModuleProps[]).find(
     (m) => m.type === "master"
   );
