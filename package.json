@@ -2,7 +2,7 @@
   "name": "blibliki-grid",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://blibliki-js.github.io",
+  "homepage": "https://blibliki-js.github.io/grid",
   "dependencies": {
     "@babel/runtime": "^7.19.4",
     "@blibliki/engine": "^0.1.0",
