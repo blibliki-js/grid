@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
 import Engine from "@blibliki/engine";
 import { addMaster } from "components/AudioModule/modulesSlice";
 import { useAppDispatch } from "hooks";
-import { useEffect, useState } from "react";
+import { loadPatch, getInitialMasterId } from "store/localStorege";
 
 export default function EngineInitializer() {
   const dispatch = useAppDispatch();
@@ -16,7 +17,11 @@ export default function EngineInitializer() {
         lookAhead: 0.01,
       },
     });
-    dispatch(addMaster({ ...master, layoutId: "" }));
+
+    dispatch(
+      addMaster({ ...master, initialId: getInitialMasterId(), layoutId: "" })
+    );
+    loadPatch();
 
     return () => {
       Engine.dispose();

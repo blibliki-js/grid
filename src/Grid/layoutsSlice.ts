@@ -28,7 +28,7 @@ export const layoutsSlice = createSlice({
 export const layoutsSelector = layoutsAdapter.getSelectors(
   (state: RootState) => state.layouts
 );
-export const { updateLayout } = layoutsSlice.actions;
+export const { updateLayout, addLayout: addPlainLayout } = layoutsSlice.actions;
 
 export const addLayout = (type: string) => (dispatch: AppDispatch) => {
   const payload = constructLayout(type);

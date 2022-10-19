@@ -1,5 +1,13 @@
 import { RouteInterface } from "@blibliki/engine/build/routes";
-import { Box, Button, List, ListItem, ListItemText } from "@mui/material";
+import {
+  Box,
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import {
   ModuleProps,
   modulesSelector,
@@ -32,14 +40,26 @@ function RouteList() {
   };
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      {routeNames.map(([id, name]) => (
-        <ListItem key={id}>
-          <ListItemText primary={name} />
-          <Button onClick={onClick(id)}>x</Button>
-        </ListItem>
-      ))}
-    </List>
+    <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <TableHead>
+        <TableRow>
+          <TableCell>Source</TableCell>
+          <TableCell>Destination</TableCell>
+          <TableCell>Actions</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {routeNames.map(([id, source, destination]) => (
+          <TableRow key={id}>
+            <TableCell>{source}</TableCell>
+            <TableCell>{destination}</TableCell>
+            <TableCell>
+              <Button onClick={onClick(id)}>x</Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 }
 
@@ -50,14 +70,15 @@ function getRouteNames(routes: RouteInterface[], modules: ModuleProps[]) {
 
     if (!source || !destination) throw Error("Routing error");
 
-    const output = source.outputs.find((io) => io.id === route.outputId);
-    const input = destination.inputs.find((io) => io.id === route.inputId);
+    const output = source.outputs.find((io) => io.name === route.outputName);
+    const input = destination.inputs.find((io) => io.name === route.inputName);
 
     if (!output || !input) throw Error("Routing error");
 
     return [
       route.id,
-      `${output.moduleName} // ${output.name} => ${input.moduleName} // ${input.name}`,
+      `${output.moduleName} // ${output.name}`,
+      `${input.moduleName} // ${input.name}`,
     ];
   });
 }

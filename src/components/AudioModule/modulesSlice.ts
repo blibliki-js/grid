@@ -16,11 +16,13 @@ interface ModuleInterface {
 }
 
 interface AddModuleInterface extends ModuleInterface {
+  id?: string;
   layoutId: string;
 }
 
 export interface ModuleProps extends AddModuleInterface {
   id: string;
+  initialId: string;
   inputs: IOProps[];
   outputs: IOProps[];
 }
@@ -69,11 +71,16 @@ export const modulesSlice = createSlice({
     ) => {
       const { name: initialName, props: initialProps } =
         AvailableModules[action.payload.type];
-      const { name = initialName, layoutId, type } = action.payload;
+      const {
+        id: initialId = "",
+        name = initialName,
+        layoutId,
+        type,
+      } = action.payload;
       const props = { ...initialProps, ...action.payload.props };
 
       const payload = Engine.registerModule(name, type, props);
-      return modulesAdapter.addOne(state, { ...payload, layoutId });
+      return modulesAdapter.addOne(state, { ...payload, initialId, layoutId });
     },
     updateModule: (state: EntityState<any>, update: PayloadAction<any>) => {
       const {

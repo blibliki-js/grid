@@ -12,20 +12,18 @@ const VOICE_SELECTIONS = [1, 2, 3, 4, 5, 6];
 export default function VoiceScheduler(props: {
   id: string;
   name: string;
-  props: { numberOfVoices: number };
+  props: { polyNumber: number };
   updateProps: Function;
 }) {
   const {
     id,
     name,
     updateProps,
-    props: { numberOfVoices },
+    props: { polyNumber },
   } = props;
   const updateSelectedId = (event: SelectChangeEvent<string>) => {
-    updateProps(id, { numberOfVoices: event.target.value });
+    updateProps(id, { polyNumber: event.target.value });
   };
-
-  if (!numberOfVoices) debugger;
 
   return (
     <FormControl fullWidth>
@@ -35,7 +33,7 @@ export default function VoiceScheduler(props: {
       <Select
         labelId="voice-select"
         id="voice-select"
-        value={numberOfVoices.toString()}
+        value={polyNumber.toString()}
         label="select number of voices"
         onChange={updateSelectedId}
       >

@@ -10,9 +10,9 @@ import Engine from "@blibliki/engine";
 
 export interface RouteProps {
   sourceId: string;
-  outputId: string;
+  outputName: string;
   destinationId: string;
-  inputId: string;
+  inputName: string;
 }
 
 interface RouteInterface extends RouteProps {

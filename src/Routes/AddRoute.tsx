@@ -37,9 +37,9 @@ export default function AddRoute() {
 
     const route = {
       sourceId: output.moduleId,
-      outputId: output.id,
+      outputName: output.name,
       destinationId: input.moduleId,
-      inputId: input.id,
+      inputName: input.name,
     };
 
     dispatch(addRoute(route));

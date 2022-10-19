@@ -11,6 +11,7 @@ import Grid from "./Grid";
 import Routes from "Routes";
 import { Box, Tabs, Tab } from "@mui/material";
 import EngineInitializer from "EngineInitializer";
+import SavePatch from "SavePatch";
 
 const Main = styled.div``;
 
@@ -45,6 +46,7 @@ function App() {
     <StyledEngineProvider injectFirst>
       <Main>
         <EngineInitializer />
+        <SavePatch />
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs value={currentTab} onChange={onChangeTab}>
             <Tab label="Grid" {...a11yProps(0)} />
