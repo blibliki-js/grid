@@ -1097,10 +1097,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blibliki/engine@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.0.tgz#606cb466501e7f8981af6df22db0df6225f5f263"
-  integrity sha512-hDydunO8lK7mGrg4pe5hCkHCFWLm/TuyqnAiNKBdrL06fI1sGYgN4OW/lwJ4BX/6187vTonXDEje7wShuFQvmg==
+"@blibliki/engine@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.1.tgz#e50e9a5a48056668778af8869ac2c31e09612d3e"
+  integrity sha512-aNVhE/Cs3oLN9rwPiv3O+ahiNFG3s5mpAtwVL8sGrp9XjxNw5lbqw3B/2O0+h7xBSEKsSSDFhHTmd+pVTUh7jg==
   dependencies:
     tone "^14.7.77"
     uuid "^8.3.2"
@@ -9105,6 +9105,11 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"

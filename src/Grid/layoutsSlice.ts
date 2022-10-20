@@ -22,13 +22,18 @@ export const layoutsSlice = createSlice({
   reducers: {
     addLayout: layoutsAdapter.addOne,
     updateLayout: layoutsAdapter.updateOne,
+    removeAllLayouts: layoutsAdapter.removeAll,
   },
 });
 
 export const layoutsSelector = layoutsAdapter.getSelectors(
   (state: RootState) => state.layouts
 );
-export const { updateLayout, addLayout: addPlainLayout } = layoutsSlice.actions;
+export const {
+  updateLayout,
+  addLayout: addPlainLayout,
+  removeAllLayouts,
+} = layoutsSlice.actions;
 
 export const addLayout = (type: string) => (dispatch: AppDispatch) => {
   const payload = constructLayout(type);

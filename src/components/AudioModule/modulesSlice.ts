@@ -105,6 +105,7 @@ export const modulesSlice = createSlice({
         changes: audioModule,
       });
     },
+    removeAllModules: modulesAdapter.removeAll,
   },
 });
 
@@ -126,7 +127,12 @@ export const selectModulesByType = createSelector(
     modules.filter((m) => m.type === type)
 );
 
-export const { addModule, addMaster, updateModule, updateModuleName } =
-  modulesSlice.actions;
+export const {
+  addModule,
+  addMaster,
+  updateModule,
+  updateModuleName,
+  removeAllModules,
+} = modulesSlice.actions;
 
 export default modulesSlice.reducer;
