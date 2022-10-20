@@ -9,6 +9,15 @@ export default function EngineInitializer() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    const setEnabledTrue = () => {
+      document.body.removeEventListener("click", setEnabledTrue);
+      setEnabled(true);
+    };
+
+    document.addEventListener("click", setEnabledTrue);
+  }, []);
+
+  useEffect(() => {
     if (!enabled) return;
 
     const { master } = Engine.initialize({
@@ -27,8 +36,6 @@ export default function EngineInitializer() {
       Engine.dispose();
     };
   }, [enabled]);
-
-  if (!enabled) return <button onClick={() => setEnabled(true)}>Start</button>;
 
   return null;
 }
