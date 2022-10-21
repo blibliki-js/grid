@@ -1,9 +1,5 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
-import {
-  MidiDevice,
-  MidiDeviceManager,
-  MidiDeviceInterface,
-} from "@blibliki/engine";
+import Engine, { MidiDevice, MidiDeviceInterface } from "@blibliki/engine";
 
 import { RootState, AppDispatch } from "store";
 
@@ -22,20 +18,23 @@ export const midiDevicesSlice = createSlice({
 
 const { setDevices, addDevice, removeDevice } = midiDevicesSlice.actions;
 
-export const initialize = () => (dispatch: AppDispatch) => {
-  MidiDeviceManager.fetchDevices().then((devices) => {
-    dispatch(setDevices(devices.map((d) => d.serialize())));
-  });
+export const initialize =
+  () => (dispatch: AppDispatch, getState: () => RootState) => {
+    const any = devicesSelector.selectAll(getState()).length;
+    if (any) return;
 
-  MidiDeviceManager.onStateChange((device: MidiDevice) => {
-    if (device.state === "disconnected") {
-      device.disconnect();
-      dispatch(removeDevice(device.id));
-    } else {
-      dispatch(addDevice(device.serialize()));
-    }
-  });
-};
+    const devices = Object.values(Engine.midiDeviceManager.devices);
+    dispatch(setDevices(devices.map((d) => d.serialize())));
+
+    Engine.midiDeviceManager.onStateChange((device: MidiDevice) => {
+      if (device.state === "disconnected") {
+        device.disconnect();
+        dispatch(removeDevice(device.id));
+      } else {
+        dispatch(addDevice(device.serialize()));
+      }
+    });
+  };
 
 export const devicesSelector = devicesAdapter.getSelectors(
   (state: RootState) => state.midiDevices
