@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Engine from "@blibliki/engine";
 import { useAppDispatch } from "hooks";
+import { updatePlainModule } from "components/AudioModule/modulesSlice";
 
 export default function EngineInitializer() {
   const dispatch = useAppDispatch();
@@ -23,6 +24,9 @@ export default function EngineInitializer() {
         latencyHint: "interactive",
         lookAhead: 0.01,
       },
+    });
+    Engine.onPropsUpdate((id, props) => {
+      dispatch(updatePlainModule({ id, changes: { props } }));
     });
 
     return () => {
