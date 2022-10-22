@@ -41,7 +41,7 @@ export default function ComputerMidiKeyboard(props: { id: string }) {
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("keyup", onKeyUp);
     };
-  }, []);
+  }, [id]);
 
   return null;
 }
