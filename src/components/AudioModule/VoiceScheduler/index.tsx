@@ -1,6 +1,5 @@
 import {
   FormControl,
-  InputLabel,
   Select,
   SelectChangeEvent,
   MenuItem,
@@ -26,10 +25,8 @@ export default function VoiceScheduler(props: {
   };
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="voice-select">
-        <Name id={id} value={name} />
-      </InputLabel>
+    <FormControl sx={{ width: 70 }} fullWidth>
+      <Name id={id} value={name} />
       <Select
         labelId="voice-select"
         id="voice-select"

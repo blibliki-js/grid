@@ -37,10 +37,8 @@ export default function MidiDeviceSelector(props: {
   };
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="midi-select">
-        <Name id={id} value={name} />
-      </InputLabel>
+    <FormControl sx={{ width: 200 }} fullWidth>
+      <Name id={id} value={name} />
       <Select
         labelId="midi-select"
         id="midi-select"
