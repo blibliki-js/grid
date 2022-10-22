@@ -9,7 +9,7 @@ import { store } from "./store";
 import { initialize } from "./globalSlice";
 import Grid from "./Grid";
 import Routes from "Routes";
-import { Box, Tabs, Tab } from "@mui/material";
+import { Box, Tabs, Tab, Link } from "@mui/material";
 import EngineInitializer from "EngineInitializer";
 import Patches from "Patches";
 
@@ -46,13 +46,22 @@ function App() {
     <StyledEngineProvider injectFirst>
       <Main>
         <EngineInitializer />
-        <Patches />
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+
+        <Container>
+          <Link href="https://github.com/blibliki-js/grid">Github</Link>
+        </Container>
+
+        <Container>
+          <Patches />
+        </Container>
+
+        <Container>
           <Tabs value={currentTab} onChange={onChangeTab}>
             <Tab label="Grid" {...a11yProps(0)} />
             <Tab label="Routes" {...a11yProps(1)} />
           </Tabs>
-        </Box>
+        </Container>
+
         <TabPanel value={currentTab} index={0}>
           <Grid />
         </TabPanel>
@@ -61,6 +70,13 @@ function App() {
         </TabPanel>
       </Main>
     </StyledEngineProvider>
+  );
+}
+
+function Container(props: { children: ReactNode }) {
+  const { children } = props;
+  return (
+    <Box sx={{ p: 2, borderBottom: 1, borderColor: "divider" }}>{children}</Box>
   );
 }
 
