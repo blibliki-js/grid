@@ -1,7 +1,6 @@
 import { Note } from "@blibliki/engine";
 import styled from "@emotion/styled";
 
-import { useAppSelector } from "hooks";
 import Key from "./Key";
 
 const toneWidth = 25.3;
@@ -26,19 +25,26 @@ const OctaveContainer = styled.div`
 `;
 
 interface OctaveProps {
+  id: string;
   octave: number;
+  props: { activeNotes: string[] };
   triggerable: boolean;
 }
 
-export default function Octave(props: OctaveProps) {
-  const { octave, triggerable } = props;
-  const { activeNotes } = useAppSelector((state) => state.global);
+export default function Octave(params: OctaveProps) {
+  const {
+    id,
+    props: { activeNotes },
+    octave,
+    triggerable,
+  } = params;
 
   return (
     <OctaveContainer>
       {Note.notes(octave).map((note: Note) => (
         <Key
           key={note.fullName}
+          id={id}
           triggerable={triggerable}
           toneWidth={toneWidth}
           semiToneWidth={semiToneWidth}

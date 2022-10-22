@@ -48,6 +48,7 @@ export const AvailableModules: { [key: string]: ModuleInterface } = {
     type: PolyModuleType.VoiceScheduler,
     props: { numberOfVoices: 1 },
   },
+  virtualMidi: { name: "VirtualMidi", type: ModuleType.VirtualMidi },
 };
 
 const modulesAdapter = createEntityAdapter<ModuleProps>({});
@@ -93,6 +94,7 @@ export const modulesSlice = createSlice({
         changes: audioModule,
       });
     },
+    updatePlainModule: modulesAdapter.updateOne,
     updateModuleName: (
       state: EntityState<any>,
       update: PayloadAction<{ id: string; name: string }>
@@ -131,6 +133,7 @@ export const {
   addModule,
   addMaster,
   updateModule,
+  updatePlainModule,
   updateModuleName,
   removeAllModules,
 } = modulesSlice.actions;

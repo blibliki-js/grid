@@ -116,6 +116,7 @@ const Keys: { [key: string]: any } = {
 };
 
 interface KeyProps extends StyleProps {
+  id: string;
   note: Note;
   active: boolean;
   triggerable: boolean;
@@ -123,6 +124,7 @@ interface KeyProps extends StyleProps {
 
 export default function Key(props: KeyProps) {
   const {
+    id,
     note,
     active,
     triggerable,
@@ -148,7 +150,7 @@ export default function Key(props: KeyProps) {
       () => {
         if (type === "noteOn" && !triggerable && !force) return;
 
-        Engine.triggerKey(note.fullName, type);
+        Engine.triggerVirtualMidi(id, note.fullName, type);
       },
     [triggerable, note.fullName]
   );

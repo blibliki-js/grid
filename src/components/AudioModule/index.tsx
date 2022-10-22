@@ -7,6 +7,7 @@ import Filter from "./Filter";
 import Volume from "./Volume";
 import MidiDeviceSelector from "./MidiDeviceSelector";
 import VoiceScheduler from "./VoiceScheduler";
+import Keyboard from "./Keyboard";
 
 export interface AudioModuleProps {
   id: string;
@@ -49,6 +50,9 @@ export default function AudioModule(audioModuleProps: {
       break;
     case "voiceScheduler":
       Component = VoiceScheduler;
+      break;
+    case "virtualMidi":
+      Component = Keyboard;
       break;
     default:
       throw Error(`Unknown audio module type ${type}`);
