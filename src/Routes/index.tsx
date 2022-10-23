@@ -9,6 +9,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
+import { sortBy } from "lodash";
 import {
   ModuleProps,
   modulesSelector,
@@ -109,7 +110,7 @@ function getRouteNames(
   routes: RouteInterface[],
   modules: ModuleProps[]
 ): RouteWithNames[] {
-  return routes.map((route) => {
+  const routesWithNames = routes.map((route) => {
     const source = modules.find((m) => m.id === route.sourceId);
     const destination = modules.find((m) => m.id === route.destinationId);
 
@@ -127,4 +128,6 @@ function getRouteNames(
       destinationName: `${input.moduleName} // ${input.name}`,
     };
   });
+
+  return sortBy(routesWithNames, ["outputName", "destinationName"]);
 }
