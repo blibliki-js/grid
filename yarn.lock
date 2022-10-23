@@ -1080,9 +1080,9 @@
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
 "@blibliki/engine@^0.1.1":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.4.tgz#01de38101cbbd0922afb30045c975529ebb05c9a"
-  integrity sha512-ugaDf5+xpsVtoua8iytrhUwM4r8T/brz089fiiTHVdR0sh3Z3n8BFrPmZAp0o0wjriq+8uIUYTmNFGlDjwZN+w==
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.5.tgz#bd58973eb109ee0e2be197fdedd9ab2a6de31f68"
+  integrity sha512-vKFF4CLwRw0dOz/0t+bN7hZhWEAfOtR4H6PO9qa4jSuFUnPXlvg0dGOMtXrhrnIyOGKxfg8qGVq0SiMSZSK6ew==
   dependencies:
     tone "^14.7.77"
     uuid "^8.3.2"
