@@ -49,6 +49,10 @@ export const AvailableModules: { [key: string]: ModuleInterface } = {
     props: { numberOfVoices: 1 },
   },
   virtualMidi: { name: "VirtualMidi", type: ModuleType.VirtualMidi },
+  reverb: { name: "Reverb", type: ModuleType.Reverb },
+  delay: { name: "Delay", type: ModuleType.Delay },
+  distortion: { name: "Distortion", type: ModuleType.Distortion },
+  bitCrusher: { name: "BitCrusher", type: ModuleType.BitCrusher },
 };
 
 const modulesAdapter = createEntityAdapter<ModuleProps>({});

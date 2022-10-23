@@ -36,6 +36,7 @@ const STATIC_PATCHES_PATH = "./staticPatches";
 const STATIC_PATCHES: { [Key: string]: string } = {
   a1: "oscSynth.json",
   a2: "threeOscSynth.json",
+  a3: "effects.json",
 };
 
 export default class Patch {

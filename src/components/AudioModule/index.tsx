@@ -8,6 +8,10 @@ import Volume from "./Volume";
 import MidiDeviceSelector from "./MidiDeviceSelector";
 import VoiceScheduler from "./VoiceScheduler";
 import Keyboard from "./Keyboard";
+import Reverb from "./Reverb";
+import Delay from "./Delay";
+import Distortion from "./Distortion";
+import BitCrusher from "./BitCrusher";
 
 export interface AudioModuleProps {
   id: string;
@@ -53,6 +57,18 @@ export default function AudioModule(audioModuleProps: {
       break;
     case "virtualMidi":
       Component = Keyboard;
+      break;
+    case "reverb":
+      Component = Reverb;
+      break;
+    case "delay":
+      Component = Delay;
+      break;
+    case "distortion":
+      Component = Distortion;
+      break;
+    case "bitCrusher":
+      Component = BitCrusher;
       break;
     default:
       throw Error(`Unknown audio module type ${type}`);
