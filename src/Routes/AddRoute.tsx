@@ -5,6 +5,7 @@ import {
   Select,
   Button,
   SelectChangeEvent,
+  Grid,
 } from "@mui/material";
 import {
   modulesSelector,
@@ -15,8 +16,9 @@ import { useState } from "react";
 
 import { addRoute } from "./routesSlice";
 
-export default function AddRoute() {
+export default function AddRoute(props: { audioModule: ModuleProps }) {
   const dispatch = useAppDispatch();
+  const { audioModule } = props;
   const modules = useAppSelector((state) => modulesSelector.selectAll(state));
 
   const [sourceId, setSourceId] = useState("");
@@ -31,7 +33,7 @@ export default function AddRoute() {
   };
 
   const onAddRoute = () => {
-    const output = outputs(modules).find((io) => io.id === sourceId);
+    const output = audioModule.outputs.find((io) => io.id === sourceId);
     const input = inputs(modules).find((io) => io.id === destinationId);
     if (!output || !input) return;
 
@@ -46,50 +48,52 @@ export default function AddRoute() {
   };
 
   return (
-    <>
-      <FormControl fullWidth>
-        <InputLabel id="add-source-label">Select source</InputLabel>
-        <Select
-          labelId="add-source-label"
-          id="add-source-select"
-          value={sourceId}
-          label="Source"
-          onChange={onSelectSource}
-        >
-          {outputs(modules).map((io) => (
-            <MenuItem key={io.id} value={io.id}>
-              {io.moduleName} // {io.name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel id="add-destination-label">Select destination</InputLabel>
-        <Select
-          labelId="add-destination-label"
-          id="add-destination-select"
-          value={destinationId}
-          label="Destionation"
-          onChange={onSelectDestination}
-        >
-          {inputs(modules).map((io) => (
-            <MenuItem key={io.id} value={io.id}>
-              {io.moduleName} // {io.name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl fullWidth>
-        <Button onClick={onAddRoute}>Add route</Button>
-      </FormControl>
-    </>
+    <Grid container spacing={2}>
+      <Grid item xs={4}>
+        <FormControl fullWidth>
+          <InputLabel id="add-source-label">Select source</InputLabel>
+          <Select
+            labelId="add-source-label"
+            id="add-source-select"
+            value={sourceId}
+            label="Source"
+            onChange={onSelectSource}
+          >
+            {audioModule.outputs.map((io) => (
+              <MenuItem key={io.id} value={io.id}>
+                {io.moduleName} // {io.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Grid>
+      <Grid item xs={4}>
+        <FormControl fullWidth>
+          <InputLabel id="add-destination-label">Select destination</InputLabel>
+          <Select
+            labelId="add-destination-label"
+            id="add-destination-select"
+            value={destinationId}
+            label="Destionation"
+            onChange={onSelectDestination}
+          >
+            {inputs(modules).map((io) => (
+              <MenuItem key={io.id} value={io.id}>
+                {io.moduleName} // {io.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Grid>
+      <Grid item xs={4}>
+        <FormControl fullWidth>
+          <Button onClick={onAddRoute}>Add route</Button>
+        </FormControl>
+      </Grid>
+    </Grid>
   );
 }
 
 function inputs(audioModules: ModuleProps[]) {
   return audioModules.map((m) => m.inputs).flat();
-}
-
-function outputs(audioModules: ModuleProps[]) {
-  return audioModules.map((m) => m.outputs).flat();
 }

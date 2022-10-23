@@ -29,12 +29,9 @@ export const routesSlice = createSlice({
       const payload = Engine.addRoute(action.payload);
       return routesAdapter.addOne(state, payload);
     },
-    removeRoute: (
-      state: EntityState<any>,
-      action: PayloadAction<RouteInterface>
-    ) => {
+    removeRoute: (state: EntityState<any>, action: PayloadAction<string>) => {
       Engine.removeRoute(action.payload);
-      return routesAdapter.removeOne(state, action.payload.id);
+      return routesAdapter.removeOne(state, action.payload);
     },
     removeAllRoutes: routesAdapter.removeAll,
   },

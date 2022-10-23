@@ -7,63 +7,108 @@ import {
   TableCell,
   TableHead,
   TableRow,
+  Typography,
 } from "@mui/material";
 import {
   ModuleProps,
   modulesSelector,
 } from "components/AudioModule/modulesSlice";
 import { useAppDispatch, useAppSelector } from "hooks";
+import { ReactNode } from "react";
 import AddRoute from "./AddRoute";
 import { removeRoute, routesSelector } from "./routesSlice";
 
 export default function Routes() {
   return (
     <Box>
-      <AddRoute />
       <RouteList />
     </Box>
   );
 }
 
 function RouteList() {
-  const dispatch = useAppDispatch();
   const routes = useAppSelector((state) => routesSelector.selectAll(state));
   const modules = useAppSelector((state) => modulesSelector.selectAll(state));
 
-  const routeNames = getRouteNames(routes, modules);
+  const routesWithNames = getRouteNames(routes, modules);
+
+  return (
+    <>
+      {modules
+        .sort((m1, m2) => m1.name.localeCompare(m2.name))
+        .map((audioModule) => (
+          <ModuleRoutes
+            key={audioModule.id}
+            audioModule={audioModule}
+            routes={routesWithNames}
+          />
+        ))}
+    </>
+  );
+}
+
+function ModuleRoutes(props: {
+  audioModule: ModuleProps;
+  routes: RouteWithNames[];
+}) {
+  const dispatch = useAppDispatch();
+  const { audioModule, routes } = props;
 
   const onClick = (id: string) => () => {
     const route = routes.find((r) => r.id === id);
     if (!route) return;
 
-    dispatch(removeRoute(route));
+    dispatch(removeRoute(route.id));
   };
 
+  if (audioModule.outputs.length === 0) return null;
+
   return (
-    <Table sx={{ minWidth: 700 }} aria-label="customized table">
-      <TableHead>
-        <TableRow>
-          <TableCell>Source</TableCell>
-          <TableCell>Destination</TableCell>
-          <TableCell>Actions</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {routeNames.map(([id, source, destination]) => (
-          <TableRow key={id}>
-            <TableCell>{source}</TableCell>
-            <TableCell>{destination}</TableCell>
-            <TableCell>
-              <Button onClick={onClick(id)}>x</Button>
-            </TableCell>
+    <Container>
+      <Typography>{audioModule.name}</Typography>
+      <AddRoute audioModule={audioModule} />
+      <Table aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Source</TableCell>
+            <TableCell>Destination</TableCell>
+            <TableCell>Actions</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHead>
+        <TableBody>
+          {routes
+            .filter((r) => r.sourceId === audioModule.id)
+            .map((route) => (
+              <TableRow key={route.id}>
+                <TableCell>{route.outputName}</TableCell>
+                <TableCell>{route.destinationName}</TableCell>
+                <TableCell>
+                  <Button onClick={onClick(route.id)}>x</Button>
+                </TableCell>
+              </TableRow>
+            ))}
+        </TableBody>
+      </Table>
+    </Container>
   );
 }
 
-function getRouteNames(routes: RouteInterface[], modules: ModuleProps[]) {
+function Container(props: { children: ReactNode }) {
+  const { children } = props;
+  return <Box sx={{ p: 2, m: 2, border: 1, width: 700 }}>{children}</Box>;
+}
+
+interface RouteWithNames {
+  id: string;
+  sourceId: string;
+  outputName: string;
+  destinationName: string;
+}
+
+function getRouteNames(
+  routes: RouteInterface[],
+  modules: ModuleProps[]
+): RouteWithNames[] {
   return routes.map((route) => {
     const source = modules.find((m) => m.id === route.sourceId);
     const destination = modules.find((m) => m.id === route.destinationId);
@@ -75,10 +120,11 @@ function getRouteNames(routes: RouteInterface[], modules: ModuleProps[]) {
 
     if (!output || !input) throw Error("Routing error");
 
-    return [
-      route.id,
-      `${output.moduleName} // ${output.name}`,
-      `${input.moduleName} // ${input.name}`,
-    ];
+    return {
+      id: route.id,
+      sourceId: route.sourceId,
+      outputName: output.name,
+      destinationName: `${input.moduleName} // ${input.name}`,
+    };
   });
 }
