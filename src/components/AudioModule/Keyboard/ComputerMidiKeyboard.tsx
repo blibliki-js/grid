@@ -22,6 +22,8 @@ const MAP_KEYS: { [key: string]: Note } = {
 };
 
 const onKeyTrigger = (id: string, type: string) => (event: KeyboardEvent) => {
+  if (event.repeat) return;
+
   const note = MAP_KEYS[event.key];
   if (!note) return;
 
