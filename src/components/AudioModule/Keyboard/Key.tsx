@@ -152,7 +152,7 @@ export default function Key(props: KeyProps) {
 
         Engine.triggerVirtualMidi(id, note.fullName, type);
       },
-    [triggerable, note.fullName]
+    [id, triggerable, note.fullName]
   );
 
   return (

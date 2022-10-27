@@ -7,11 +7,11 @@ import {
 } from "@reduxjs/toolkit";
 
 import { RootState } from "store";
-import Engine, { ModuleType, PolyModuleType, IOProps } from "@blibliki/engine";
+import Engine, { IOProps } from "@blibliki/engine";
 
 interface ModuleInterface {
   name: string;
-  type: ModuleType | PolyModuleType;
+  type: string;
   props?: { [key: string]: any };
 }
 
@@ -28,31 +28,31 @@ export interface ModuleProps extends AddModuleInterface {
 }
 
 export const AvailableModules: { [key: string]: ModuleInterface } = {
-  oscillator: { name: "Oscilator", type: PolyModuleType.Oscillator },
-  ampEnvelope: {
+  Oscillator: { name: "Oscilator", type: "Oscillator" },
+  AmpEnvelope: {
     name: "Amp Envelope",
-    type: PolyModuleType.AmpEnvelope,
+    type: "AmpEnvelope",
   },
-  freqEnvelope: {
+  FreqEnvelope: {
     name: "Frequency Envelope",
-    type: PolyModuleType.FreqEnvelope,
+    type: "FreqEnvelope",
   },
-  filter: { name: "Filter", type: PolyModuleType.Filter },
-  volume: { name: "Volume", type: PolyModuleType.Volume },
-  midiSelector: {
+  Filter: { name: "Filter", type: "Filter" },
+  Volume: { name: "Volume", type: "Volume" },
+  MidiSelector: {
     name: "Midi Selector",
-    type: ModuleType.MidiSelector,
+    type: "MidiSelector",
   },
-  voiceScheduler: {
+  VoiceScheduler: {
     name: "Voice Scheduler",
-    type: PolyModuleType.VoiceScheduler,
+    type: "VoiceScheduler",
     props: { numberOfVoices: 1 },
   },
-  virtualMidi: { name: "VirtualMidi", type: ModuleType.VirtualMidi },
-  reverb: { name: "Reverb", type: ModuleType.Reverb },
-  delay: { name: "Delay", type: ModuleType.Delay },
-  distortion: { name: "Distortion", type: ModuleType.Distortion },
-  bitCrusher: { name: "BitCrusher", type: ModuleType.BitCrusher },
+  VirtualMidi: { name: "VirtualMidi", type: "VirtualMidi" },
+  Reverb: { name: "Reverb", type: "Reverb" },
+  Delay: { name: "Delay", type: "Delay" },
+  Distortion: { name: "Distortion", type: "Distortion" },
+  BitCrusher: { name: "BitCrusher", type: "BitCrusher" },
 };
 
 const modulesAdapter = createEntityAdapter<ModuleProps>({});
@@ -66,7 +66,7 @@ export const modulesSlice = createSlice({
       action: PayloadAction<ModuleProps>
     ) => {
       const { payload } = action;
-      if (!payload.id || payload.type !== "master") return;
+      if (!payload.id || payload.type !== "Master") return;
 
       return modulesAdapter.addOne(state, action.payload);
     },

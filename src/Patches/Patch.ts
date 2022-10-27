@@ -139,7 +139,7 @@ export default class Patch {
     const master = Engine.master;
 
     modules.forEach((m) => {
-      if (m.type === "master") {
+      if (m.type === "Master") {
         store.dispatch(addMaster({ ...master, initialId: m.id, layoutId: "" }));
         return;
       }

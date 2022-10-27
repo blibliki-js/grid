@@ -35,39 +35,39 @@ export default function AudioModule(audioModuleProps: {
   };
 
   switch (type) {
-    case "oscillator":
+    case "Oscillator":
       Component = Oscillator;
       break;
-    case "filter":
+    case "Filter":
       Component = Filter;
       break;
-    case "volume":
+    case "Volume":
       Component = Volume;
       break;
-    case "envelope":
-    case "ampEnvelope":
-    case "freqEnvelope":
+    case "Envelope":
+    case "AmpEnvelope":
+    case "FreqEnvelope":
       Component = Envelope;
       break;
-    case "midiSelector":
+    case "MidiSelector":
       Component = MidiDeviceSelector;
       break;
-    case "voiceScheduler":
+    case "VoiceScheduler":
       Component = VoiceScheduler;
       break;
-    case "virtualMidi":
+    case "VirtualMidi":
       Component = Keyboard;
       break;
-    case "reverb":
+    case "Reverb":
       Component = Reverb;
       break;
-    case "delay":
+    case "Delay":
       Component = Delay;
       break;
-    case "distortion":
+    case "Distortion":
       Component = Distortion;
       break;
-    case "bitCrusher":
+    case "BitCrusher":
       Component = BitCrusher;
       break;
     default:

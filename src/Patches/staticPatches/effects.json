@@ -5,7 +5,7 @@
     {
       "id": "a28f0d14-7eca-461b-b693-afbc9d75e240",
       "name": "Master",
-      "type": "master",
+      "type": "Master",
       "inputs": [
         {
           "id": "3a4a3658-ccd1-44da-b1a5-1aacb741dddf",
@@ -21,14 +21,13 @@
     {
       "id": "9ffd59f7-d1be-458c-9c3f-3959160da0e6",
       "name": "Osc",
-      "type": "oscillator",
+      "type": "Oscillator",
       "props": {
         "noteName": "C3",
         "fine": 23,
         "coarse": 0,
         "wave": "sawtooth",
         "range": 0,
-        "volume": 0,
         "voiceNo": 0
       },
       "inputs": [
@@ -59,7 +58,7 @@
     {
       "id": "5d7ba58a-8e08-496b-9897-9bc52dd2dd00",
       "name": "Vol",
-      "type": "volume",
+      "type": "Volume",
       "props": { "volume": -26, "voiceNo": 0 },
       "inputs": [
         {
@@ -89,7 +88,7 @@
     {
       "id": "4610b911-d4d9-44f8-90fd-2081e30308c4",
       "name": "Amp Envelope",
-      "type": "ampEnvelope",
+      "type": "AmpEnvelope",
       "props": {
         "attack": 0,
         "decay": 0.58,
@@ -131,7 +130,7 @@
     {
       "id": "924616ea-9d4b-4f83-b1a3-3003d5b5067d",
       "name": "Frequency Envelope",
-      "type": "freqEnvelope",
+      "type": "FreqEnvelope",
       "props": {
         "attack": 0,
         "decay": 0.49,
@@ -180,7 +179,7 @@
     {
       "id": "7c24836b-e1a1-4ce0-b666-78c8e8f42c8e",
       "name": "Filter",
-      "type": "filter",
+      "type": "Filter",
       "props": {
         "cutoff": 192.89993948749998,
         "resonance": 16.5,
@@ -221,7 +220,7 @@
     {
       "id": "d8f195ac-4b6e-4108-96de-bc5428af15ff",
       "name": "Midi Selector",
-      "type": "midiSelector",
+      "type": "MidiSelector",
       "props": { "selectedId": "1695389404" },
       "inputs": [],
       "outputs": [
@@ -238,7 +237,7 @@
     {
       "id": "a1c36a6f-eb96-4ec1-bcf4-f04b3e067dd1",
       "name": "Voice Scheduler",
-      "type": "voiceScheduler",
+      "type": "VoiceScheduler",
       "props": { "polyNumber": 3 },
       "inputs": [
         {
@@ -274,7 +273,7 @@
     {
       "id": "4a314814-9e75-4dd9-b641-7ad5a74627e8",
       "name": "VirtualMidi",
-      "type": "virtualMidi",
+      "type": "VirtualMidi",
       "props": { "activeNotes": [] },
       "inputs": [
         {
@@ -299,14 +298,13 @@
     {
       "id": "97341b10-8cbd-430c-97f7-d7304b4f4910",
       "name": "Osc2",
-      "type": "oscillator",
+      "type": "Oscillator",
       "props": {
         "noteName": "C3",
         "fine": -13,
         "coarse": 0,
         "wave": "sawtooth",
         "range": 0,
-        "volume": 0,
         "voiceNo": 0
       },
       "inputs": [
@@ -337,7 +335,7 @@
     {
       "id": "b44e0f17-d236-485d-b522-c9bdf77744a7",
       "name": "Vol2",
-      "type": "volume",
+      "type": "Volume",
       "props": { "volume": -25, "voiceNo": 0 },
       "inputs": [
         {
@@ -367,14 +365,13 @@
     {
       "id": "d9c8faec-ec32-4827-88f7-d609f524fa51",
       "name": "Osc3",
-      "type": "oscillator",
+      "type": "Oscillator",
       "props": {
         "noteName": "C3",
         "fine": 0,
         "coarse": 0,
         "wave": "square",
         "range": -1,
-        "volume": 0,
         "voiceNo": 0
       },
       "inputs": [
@@ -405,7 +402,7 @@
     {
       "id": "7085fa9b-5905-447b-b471-33954dc989d2",
       "name": "Vol3",
-      "type": "volume",
+      "type": "Volume",
       "props": { "volume": -28, "voiceNo": 0 },
       "inputs": [
         {
@@ -435,7 +432,7 @@
     {
       "id": "336757bd-2ece-4a9f-b300-5c0bd2535d44",
       "name": "BitCrusher",
-      "type": "bitCrusher",
+      "type": "BitCrusher",
       "props": { "wet": 1, "bits": 16 },
       "inputs": [
         {
@@ -459,7 +456,7 @@
     {
       "id": "542e7fdb-c7b4-4d79-9f0d-0993377bfe8a",
       "name": "Distortion",
-      "type": "distortion",
+      "type": "Distortion",
       "props": { "wet": 0, "drive": 1 },
       "inputs": [
         {
@@ -483,7 +480,7 @@
     {
       "id": "76c2c057-b2fb-43e4-894b-628d2d161f9a",
       "name": "Delay",
-      "type": "delay",
+      "type": "Delay",
       "props": { "wet": 0.18, "delayTime": 0.65, "feedback": 0.28 },
       "inputs": [
         {
@@ -507,7 +504,7 @@
     {
       "id": "38e9c1f5-4751-4189-aa55-890f078d34ef",
       "name": "Reverb",
-      "type": "reverb",
+      "type": "Reverb",
       "props": { "wet": 0.23, "decay": 40.5, "preDelay": 0.02 },
       "inputs": [
         {
@@ -744,7 +741,7 @@
   "layouts": [
     {
       "i": "946602c0-012c-472a-a09a-61e81aeec69f",
-      "type": "oscillator",
+      "type": "Oscillator",
       "x": 0,
       "y": 2,
       "w": 32,
@@ -754,7 +751,7 @@
     },
     {
       "i": "724adaae-672c-47ec-af6e-47ea37af8c27",
-      "type": "volume",
+      "type": "Volume",
       "x": 32,
       "y": 2,
       "w": 8,
@@ -764,7 +761,7 @@
     },
     {
       "i": "b7c172b1-6900-460f-be13-3f8d15062d06",
-      "type": "ampEnvelope",
+      "type": "AmpEnvelope",
       "x": 59,
       "y": 2,
       "w": 17,
@@ -774,7 +771,7 @@
     },
     {
       "i": "2441804f-2d55-4827-a35c-31ed24e837c1",
-      "type": "freqEnvelope",
+      "type": "FreqEnvelope",
       "x": 59,
       "y": 20,
       "w": 17,
@@ -784,7 +781,7 @@
     },
     {
       "i": "ffc513cd-978a-486d-8b57-5206eaab674b",
-      "type": "filter",
+      "type": "Filter",
       "x": 59,
       "y": 38,
       "w": 19,
@@ -794,7 +791,7 @@
     },
     {
       "i": "98b8c0d6-89ce-4aba-a141-c8959d359e4c",
-      "type": "midiSelector",
+      "type": "MidiSelector",
       "x": 88,
       "y": 33,
       "w": 24,
@@ -804,7 +801,7 @@
     },
     {
       "i": "e075c686-61f4-4f60-94ec-7384150ced8b",
-      "type": "voiceScheduler",
+      "type": "VoiceScheduler",
       "x": 135,
       "y": 33,
       "w": 11,
@@ -814,7 +811,7 @@
     },
     {
       "i": "d02e7bee-c54f-4c31-befa-3525b6c976a7",
-      "type": "virtualMidi",
+      "type": "VirtualMidi",
       "x": 88,
       "y": 42,
       "w": 58,
@@ -824,7 +821,7 @@
     },
     {
       "i": "c88ac9d4-0982-4b35-bde1-608fd9782270",
-      "type": "oscillator",
+      "type": "Oscillator",
       "x": 0,
       "y": 23,
       "w": 32,
@@ -834,7 +831,7 @@
     },
     {
       "i": "ddf4a98f-5f16-4263-878a-0edad8f89959",
-      "type": "volume",
+      "type": "Volume",
       "x": 32,
       "y": 23,
       "w": 9,
@@ -844,7 +841,7 @@
     },
     {
       "i": "850e3e18-687a-4aa0-99b6-f3fcc2c0ab82",
-      "type": "oscillator",
+      "type": "Oscillator",
       "x": 1,
       "y": 47,
       "w": 32,
@@ -854,7 +851,7 @@
     },
     {
       "i": "abf73d06-29ae-4018-8991-5e5cc43ba0ae",
-      "type": "volume",
+      "type": "Volume",
       "x": 33,
       "y": 47,
       "w": 9,
@@ -864,7 +861,7 @@
     },
     {
       "i": "9b8b34ac-075a-45a0-ad3b-c3d81e10f729",
-      "type": "bitCrusher",
+      "type": "BitCrusher",
       "x": 75,
       "y": 64,
       "w": 11,
@@ -874,7 +871,7 @@
     },
     {
       "i": "6f40dfcc-63d4-4a5e-8ef3-3e11ced5bb9c",
-      "type": "distortion",
+      "type": "Distortion",
       "x": 86,
       "y": 64,
       "w": 12,
@@ -884,7 +881,7 @@
     },
     {
       "i": "e9246947-be42-44dc-84cf-fd077bcd4abb",
-      "type": "delay",
+      "type": "Delay",
       "x": 98,
       "y": 64,
       "w": 23,
@@ -894,7 +891,7 @@
     },
     {
       "i": "a4546f16-d04e-40c4-aa43-b794c18a1192",
-      "type": "reverb",
+      "type": "Reverb",
       "x": 121,
       "y": 64,
       "w": 19,
