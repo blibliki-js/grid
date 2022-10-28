@@ -1,5 +1,6 @@
 import { Slider } from "@mui/material";
 import styled from "@emotion/styled";
+import { throttle } from "lodash";
 
 const StyledSlider = styled(Slider)`
   margin-bottom: 10px;
@@ -84,12 +85,13 @@ export default function Fader(props: FaderProps) {
 
   const internalOnChange = (_: any, newValue?: number | number[]) =>
     onChange(newValue, calcValue(newValue, min, max || 1, exp));
+  const debouncedOnChange = throttle(internalOnChange, 500);
 
   return (
     <Container>
       <StyledSlider
         orientation="vertical"
-        onChange={internalOnChange}
+        onChange={debouncedOnChange}
         value={revValue}
         defaultValue={defaultValue}
         min={min}

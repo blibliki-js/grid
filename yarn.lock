@@ -1079,10 +1079,8 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blibliki/engine@^0.1.1":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.7.tgz#912cdf03a4c2ea7f0e22d985cd8c20ba1adc81dc"
-  integrity sha512-XY5/GRVRofeQ7D/+1Ao2fNaJDkN87UyoOwoW+yhBabunW8YcAX9fyLEmt9EpLGlL8DahGhqo25OKTZikRr5siA==
+"@blibliki/engine@../engine":
+  version "0.1.8"
   dependencies:
     "@types/lodash" "^4.14.186"
     lodash "^4.17.21"

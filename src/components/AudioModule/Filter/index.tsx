@@ -1,13 +1,23 @@
 import styled from "@emotion/styled";
 
 import Fader, { MarkProps } from "components/Fader";
+import Cutoff from "./Cutoff";
+import Resonance from "./Resonance";
+import FilterType from "./FilterType";
+import Slope from "./Slope";
 import Name from "../attributes/Name";
 
 interface FilterProps {
   id: string;
   name: string;
-  updateProps: Function;
-  props: { cutoff: number; resonance: number; envelopeAmount: number };
+  updateProps: (id: string, props: any) => void;
+  props: {
+    cutoff: number;
+    resonance: number;
+    envelopeAmount: number;
+    filterType: BiquadFilterType;
+    slope: number;
+  };
 }
 
 const FilterContainer = styled.div`
@@ -31,14 +41,12 @@ export default function Filter(props: FilterProps) {
     id,
     updateProps,
     name: title,
-    props: { cutoff, resonance, envelopeAmount },
+    props: { cutoff, resonance, filterType, slope, envelopeAmount },
   } = props;
 
-  const updateProp =
-    (propName: string) => (value: number, calcValue: number) => {
-      const currentVal = propName === "cutoff" ? calcValue : value;
-      updateProps(id, { [propName]: currentVal });
-    };
+  const updateProp = (propName: string) => (value: number) => {
+    updateProps(id, { [propName]: value });
+  };
 
   return (
     <FilterContainer>
@@ -47,21 +55,8 @@ export default function Filter(props: FilterProps) {
       </Title>
 
       <FaderContainer>
-        <Fader
-          name="Hz"
-          min={20}
-          max={20000}
-          onChange={updateProp("cutoff")}
-          value={cutoff}
-          exp={4}
-        />
-        <Fader
-          name="Q"
-          min={0}
-          max={100}
-          onChange={updateProp("resonance")}
-          value={resonance}
-        />
+        <Cutoff id={id} value={cutoff} updateProps={updateProps} />
+        <Resonance id={id} value={resonance} updateProps={updateProps} />
         <Fader
           name="Amount"
           marks={AmountCenter}
@@ -71,6 +66,8 @@ export default function Filter(props: FilterProps) {
           onChange={updateProp("envelopeAmount")}
           value={envelopeAmount}
         />
+        <FilterType id={id} value={filterType} updateProps={updateProps} />
+        <Slope id={id} value={slope} updateProps={updateProps} />
       </FaderContainer>
     </FilterContainer>
   );
