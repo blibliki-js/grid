@@ -10,7 +10,6 @@ export default function Resonance(props: ResonanceProps) {
   const { id, value, updateProps } = props;
 
   const updateProp = (_: number, calcValue: number) => {
-    console.log(calcValue);
     updateProps(id, { resonance: calcValue });
   };
 
@@ -21,7 +20,7 @@ export default function Resonance(props: ResonanceProps) {
       max={100}
       onChange={updateProp}
       value={value}
-      exp={2}
+      exp={5}
     />
   );
 }
