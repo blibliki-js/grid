@@ -3,23 +3,23 @@
   "name": "Init patch",
   "modules": [
     {
-      "id": "3fa52c2d-32b3-4f73-ae91-ee44581f1530",
+      "id": "91471d7f-cd65-4446-9eeb-acfb7ec89845",
       "name": "Master",
       "type": "Master",
       "inputs": [
         {
-          "id": "4b57521e-1c02-4627-9f56-ab9f88c36b21",
+          "id": "ff1d35f1-cdab-4363-bec4-99ad5e9f54ba",
           "name": "input",
-          "moduleId": "3fa52c2d-32b3-4f73-ae91-ee44581f1530",
+          "moduleId": "91471d7f-cd65-4446-9eeb-acfb7ec89845",
           "moduleName": "Master"
         }
       ],
       "outputs": [],
-      "initialId": "918ccaad-bb3a-4162-be94-5d6933eab2f4",
+      "initialId": "3fa52c2d-32b3-4f73-ae91-ee44581f1530",
       "layoutId": ""
     },
     {
-      "id": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
+      "id": "bbdf0667-a580-423a-9df5-40e6ae413a6f",
       "name": "Oscilator",
       "type": "Oscillator",
       "props": {
@@ -33,61 +33,61 @@
       },
       "inputs": [
         {
-          "id": "991fd7e4-2465-4396-b4ec-db5b7911f064",
+          "id": "af597183-614b-473a-8f37-4007d3bfb48b",
           "name": "number of voices",
-          "moduleId": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
+          "moduleId": "bbdf0667-a580-423a-9df5-40e6ae413a6f",
           "moduleName": "Oscilator"
         },
         {
-          "id": "6ef8d953-ff69-4e2d-a7ce-e199747466d9",
+          "id": "aea52c73-9db8-4a26-a259-d004dc65f982",
           "name": "midi in",
-          "moduleId": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
+          "moduleId": "bbdf0667-a580-423a-9df5-40e6ae413a6f",
           "moduleName": "Oscilator"
         }
       ],
       "outputs": [
         {
-          "id": "f63074a6-87fa-431e-a57c-65359d05ec8a",
+          "id": "23ddc16a-15a1-443a-8c05-739307978bd1",
           "name": "output",
-          "moduleId": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
+          "moduleId": "bbdf0667-a580-423a-9df5-40e6ae413a6f",
           "moduleName": "Oscilator"
         }
       ],
-      "initialId": "9c374493-3480-4174-b094-da74940cb196",
+      "initialId": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
       "layoutId": "946602c0-012c-472a-a09a-61e81aeec69f"
     },
     {
-      "id": "b97e2d1c-7e93-4263-8874-d9cda993461a",
+      "id": "5174a086-5f7d-4336-b0d1-8dfa2edd0a00",
       "name": "Volume",
       "type": "Volume",
       "props": { "volume": -26, "voiceNo": 0 },
       "inputs": [
         {
-          "id": "80c26c36-6124-4b75-a63a-717e0f1fa9b8",
+          "id": "c5dd20dc-5e2b-4c77-8a22-5aae2e10145c",
           "name": "number of voices",
-          "moduleId": "b97e2d1c-7e93-4263-8874-d9cda993461a",
+          "moduleId": "5174a086-5f7d-4336-b0d1-8dfa2edd0a00",
           "moduleName": "Volume"
         },
         {
-          "id": "917395ed-f37b-43b9-a03d-0c210e764e25",
+          "id": "873305e0-e0f8-450b-84c8-11a6f7c85c3b",
           "name": "input",
-          "moduleId": "b97e2d1c-7e93-4263-8874-d9cda993461a",
+          "moduleId": "5174a086-5f7d-4336-b0d1-8dfa2edd0a00",
           "moduleName": "Volume"
         }
       ],
       "outputs": [
         {
-          "id": "10efd590-0fe6-4a03-bd43-f34f187eb38b",
+          "id": "6ae8ffcf-b700-4837-8cf3-deb900ba578c",
           "name": "output",
-          "moduleId": "b97e2d1c-7e93-4263-8874-d9cda993461a",
+          "moduleId": "5174a086-5f7d-4336-b0d1-8dfa2edd0a00",
           "moduleName": "Volume"
         }
       ],
-      "initialId": "4e843295-33ab-480a-87af-5d7ba59e3f88",
+      "initialId": "b97e2d1c-7e93-4263-8874-d9cda993461a",
       "layoutId": "724adaae-672c-47ec-af6e-47ea37af8c27"
     },
     {
-      "id": "074f7106-f303-4dca-813e-989143c2bb71",
+      "id": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
       "name": "Amp Envelope",
       "type": "AmpEnvelope",
       "props": {
@@ -99,37 +99,37 @@
       },
       "inputs": [
         {
-          "id": "ce9edcc9-9d28-4472-98a6-72a72ddeab62",
+          "id": "ed9d4be2-de35-483e-a090-4a3ed7e66727",
           "name": "number of voices",
-          "moduleId": "074f7106-f303-4dca-813e-989143c2bb71",
+          "moduleId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
           "moduleName": "Amp Envelope"
         },
         {
-          "id": "aef2f3f6-e500-4947-8a20-ae7de23d972c",
+          "id": "a1b8034b-cb41-4bfb-b64f-82fd9b31cfb7",
           "name": "input",
-          "moduleId": "074f7106-f303-4dca-813e-989143c2bb71",
+          "moduleId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
           "moduleName": "Amp Envelope"
         },
         {
-          "id": "85458eb9-ac4d-424e-8c6e-96f6888e6489",
+          "id": "65637f45-05c3-4ea1-a3d3-f7c0f5be8081",
           "name": "midi in",
-          "moduleId": "074f7106-f303-4dca-813e-989143c2bb71",
+          "moduleId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
           "moduleName": "Amp Envelope"
         }
       ],
       "outputs": [
         {
-          "id": "eccb58ae-e312-4746-83c8-3b5dbcc12340",
+          "id": "7bf54916-7d5d-4e91-ad60-e0cbd98bc5e2",
           "name": "output",
-          "moduleId": "074f7106-f303-4dca-813e-989143c2bb71",
+          "moduleId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
           "moduleName": "Amp Envelope"
         }
       ],
-      "initialId": "410cc088-e4f4-40d0-8026-fc4437f2f688",
+      "initialId": "074f7106-f303-4dca-813e-989143c2bb71",
       "layoutId": "b7c172b1-6900-460f-be13-3f8d15062d06"
     },
     {
-      "id": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+      "id": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
       "name": "Frequency Envelope",
       "type": "FreqEnvelope",
       "props": {
@@ -142,273 +142,275 @@
       },
       "inputs": [
         {
-          "id": "54081335-d1c0-43b4-a8bc-3cd3ede552a7",
+          "id": "9339da95-504a-4524-b8d0-30aa30a07d04",
           "name": "number of voices",
-          "moduleId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+          "moduleId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
           "moduleName": "Frequency Envelope"
         },
         {
-          "id": "6307568b-887c-490c-b5c5-ae5097047d46",
+          "id": "f8da8a53-95f8-4af4-a4b4-e1dea7526338",
           "name": "input",
-          "moduleId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+          "moduleId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
           "moduleName": "Frequency Envelope"
         },
         {
-          "id": "d57ea0f0-bb25-439c-ac43-0aeeca7fb34c",
+          "id": "1087c0ce-750e-41da-880c-466e802dd1a9",
           "name": "midi in",
-          "moduleId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+          "moduleId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
           "moduleName": "Frequency Envelope"
         }
       ],
       "outputs": [
         {
-          "id": "95dd5ee3-5574-4168-ba9b-378ae6ef6528",
+          "id": "f48b99fa-c5eb-447f-8730-d8fbfa306084",
           "name": "output",
-          "moduleId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+          "moduleId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
           "moduleName": "Frequency Envelope"
         },
         {
-          "id": "9d7c1f9f-f54c-4151-93df-866f4928866e",
+          "id": "bb5562fc-2527-4600-ad13-679a078193eb",
           "name": "frequency",
-          "moduleId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+          "moduleId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
           "moduleName": "Frequency Envelope"
         }
       ],
-      "initialId": "991427cf-5613-40da-8dff-4dd2f77367e2",
+      "initialId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
       "layoutId": "2441804f-2d55-4827-a35c-31ed24e837c1"
     },
     {
-      "id": "e1b0a905-bacb-4624-b743-74857e0e176f",
+      "id": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
       "name": "Filter",
       "type": "Filter",
       "props": {
         "cutoff": 735.4058904874996,
         "resonance": 17.5,
         "envelopeAmount": 4.8,
+        "slope": -24,
+        "filterType": "lowpass",
         "voiceNo": 0
       },
       "inputs": [
         {
-          "id": "0d10a8bf-ef71-4539-9432-087ee0b2c037",
+          "id": "4b69e564-e4aa-4115-a942-36e072a34dab",
           "name": "number of voices",
-          "moduleId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+          "moduleId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
           "moduleName": "Filter"
         },
         {
-          "id": "93ec1d23-0d18-4eb2-ba5b-f57aba0a1272",
+          "id": "6d9b6e62-1a8c-47cd-87dc-fa75da24ed23",
           "name": "input",
-          "moduleId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+          "moduleId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
           "moduleName": "Filter"
         },
         {
-          "id": "927c9291-ed44-417e-8ec0-14d158484321",
+          "id": "8a68f13c-4e89-40c1-a4cb-12aec485e5f7",
           "name": "frequency",
-          "moduleId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+          "moduleId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
           "moduleName": "Filter"
         }
       ],
       "outputs": [
         {
-          "id": "801516b1-a537-4b95-a6b0-86410e24d723",
+          "id": "60ce11a9-b1e2-43f4-8e6d-94bffa02f7d5",
           "name": "output",
-          "moduleId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+          "moduleId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
           "moduleName": "Filter"
         }
       ],
-      "initialId": "c3f8e79d-26f6-4383-8cac-18e25f0333c8",
+      "initialId": "e1b0a905-bacb-4624-b743-74857e0e176f",
       "layoutId": "ffc513cd-978a-486d-8b57-5206eaab674b"
     },
     {
-      "id": "3ab20ae1-aa45-43af-8b70-0fc9a2cab77c",
+      "id": "d2c3ba81-1248-441c-80ff-9ad974da3416",
       "name": "Midi Selector",
       "type": "MidiSelector",
       "props": { "selectedId": "1695389404" },
       "inputs": [],
       "outputs": [
         {
-          "id": "4998dde8-331f-41ce-942a-ebe6924889ef",
+          "id": "68749528-2421-4098-8d72-783235e239b9",
           "name": "midi out",
-          "moduleId": "3ab20ae1-aa45-43af-8b70-0fc9a2cab77c",
+          "moduleId": "d2c3ba81-1248-441c-80ff-9ad974da3416",
           "moduleName": "Midi Selector"
         }
       ],
-      "initialId": "ee3c2dc2-1878-473d-bc7a-afeda080ebce",
+      "initialId": "3ab20ae1-aa45-43af-8b70-0fc9a2cab77c",
       "layoutId": "98b8c0d6-89ce-4aba-a141-c8959d359e4c"
     },
     {
-      "id": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "id": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "name": "Voice Scheduler",
       "type": "VoiceScheduler",
       "props": { "polyNumber": 6 },
       "inputs": [
         {
-          "id": "6b58b470-9540-433c-98b6-da5dd5b69fb2",
+          "id": "5efd4da0-fbfa-4922-b5c3-8d3d9f963cbc",
           "name": "number of voices",
-          "moduleId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+          "moduleId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
           "moduleName": "Voice Scheduler"
         },
         {
-          "id": "77da772b-d6d1-43c9-a4c7-d8099f4fced7",
+          "id": "b8dcbca2-89d7-49c2-b48f-3c67d20b6520",
           "name": "midi in",
-          "moduleId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+          "moduleId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
           "moduleName": "Voice Scheduler"
         }
       ],
       "outputs": [
         {
-          "id": "1d3cc2d7-9f2e-418d-9083-7e5ca7708974",
+          "id": "8ce22324-2465-4920-8468-95a51a4b09d6",
           "name": "number of voices",
-          "moduleId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+          "moduleId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
           "moduleName": "Voice Scheduler"
         },
         {
-          "id": "a2251d34-05d9-4f05-b165-a4acd708706c",
+          "id": "a44a9ec5-b05a-4e79-af0f-2971434779fd",
           "name": "midi out",
-          "moduleId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+          "moduleId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
           "moduleName": "Voice Scheduler"
         }
       ],
-      "initialId": "fdea515d-13cb-4e15-bdc1-5f24421b1539",
+      "initialId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
       "layoutId": "e075c686-61f4-4f60-94ec-7384150ced8b"
     },
     {
-      "id": "99df5959-323a-45c0-bef9-cf789724ae65",
+      "id": "4c3b1d2e-ab7f-4f61-aa66-ce7651b54e8d",
       "name": "VirtualMidi",
       "type": "VirtualMidi",
       "props": { "activeNotes": [] },
       "inputs": [
         {
-          "id": "07053e30-aa60-4769-a1c6-40892ad26408",
+          "id": "8effa239-7d45-4cd6-9ecb-d752f4ed078c",
           "name": "midi in",
-          "moduleId": "99df5959-323a-45c0-bef9-cf789724ae65",
+          "moduleId": "4c3b1d2e-ab7f-4f61-aa66-ce7651b54e8d",
           "moduleName": "VirtualMidi"
         }
       ],
       "outputs": [
         {
-          "id": "59e0a76b-c1ae-475e-970c-16f0425f76e9",
+          "id": "d15418d5-861b-4a28-83b3-5d9aae9edb14",
           "name": "midi out",
-          "moduleId": "99df5959-323a-45c0-bef9-cf789724ae65",
+          "moduleId": "4c3b1d2e-ab7f-4f61-aa66-ce7651b54e8d",
           "moduleName": "VirtualMidi"
         }
       ],
       "activeNotes": [],
-      "initialId": "765acb35-cc15-4b7f-84af-b81fa3cf8951",
+      "initialId": "99df5959-323a-45c0-bef9-cf789724ae65",
       "layoutId": "d02e7bee-c54f-4c31-befa-3525b6c976a7"
     }
   ],
   "routes": [
     {
-      "sourceId": "3ab20ae1-aa45-43af-8b70-0fc9a2cab77c",
+      "sourceId": "d2c3ba81-1248-441c-80ff-9ad974da3416",
       "outputName": "midi out",
-      "destinationId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "destinationId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "inputName": "midi in",
-      "id": "ec497361-5dd7-49c0-b74b-4b733ea70118"
+      "id": "9e463414-1757-4303-b932-e159d37e92a4"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "midi out",
-      "destinationId": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
+      "destinationId": "bbdf0667-a580-423a-9df5-40e6ae413a6f",
       "inputName": "midi in",
-      "id": "e8f2824c-c313-4962-92ac-9fa1d66ba400"
+      "id": "b7a07ce0-90f4-4be9-a7e9-94451437b7ea"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "midi out",
-      "destinationId": "074f7106-f303-4dca-813e-989143c2bb71",
+      "destinationId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
       "inputName": "midi in",
-      "id": "cc9a511d-d7ef-447a-9db9-5043b7c46155"
+      "id": "3727f418-6c84-4a2a-bae5-9d8b1663172e"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "midi out",
-      "destinationId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+      "destinationId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
       "inputName": "midi in",
-      "id": "e0ea3291-d72a-4a99-b48f-ebb9854a0430"
+      "id": "ffbc0fa7-387f-493e-a24a-036368deda16"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "number of voices",
-      "destinationId": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
+      "destinationId": "bbdf0667-a580-423a-9df5-40e6ae413a6f",
       "inputName": "number of voices",
-      "id": "37b12d9e-1185-4390-b4ff-12da6fa4ac84"
+      "id": "d57323fa-64cd-4d3c-8cb2-ae121fa8aa69"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "number of voices",
-      "destinationId": "b97e2d1c-7e93-4263-8874-d9cda993461a",
+      "destinationId": "5174a086-5f7d-4336-b0d1-8dfa2edd0a00",
       "inputName": "number of voices",
-      "id": "265532d5-ff28-4def-9717-482d94a16d16"
+      "id": "9b222d77-c1e2-44de-9965-53e50ce438a2"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "number of voices",
-      "destinationId": "074f7106-f303-4dca-813e-989143c2bb71",
+      "destinationId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
       "inputName": "number of voices",
-      "id": "1e107147-7c9e-4274-a33f-aa69d6c39b90"
+      "id": "e47d355b-5cd9-4de1-92d5-5c39aef8a302"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "number of voices",
-      "destinationId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+      "destinationId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
       "inputName": "number of voices",
-      "id": "83427795-e531-4ed0-87e0-1c316a285a1b"
+      "id": "f8f56c02-4539-4a1a-b360-719469e4f107"
     },
     {
-      "sourceId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "sourceId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "outputName": "number of voices",
-      "destinationId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+      "destinationId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
       "inputName": "number of voices",
-      "id": "e8c01a52-b9de-41a9-8f33-5d2b724a8fd7"
+      "id": "155d099e-c4cb-4613-885a-01923feb6fa2"
     },
     {
-      "sourceId": "c5e88405-b5c6-4171-b6bf-bb6fc8cc1fc2",
+      "sourceId": "bbdf0667-a580-423a-9df5-40e6ae413a6f",
       "outputName": "output",
-      "destinationId": "b97e2d1c-7e93-4263-8874-d9cda993461a",
+      "destinationId": "5174a086-5f7d-4336-b0d1-8dfa2edd0a00",
       "inputName": "input",
-      "id": "ca5a1271-a036-4e16-b0d5-fd699f78d939"
+      "id": "1448801c-d5f3-4035-9065-7dd223b7fa9b"
     },
     {
-      "sourceId": "b97e2d1c-7e93-4263-8874-d9cda993461a",
+      "sourceId": "5174a086-5f7d-4336-b0d1-8dfa2edd0a00",
       "outputName": "output",
-      "destinationId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+      "destinationId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
       "inputName": "input",
-      "id": "fd2d0f8d-7c1f-44e3-a315-74fefcbded49"
+      "id": "31b7e57e-0045-4d7f-8970-1ab180fdce13"
     },
     {
-      "sourceId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+      "sourceId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
       "outputName": "output",
-      "destinationId": "074f7106-f303-4dca-813e-989143c2bb71",
+      "destinationId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
       "inputName": "input",
-      "id": "e85f9f11-2d47-4902-9dac-44671dcc8569"
+      "id": "6690d9a8-9155-4ee7-b2b3-8586b1dca42f"
     },
     {
-      "sourceId": "074f7106-f303-4dca-813e-989143c2bb71",
+      "sourceId": "d4b8edf3-434e-4ba5-a6fb-ca1846eaa2cf",
       "outputName": "output",
-      "destinationId": "3fa52c2d-32b3-4f73-ae91-ee44581f1530",
+      "destinationId": "91471d7f-cd65-4446-9eeb-acfb7ec89845",
       "inputName": "input",
-      "id": "1ccb7df9-33a8-4276-8606-6c09a8360fc9"
+      "id": "152463fc-b66d-4d9b-9e91-cf44f27da43e"
     },
     {
-      "sourceId": "37ce7062-fbf5-4ceb-b9da-a713ceee3ad3",
+      "sourceId": "9dd395a9-b7da-42e7-b859-ebb737d3bfa8",
       "outputName": "frequency",
-      "destinationId": "e1b0a905-bacb-4624-b743-74857e0e176f",
+      "destinationId": "a20b85ce-d9ea-4093-9f64-1d6d196439df",
       "inputName": "frequency",
-      "id": "895d38da-a049-45d3-8135-a24b21c17fec"
+      "id": "b0d5b582-8bfe-4a90-a54b-6055d1d2aff6"
     },
     {
-      "sourceId": "3ab20ae1-aa45-43af-8b70-0fc9a2cab77c",
+      "sourceId": "d2c3ba81-1248-441c-80ff-9ad974da3416",
       "outputName": "midi out",
-      "destinationId": "99df5959-323a-45c0-bef9-cf789724ae65",
+      "destinationId": "4c3b1d2e-ab7f-4f61-aa66-ce7651b54e8d",
       "inputName": "midi in",
-      "id": "0671803a-c757-4186-bf9e-9360581ed32c"
+      "id": "710bf2ea-d16b-49b4-a5a1-dcaf4ebfa38a"
     },
     {
-      "sourceId": "99df5959-323a-45c0-bef9-cf789724ae65",
+      "sourceId": "4c3b1d2e-ab7f-4f61-aa66-ce7651b54e8d",
       "outputName": "midi out",
-      "destinationId": "95496956-5f12-4c02-b6e8-4f9db3c13a7e",
+      "destinationId": "fafbba86-50ba-488d-994b-9f3ef7bccb7e",
       "inputName": "midi in",
-      "id": "be8bbbc8-3991-40cf-9de1-908303358acf"
+      "id": "09837889-87c4-426f-bd65-a2f1bce68a0a"
     }
   ],
   "layouts": [
@@ -457,7 +459,7 @@
       "type": "Filter",
       "x": 59,
       "y": 38,
-      "w": 19,
+      "w": 34,
       "h": 18,
       "moved": false,
       "static": false
@@ -465,28 +467,28 @@
     {
       "i": "98b8c0d6-89ce-4aba-a141-c8959d359e4c",
       "type": "MidiSelector",
-      "x": 95,
-      "y": 2,
-      "w": 23,
-      "h": 6,
+      "x": 143,
+      "y": 5,
+      "w": 24,
+      "h": 9,
       "moved": false,
       "static": false
     },
     {
       "i": "e075c686-61f4-4f60-94ec-7384150ced8b",
       "type": "VoiceScheduler",
-      "x": 95,
-      "y": 8,
-      "w": 10,
-      "h": 6,
+      "x": 109,
+      "y": 5,
+      "w": 11,
+      "h": 9,
       "moved": false,
       "static": false
     },
     {
       "i": "d02e7bee-c54f-4c31-befa-3525b6c976a7",
       "type": "VirtualMidi",
-      "x": 0,
-      "y": 20,
+      "x": 109,
+      "y": 14,
       "w": 58,
       "h": 13,
       "moved": false,
