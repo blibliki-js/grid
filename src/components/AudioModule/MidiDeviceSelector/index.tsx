@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import {
   FormControl,
-  InputLabel,
   Select,
   SelectChangeEvent,
   MenuItem,

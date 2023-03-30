@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useState, createRef } from "react";
 import styled from "@emotion/styled";
-import AudioModule, { AudioModuleProps } from "components/AudioModule";
+import AudioModule from "components/AudioModule";
 
 import { useAppDispatch, useAppSelector } from "hooks";
 import { updateLayout, ExtendedLayout } from "./layoutsSlice";

@@ -61,7 +61,7 @@ export default function AddRoute(props: { audioModule: ModuleProps }) {
           >
             {audioModule.outputs.map((io) => (
               <MenuItem key={io.id} value={io.id}>
-                {io.moduleName} // {io.name}
+                {io.moduleName} || {io.name}
               </MenuItem>
             ))}
           </Select>
@@ -79,7 +79,7 @@ export default function AddRoute(props: { audioModule: ModuleProps }) {
           >
             {inputs(modules).map((io) => (
               <MenuItem key={io.id} value={io.id}>
-                {io.moduleName} // {io.name}
+                {io.moduleName} || {io.name}
               </MenuItem>
             ))}
           </Select>

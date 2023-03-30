@@ -6,10 +6,11 @@ import {
   Button,
   SelectChangeEvent,
 } from "@mui/material";
-import { AvailableModules } from "components/AudioModule/modulesSlice";
 import { useAppDispatch } from "hooks";
 import { useState } from "react";
 
+import { AvailableModules } from "components/AudioModule/modulesSlice";
+import Modal from "components/Modal";
 import { addLayout } from "./layoutsSlice";
 
 export default function AddAudioModule() {
@@ -25,24 +26,26 @@ export default function AddAudioModule() {
   };
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="add-module-label">Select Module</InputLabel>
-      <Select
-        labelId="add-module-label"
-        id="add-module-selectg"
-        value={type}
-        label="AudioModule"
-        onChange={onSelect}
-      >
-        {Object.values(AvailableModules).map(({ name, type }) => (
-          <MenuItem key={type} value={type}>
-            {name}
-          </MenuItem>
-        ))}
-      </Select>
-      <Button variant="contained" onClick={addAudioModule}>
-        Add
-      </Button>
-    </FormControl>
+    <Modal modalName="addAudioModule">
+      <FormControl fullWidth>
+        <InputLabel id="add-module-label">Select Module</InputLabel>
+        <Select
+          labelId="add-module-label"
+          id="add-module-selectg"
+          value={type}
+          label="AudioModule"
+          onChange={onSelect}
+        >
+          {Object.values(AvailableModules).map(({ name, type }) => (
+            <MenuItem key={type} value={type}>
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+        <Button variant="contained" onClick={addAudioModule}>
+          Add
+        </Button>
+      </FormControl>
+    </Modal>
   );
 }

@@ -1,6 +1,5 @@
-import { ReactNode, useEffect, useState } from "react";
-import { Provider, useDispatch } from "react-redux";
-import styled from "@emotion/styled";
+import { ReactNode, useEffect } from "react";
+import { Provider } from "react-redux";
 import { StyledEngineProvider } from "@mui/material/styles";
 
 import "App.scss";
@@ -9,11 +8,11 @@ import { store } from "./store";
 import { initialize } from "./globalSlice";
 import Grid from "./Grid";
 import Routes from "Routes";
-import { Box, Tabs, Tab, Link } from "@mui/material";
+import Layout from "Layout";
+import { Box } from "@mui/material";
 import EngineInitializer from "EngineInitializer";
 import Patches from "Patches";
-
-const Main = styled.div``;
+import { useAppDispatch, useAppSelector } from "hooks";
 
 export default function ProviderApp() {
   return (
@@ -23,60 +22,29 @@ export default function ProviderApp() {
   );
 }
 
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-
 function App() {
-  const dispatch = useDispatch();
-  const [currentTab, setCurrentTab] = useState(0);
+  const dispatch = useAppDispatch();
+  const { activeTab } = useAppSelector((state) => state.global);
 
   useEffect(() => {
     dispatch(initialize());
   }, [dispatch]);
 
-  const onChangeTab = (_: any, newValue: number) => {
-    setCurrentTab(newValue);
-  };
-
   return (
     <StyledEngineProvider injectFirst>
-      <Main>
+      <Layout>
         <EngineInitializer />
 
-        <Container>
-          <Link href="https://github.com/blibliki-js/grid">Github</Link>
-        </Container>
-
-        <Container>
-          <Patches />
-        </Container>
-
-        <Container>
-          <Tabs value={currentTab} onChange={onChangeTab}>
-            <Tab label="Grid" {...a11yProps(0)} />
-            <Tab label="Routes" {...a11yProps(1)} />
-          </Tabs>
-        </Container>
-
-        <TabPanel value={currentTab} index={0}>
+        <TabPanel value={activeTab} index={0}>
           <Grid />
         </TabPanel>
-        <TabPanel value={currentTab} index={1}>
+        <TabPanel value={activeTab} index={1}>
           <Routes />
         </TabPanel>
-      </Main>
-    </StyledEngineProvider>
-  );
-}
+      </Layout>
 
-function Container(props: { children: ReactNode }) {
-  const { children } = props;
-  return (
-    <Box sx={{ p: 2, borderBottom: 1, borderColor: "divider" }}>{children}</Box>
+      <Patches />
+    </StyledEngineProvider>
   );
 }
 
