@@ -5,7 +5,6 @@ import modulesReducer from "components/AudioModule/modulesSlice";
 import modalReducer from "components/Modal/modalSlice";
 import layoutsReducer from "Grid/layoutsSlice";
 import routesReducer from "Routes/routesSlice";
-import patchesReducer from "Patches/patchesSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +14,6 @@ export const store = configureStore({
     modal: modalReducer,
     layouts: layoutsReducer,
     routes: routesReducer,
-    patches: patchesReducer,
   },
 });
 
