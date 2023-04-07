@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 
 import { useAppDispatch, useAppSelector } from "hooks";
 import { setActiveTab } from "globalSlice";
-import { TriggerModal } from "components/Modal";
 import Patch from "./Patch";
 
 const HeaderContainer = styled(Box)`
@@ -37,11 +36,6 @@ export default function Header() {
       <Group>
         <HeaderItem>
           <Patch />
-        </HeaderItem>
-        <HeaderItem>
-          <TriggerModal modalName="addAudioModule" type="open">
-            Add module
-          </TriggerModal>
         </HeaderItem>
       </Group>
       <Group>

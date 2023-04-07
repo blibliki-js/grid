@@ -11,7 +11,7 @@ import { useState } from "react";
 
 import { AvailableModules } from "components/AudioModule/modulesSlice";
 import Modal from "components/Modal";
-import { addLayout } from "./layoutsSlice";
+import { addLayout } from "Grid/layoutsSlice";
 
 export default function AddAudioModule() {
   const dispatch = useAppDispatch();

@@ -1,6 +1,9 @@
 import { MouseEvent, useState } from "react";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Button, Divider, Menu, MenuItem } from "@mui/material";
 import { TriggerModal } from "components/Modal";
+
+import LoadModal from "./LoadModal";
+import AddAudioModuleModal from "./AddAudioModuleModal";
 
 export default function Patch() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -39,7 +42,17 @@ export default function Patch() {
             Load
           </TriggerModal>
         </MenuItem>
+        <Divider />
+
+        <MenuItem onClick={handleClose}>
+          <TriggerModal modalName="addAudioModule" type="open">
+            Add module
+          </TriggerModal>
+        </MenuItem>
       </Menu>
+
+      <LoadModal />
+      <AddAudioModuleModal />
     </div>
   );
 }

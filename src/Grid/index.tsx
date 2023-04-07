@@ -1,7 +1,6 @@
 import GridLayout, { Layout } from "react-grid-layout";
 import styled from "@emotion/styled";
 
-import AddAudioModules from "./AddAudioModule";
 import GridItem from "./GridItem";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { layoutsSelector, updateLayout } from "./layoutsSlice";
@@ -24,7 +23,6 @@ export default function Grid() {
 
   return (
     <Root>
-      <AddAudioModules />
       <GridLayout
         layout={layouts}
         onLayoutChange={onLayoutChange}
