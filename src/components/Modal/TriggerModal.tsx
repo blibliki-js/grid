@@ -1,4 +1,4 @@
-import { Link } from "@mui/material";
+import { Button } from "@mui/material";
 import { ReactNode } from "react";
 
 import { useAppDispatch } from "hooks";
@@ -18,5 +18,5 @@ export default function TriggerModal(props: Props) {
     type === "open" ? dispatch(open(modalName)) : dispatch(close(modalName));
   };
 
-  return <Link onClick={onClick}>{children}</Link>;
+  return <Button onClick={onClick}>{children}</Button>;
 }

@@ -4,6 +4,7 @@ import { StyledEngineProvider } from "@mui/material/styles";
 
 import "App.scss";
 
+import "models/db";
 import { store } from "./store";
 import { initialize } from "./globalSlice";
 import Grid from "./Grid";
@@ -11,7 +12,6 @@ import Routes from "Routes";
 import Layout from "Layout";
 import { Box } from "@mui/material";
 import EngineInitializer from "EngineInitializer";
-import Patches from "Patches";
 import { useAppDispatch, useAppSelector } from "hooks";
 
 export default function ProviderApp() {
@@ -42,8 +42,6 @@ function App() {
           <Routes />
         </TabPanel>
       </Layout>
-
-      <Patches />
     </StyledEngineProvider>
   );
 }

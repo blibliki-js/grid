@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
-import { Box, Link, Tab, Tabs } from "@mui/material";
+import { Box, Link, Tab, Tabs, TextField } from "@mui/material";
 import styled from "@emotion/styled";
 
 import { useAppDispatch, useAppSelector } from "hooks";
 import { setActiveTab } from "globalSlice";
-import { TriggerModal } from "components/Modal";
 import Patch from "./Patch";
+import { setName as setPatchName } from "patchSlice";
 
 const HeaderContainer = styled(Box)`
   display: flex;
@@ -27,6 +27,9 @@ const Group = styled.div`
 export default function Header() {
   const dispatch = useAppDispatch();
   const { activeTab } = useAppSelector((state) => state.global);
+  const {
+    patch: { name: patchName },
+  } = useAppSelector((state) => state.patch);
 
   const onChangeTab = (_: any, newValue: number) => {
     dispatch(setActiveTab(newValue));
@@ -39,9 +42,14 @@ export default function Header() {
           <Patch />
         </HeaderItem>
         <HeaderItem>
-          <TriggerModal modalName="addAudioModule" type="open">
-            Add module
-          </TriggerModal>
+          <TextField
+            id="patchName"
+            variant="standard"
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              dispatch(setPatchName(event.target.value))
+            }
+            value={patchName}
+          />
         </HeaderItem>
       </Group>
       <Group>
