@@ -4,6 +4,7 @@ import { StyledEngineProvider } from "@mui/material/styles";
 
 import "App.scss";
 
+import "models/db";
 import { store } from "./store";
 import { initialize } from "./globalSlice";
 import Grid from "./Grid";
