@@ -27,7 +27,9 @@ const Group = styled.div`
 export default function Header() {
   const dispatch = useAppDispatch();
   const { activeTab } = useAppSelector((state) => state.global);
-  const { name: patchName } = useAppSelector((state) => state.patch);
+  const {
+    patch: { name: patchName },
+  } = useAppSelector((state) => state.patch);
 
   const onChangeTab = (_: any, newValue: number) => {
     dispatch(setActiveTab(newValue));

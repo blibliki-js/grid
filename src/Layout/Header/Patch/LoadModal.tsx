@@ -12,6 +12,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import db from "models/db";
 import Modal, { close as closeModal } from "components/Modal";
 import { useAppDispatch } from "hooks";
+import { loadById } from "patchSlice";
 
 export default function SavePatch() {
   const dispatch = useAppDispatch();
@@ -21,6 +22,8 @@ export default function SavePatch() {
 
   const onSelect = (event: SelectChangeEvent) => setPatchId(event.target.value);
   const select = () => {
+    const id = parseInt(patchId);
+    dispatch(loadById(id));
     dispatch(closeModal("patch"));
   };
 
