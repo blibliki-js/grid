@@ -12,6 +12,7 @@ import Reverb from "./Reverb";
 import Delay from "./Delay";
 import Distortion from "./Distortion";
 import BitCrusher from "./BitCrusher";
+import Sequencer from "./Sequencer";
 
 export interface AudioModuleProps {
   id: string;
@@ -69,6 +70,9 @@ export default function AudioModule(audioModuleProps: {
       break;
     case "BitCrusher":
       Component = BitCrusher;
+      break;
+    case "Sequencer":
+      Component = Sequencer;
       break;
     default:
       throw Error(`Unknown audio module type ${type}`);

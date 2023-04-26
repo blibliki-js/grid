@@ -54,6 +54,10 @@ export const AvailableModules: { [key: string]: ModuleInterface } = {
   Delay: { name: "Delay", type: "Delay" },
   Distortion: { name: "Distortion", type: "Distortion" },
   BitCrusher: { name: "BitCrusher", type: "BitCrusher" },
+  Sequencer: {
+    name: "Sequencer",
+    type: "Sequencer",
+  },
 };
 
 const modulesAdapter = createEntityAdapter<ModuleProps>({});
