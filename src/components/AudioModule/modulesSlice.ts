@@ -6,8 +6,9 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
-import { RootState } from "store";
+import { AppDispatch, RootState } from "store";
 import Engine, { IOProps } from "@blibliki/engine";
+import { plainRemoveRoute } from "Routes/routesSlice";
 
 interface ModuleInterface {
   name: string;
@@ -98,6 +99,9 @@ export const modulesSlice = createSlice({
         changes: audioModule,
       });
     },
+    removeModule: (state: EntityState<any>, action: PayloadAction<string>) => {
+      return modulesAdapter.removeOne(state, action.payload);
+    },
     updatePlainModule: modulesAdapter.updateOne,
     updateModuleName: (
       state: EntityState<any>,
@@ -132,6 +136,13 @@ export const selectModulesByType = createSelector(
   (modules: ModuleProps[], type: string) =>
     modules.filter((m) => m.type === type)
 );
+
+export const removeModule =
+  (id: string) => (dispatch: AppDispatch, getState: () => RootState) => {
+    const routeIds = Engine.unregisterModule(id);
+    dispatch(modulesSlice.actions.removeModule(id));
+    routeIds.forEach((routeId) => dispatch(plainRemoveRoute(routeId)));
+  };
 
 export const {
   addModule,

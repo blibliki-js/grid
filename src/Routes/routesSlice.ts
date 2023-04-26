@@ -33,6 +33,12 @@ export const routesSlice = createSlice({
       Engine.removeRoute(action.payload);
       return routesAdapter.removeOne(state, action.payload);
     },
+    plainRemoveRoute: (
+      state: EntityState<any>,
+      action: PayloadAction<string>
+    ) => {
+      return routesAdapter.removeOne(state, action.payload);
+    },
     removeAllRoutes: routesAdapter.removeAll,
   },
 });
@@ -41,6 +47,7 @@ export const routesSelector = routesAdapter.getSelectors(
   (state: RootState) => state.routes
 );
 
-export const { addRoute, removeRoute, removeAllRoutes } = routesSlice.actions;
+export const { addRoute, plainRemoveRoute, removeRoute, removeAllRoutes } =
+  routesSlice.actions;
 
 export default routesSlice.reducer;

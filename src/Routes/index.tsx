@@ -18,6 +18,7 @@ import { useAppDispatch, useAppSelector } from "hooks";
 import { ReactNode } from "react";
 import AddRoute from "./AddRoute";
 import { removeRoute, routesSelector } from "./routesSlice";
+import { removeModule } from "../components/AudioModule/modulesSlice";
 
 export default function Routes() {
   return (
@@ -62,11 +63,26 @@ function ModuleRoutes(props: {
     dispatch(removeRoute(route.id));
   };
 
+  const onRemoveModule = (id: string) => () => {
+    dispatch(removeModule(id));
+  };
+
   if (audioModule.outputs.length === 0) return null;
 
   return (
     <Container>
-      <Typography>{audioModule.name}</Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "4px",
+        }}
+      >
+        <Typography variant="h5" component="h5">
+          {audioModule.name}
+        </Typography>
+        <Button onClick={onRemoveModule(audioModule.id)}>Delete Module</Button>
+      </Box>
       <AddRoute audioModule={audioModule} />
       <Table aria-label="customized table">
         <TableHead>
