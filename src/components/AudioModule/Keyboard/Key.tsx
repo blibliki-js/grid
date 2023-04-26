@@ -146,7 +146,7 @@ export default function Key(props: KeyProps) {
 
   const trigger = useMemo(
     () =>
-      (type: string, force: boolean = false) =>
+      (type: "noteOn" | "noteOff", force: boolean = false) =>
       () => {
         if (type === "noteOn" && !triggerable && !force) return;
 

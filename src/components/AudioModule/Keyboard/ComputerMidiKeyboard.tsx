@@ -21,14 +21,15 @@ const MAP_KEYS: { [key: string]: Note } = {
   p: new Note("D#4"),
 };
 
-const onKeyTrigger = (id: string, type: string) => (event: KeyboardEvent) => {
-  if (event.repeat) return;
+const onKeyTrigger =
+  (id: string, type: "noteOn" | "noteOff") => (event: KeyboardEvent) => {
+    if (event.repeat) return;
 
-  const note = MAP_KEYS[event.key];
-  if (!note) return;
+    const note = MAP_KEYS[event.key];
+    if (!note) return;
 
-  Engine.triggerVirtualMidi(id, note.fullName, type);
-};
+    Engine.triggerVirtualMidi(id, note.fullName, type);
+  };
 
 export default function ComputerMidiKeyboard(props: { id: string }) {
   const { id } = props;
