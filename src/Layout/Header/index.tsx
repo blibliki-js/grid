@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
-import { Box, Link, Tab, Tabs, TextField } from "@mui/material";
+import { Box, Button, Link, Tab, Tabs, TextField } from "@mui/material";
 import styled from "@emotion/styled";
 
 import { useAppDispatch, useAppSelector } from "hooks";
-import { setActiveTab } from "globalSlice";
+import { setActiveTab, start, stop } from "globalSlice";
 import Patch from "./Patch";
 import { setName as setPatchName } from "patchSlice";
 
@@ -26,13 +26,18 @@ const Group = styled.div`
 
 export default function Header() {
   const dispatch = useAppDispatch();
-  const { activeTab } = useAppSelector((state) => state.global);
+  const { activeTab, isStarted } = useAppSelector((state) => state.global);
   const {
     patch: { name: patchName },
   } = useAppSelector((state) => state.patch);
 
   const onChangeTab = (_: any, newValue: number) => {
     dispatch(setActiveTab(newValue));
+  };
+
+  const togglePlay = () => {
+    const toggle = isStarted ? stop : start;
+    dispatch(toggle());
   };
 
   return (
@@ -50,6 +55,11 @@ export default function Header() {
             }
             value={patchName}
           />
+        </HeaderItem>
+        <HeaderItem>
+          <Button variant="outlined" onClick={togglePlay}>
+            {isStarted ? "Stop" : "Start"}
+          </Button>
         </HeaderItem>
       </Group>
       <Group>

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import Engine from "@blibliki/engine";
 import { useAppDispatch } from "hooks";
-import { updatePlainModule } from "components/AudioModule/modulesSlice";
-import { initialize as patchInitialize } from "patchSlice";
+import { initialize, dispose } from "./globalSlice";
 
 export default function EngineInitializer() {
   const dispatch = useAppDispatch();
@@ -20,21 +18,12 @@ export default function EngineInitializer() {
   useEffect(() => {
     if (!enabled) return;
 
-    Engine.initialize({
-      context: {
-        latencyHint: "interactive",
-        lookAhead: 0.01,
-      },
-    });
-    dispatch(patchInitialize());
-    Engine.onPropsUpdate((id, props) => {
-      dispatch(updatePlainModule({ id, changes: { props } }));
-    });
+    dispatch(initialize());
 
     return () => {
-      Engine.dispose();
+      dispatch(dispose());
     };
-  }, [enabled]);
+  }, [dispatch, enabled]);
 
   return null;
 }
