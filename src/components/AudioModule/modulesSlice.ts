@@ -9,6 +9,7 @@ import {
 import { AppDispatch, RootState } from "store";
 import Engine, { IOProps } from "@blibliki/engine";
 import { plainRemoveRoute } from "Routes/routesSlice";
+import { removeLayout } from "Grid/layoutsSlice";
 
 interface ModuleInterface {
   name: string;
@@ -143,9 +144,13 @@ export const selectModulesByType = createSelector(
 
 export const removeModule =
   (id: string) => (dispatch: AppDispatch, getState: () => RootState) => {
+    const audioModule = modulesSelector.selectById(getState(), id);
+    if (!audioModule) throw Error(`Audio module with id ${id} not exists`);
+
     const routeIds = Engine.unregisterModule(id);
     dispatch(modulesSlice.actions.removeModule(id));
     routeIds.forEach((routeId) => dispatch(plainRemoveRoute(routeId)));
+    dispatch(removeLayout(audioModule?.layoutId));
   };
 
 export const {

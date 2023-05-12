@@ -22,6 +22,7 @@ export const layoutsSlice = createSlice({
   reducers: {
     addLayout: layoutsAdapter.addOne,
     updateLayout: layoutsAdapter.updateOne,
+    removeLayout: layoutsAdapter.removeOne,
     removeAllLayouts: layoutsAdapter.removeAll,
   },
 });
@@ -33,6 +34,7 @@ export const {
   updateLayout,
   addLayout: addPlainLayout,
   removeAllLayouts,
+  removeLayout,
 } = layoutsSlice.actions;
 
 export const addLayout = (type: string) => (dispatch: AppDispatch) => {
