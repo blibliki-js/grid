@@ -1080,9 +1080,9 @@
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
 "@blibliki/engine@^0.1.8":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.11.tgz#00ea88cc11884f8a8b68424656c9028f807880e2"
-  integrity sha512-ZPGq+RwcjOo25Al3WGumUtYSluTWg4MrbPMZXpeMGOzAyMl1HxPOFGKHwF09mJNwC41j+UWuzCTfpQCN+KbMoA==
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.12.tgz#36a2931919a31b2dcac98b6fa019a34a4e75ab1b"
+  integrity sha512-v69+sTd2vjmQjR9Ln4KoGgHfaPyj98wXr0MLrmbl6AGUo/2qOvOnsl8uKAIyXNrL9B6IXcSTmfJK2Cap53JDsQ==
   dependencies:
     "@types/lodash" "^4.14.186"
     lodash "^4.17.21"

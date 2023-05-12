@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ChangeEvent, ReactNode } from "react";
 import { Box, Button, Link, Tab, Tabs, TextField } from "@mui/material";
 import styled from "@emotion/styled";
 
 import { useAppDispatch, useAppSelector } from "hooks";
-import { setActiveTab, start, stop } from "globalSlice";
+import { setActiveTab, start, stop, setBpm } from "globalSlice";
 import Patch from "./Patch";
 import { setName as setPatchName } from "patchSlice";
 
@@ -26,7 +26,7 @@ const Group = styled.div`
 
 export default function Header() {
   const dispatch = useAppDispatch();
-  const { activeTab, isStarted } = useAppSelector((state) => state.global);
+  const { activeTab, isStarted, bpm } = useAppSelector((state) => state.global);
   const {
     patch: { name: patchName },
   } = useAppSelector((state) => state.patch);
@@ -50,10 +50,21 @@ export default function Header() {
           <TextField
             id="patchName"
             variant="standard"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
               dispatch(setPatchName(event.target.value))
             }
             value={patchName}
+          />
+        </HeaderItem>
+        <HeaderItem>
+          <TextField
+            sx={{ width: "50px" }}
+            variant="standard"
+            type="number"
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              dispatch(setBpm(+event.target.value))
+            }
+            value={bpm}
           />
         </HeaderItem>
         <HeaderItem>

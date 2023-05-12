@@ -14,14 +14,16 @@ interface GlobalProps {
   isInitialized: boolean;
   isStarted: boolean;
   context: IContext;
+  bpm: number;
   activeTab: number;
 }
 
 const initialState: GlobalProps = {
   isInitialized: false,
   isStarted: false,
-  context: { latencyHint: "playback" },
+  context: { latencyHint: "interactive", lookAhead: 0.05 },
   activeTab: 0,
+  bpm: 120,
 };
 
 export const globalSlice = createSlice({
@@ -39,9 +41,10 @@ export const globalSlice = createSlice({
 
 export const initialize =
   () => (dispatch: AppDispatch, getState: () => RootState) => {
-    const { context } = getState().global;
+    const { context, bpm } = getState().global;
 
     Engine.initialize({ context });
+    Engine.bpm = bpm;
     dispatch(patchInitialize());
 
     Engine.onPropsUpdate((id, props) => {
@@ -49,7 +52,11 @@ export const initialize =
     });
 
     return dispatch(
-      setAttributes({ isInitialized: true, isStarted: Engine.isStarted })
+      setAttributes({
+        isInitialized: true,
+        isStarted: Engine.isStarted,
+        bpm: Engine.bpm,
+      })
     );
   };
 
@@ -61,6 +68,11 @@ export const start = () => (dispatch: AppDispatch) => {
 export const stop = () => (dispatch: AppDispatch) => {
   Engine.stop();
   dispatch(setAttributes({ isStarted: false }));
+};
+
+export const setBpm = (bpm: number) => (dispatch: AppDispatch) => {
+  Engine.bpm = bpm;
+  dispatch(setAttributes({ bpm }));
 };
 
 export const dispose = () => () => {
