@@ -4,6 +4,7 @@ import { TriggerModal } from "components/Modal";
 
 import LoadModal from "./LoadModal";
 import AddAudioModuleModal from "./AddAudioModuleModal";
+import Export from "./Export";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { destroy, save } from "patchSlice";
 
@@ -58,6 +59,9 @@ export default function Patch() {
           <Destroy disabled={!Boolean(patch.id) || Boolean(patch.staticId)}>
             Delete
           </Destroy>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Export />
         </MenuItem>
         <Divider />
 
