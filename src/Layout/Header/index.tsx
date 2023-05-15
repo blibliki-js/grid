@@ -7,6 +7,9 @@ import { setActiveTab, start, stop, setBpm } from "globalSlice";
 import Patch from "./Patch";
 import { setName as setPatchName } from "patchSlice";
 
+import LoadModal from "./Patch/LoadModal";
+import AddAudioModuleModal from "./Patch/AddAudioModuleModal";
+
 const HeaderContainer = styled(Box)`
   display: flex;
   align-items: center;
@@ -86,6 +89,9 @@ export default function Header() {
           </Link>
         </HeaderItem>
       </Group>
+
+      <LoadModal />
+      <AddAudioModuleModal />
     </HeaderContainer>
   );
 }

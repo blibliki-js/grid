@@ -2,8 +2,6 @@ import { MouseEvent, ReactNode, useState } from "react";
 import { Button, Divider, Menu, MenuItem } from "@mui/material";
 import { TriggerModal } from "components/Modal";
 
-import LoadModal from "./LoadModal";
-import AddAudioModuleModal from "./AddAudioModuleModal";
 import Export from "./Export";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { destroy, save } from "patchSlice";
@@ -71,9 +69,6 @@ export default function Patch() {
           </TriggerModal>
         </MenuItem>
       </Menu>
-
-      <LoadModal />
-      <AddAudioModuleModal />
     </div>
   );
 }

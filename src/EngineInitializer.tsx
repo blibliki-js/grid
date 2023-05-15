@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "hooks";
 import { initialize, dispose } from "./globalSlice";
+import { open, close } from "./components/Modal/modalSlice";
 
 export default function EngineInitializer() {
   const dispatch = useAppDispatch();
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    const setEnabledTrue = () => {
-      document.body.removeEventListener("click", setEnabledTrue);
-      setEnabled(true);
-    };
+    if (enabled) return;
 
-    document.addEventListener("click", setEnabledTrue);
-  }, []);
-
-  useEffect(() => {
-    if (!enabled) return;
-
+    setEnabled(true);
     dispatch(initialize());
+    dispatch(open("patch"));
 
     return () => {
       dispatch(dispose());
