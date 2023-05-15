@@ -1,12 +1,10 @@
 import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Paper,
 } from "@mui/material";
-import { useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 
 import db from "models/db";
@@ -16,13 +14,14 @@ import { loadById } from "patchSlice";
 
 export default function SavePatch() {
   const dispatch = useAppDispatch();
-  const [patchId, setPatchId] = useState("");
 
   const patches = useLiveQuery(() => db.patches.toArray(), []);
 
-  const onSelect = (event: SelectChangeEvent) => setPatchId(event.target.value);
-  const select = () => {
-    const id = parseInt(patchId);
+  const close = () => {
+    dispatch(closeModal("patch"));
+  };
+
+  const select = (id: number) => () => {
     dispatch(loadById(id));
     dispatch(closeModal("patch"));
   };
@@ -31,25 +30,23 @@ export default function SavePatch() {
 
   return (
     <Modal modalName="patch">
-      <FormControl fullWidth>
-        <InputLabel id="select-patch-label">Select Patch</InputLabel>
-        <Select
-          labelId="select-patch-label"
-          id="patch-select"
-          value={patchId}
-          label="AudioModule"
-          onChange={onSelect}
-        >
+      <h2>Select a patch</h2>
+      <Paper style={{ maxHeight: 300, overflow: "auto" }}>
+        <List>
+          <ListItem>
+            <ListItemButton component="button" onClick={close}>
+              <ListItemText primary="New patch" />
+            </ListItemButton>
+          </ListItem>
           {patches.map(({ id, name }) => (
-            <MenuItem key={id} value={id}>
-              {name}
-            </MenuItem>
+            <ListItem key={id}>
+              <ListItemButton component="button" onClick={select(id)}>
+                <ListItemText primary={name} />
+              </ListItemButton>
+            </ListItem>
           ))}
-        </Select>
-      </FormControl>
-      <Button variant="contained" onClick={select}>
-        Select
-      </Button>
+        </List>
+      </Paper>
     </Modal>
   );
 }
