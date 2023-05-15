@@ -1,0 +1,5892 @@
+{
+  "id": "2dcae559-a42e-44dz-9500-37b23l802b67",
+  "name": "Spectral",
+  "modules": [
+    {
+      "id": "29ab3796-d18f-49a7-9e2a-6285cf083e1a",
+      "name": "Master",
+      "type": "Master",
+      "props": {},
+      "inputs": [
+        {
+          "id": "ec5c04bb-71ec-4d14-b909-dff675ba8b69",
+          "name": "input",
+          "moduleId": "29ab3796-d18f-49a7-9e2a-6285cf083e1a",
+          "moduleName": "Master"
+        }
+      ],
+      "outputs": [],
+      "initialId": "60d8a24b-36c3-4cb1-916d-d24eee0945c1",
+      "layoutId": ""
+    },
+    {
+      "id": "cbb0ea7c-f353-4e72-b185-8c00f0518cd3",
+      "name": "Osc",
+      "type": "Oscillator",
+      "props": {
+        "noteName": "C3",
+        "fine": 0,
+        "coarse": 0,
+        "wave": "sine",
+        "range": 0,
+        "volume": 0
+      },
+      "inputs": [
+        {
+          "id": "e6d7a85d-de2a-4709-9970-eafcae72ac96",
+          "name": "number of voices",
+          "moduleId": "cbb0ea7c-f353-4e72-b185-8c00f0518cd3",
+          "moduleName": "Osc"
+        },
+        {
+          "id": "cff47ba7-e98b-4526-a3fe-a2d99cdf4b72",
+          "name": "midi in",
+          "moduleId": "cbb0ea7c-f353-4e72-b185-8c00f0518cd3",
+          "moduleName": "Osc"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "be4b4338-0c34-4a8a-90f8-077ac4837610",
+          "name": "output",
+          "moduleId": "cbb0ea7c-f353-4e72-b185-8c00f0518cd3",
+          "moduleName": "Osc"
+        }
+      ],
+      "initialId": "1c4e939f-9875-4f9c-9fc6-0e5941f4f35a",
+      "layoutId": "73eda0f5-2c48-44e3-91d8-bcee7622a269"
+    },
+    {
+      "id": "a7e6a42d-c182-4af9-97c4-8e5fa4e07c33",
+      "name": "Sequencer",
+      "type": "DataSequencer",
+      "props": {
+        "sequences": [
+          { "voiceNo": 0, "time": 0.59, "frequency": 1736, "amplitude": 0 },
+          {
+            "voiceNo": 0,
+            "time": 0.595,
+            "frequency": 1732,
+            "amplitude": 0.004457
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.6,
+            "frequency": 1728,
+            "amplitude": 0.004543
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.605,
+            "frequency": 1728,
+            "amplitude": 0.004636
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.61,
+            "frequency": 1724,
+            "amplitude": 0.004738
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.615,
+            "frequency": 1720,
+            "amplitude": 0.004777
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.62,
+            "frequency": 1720,
+            "amplitude": 0.004875
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.625,
+            "frequency": 1716,
+            "amplitude": 0.005007
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.63,
+            "frequency": 1716,
+            "amplitude": 0.005119
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.635,
+            "frequency": 1712,
+            "amplitude": 0.005314
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.64,
+            "frequency": 1712,
+            "amplitude": 0.005443
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.645,
+            "frequency": 1712,
+            "amplitude": 0.005662
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.65,
+            "frequency": 1712,
+            "amplitude": 0.005968
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.66,
+            "frequency": 1712,
+            "amplitude": 0.006495
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.665,
+            "frequency": 1712,
+            "amplitude": 0.007051
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.67,
+            "frequency": 1712,
+            "amplitude": 0.007401
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.675,
+            "frequency": 1716,
+            "amplitude": 0.007644
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.68,
+            "frequency": 1716,
+            "amplitude": 0.007884
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.69,
+            "frequency": 1716,
+            "amplitude": 0.008114
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.695,
+            "frequency": 1716,
+            "amplitude": 0.008322
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.705,
+            "frequency": 1716,
+            "amplitude": 0.008495
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.71,
+            "frequency": 1716,
+            "amplitude": 0.008615
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.72,
+            "frequency": 1720,
+            "amplitude": 0.008793
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.725,
+            "frequency": 1720,
+            "amplitude": 0.009256
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.735,
+            "frequency": 1720,
+            "amplitude": 0.009455
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.745,
+            "frequency": 1720,
+            "amplitude": 0.010221
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.755,
+            "frequency": 1720,
+            "amplitude": 0.011154
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.765,
+            "frequency": 1720,
+            "amplitude": 0.011616
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.775,
+            "frequency": 1720,
+            "amplitude": 0.011412
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.79,
+            "frequency": 1720,
+            "amplitude": 0.010963
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.805,
+            "frequency": 1720,
+            "amplitude": 0.010386
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.82,
+            "frequency": 1724,
+            "amplitude": 0.009523
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.84,
+            "frequency": 1724,
+            "amplitude": 0.008631
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.86,
+            "frequency": 1724,
+            "amplitude": 0.007598
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.88,
+            "frequency": 1724,
+            "amplitude": 0.006646
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.9,
+            "frequency": 1724,
+            "amplitude": 0.005688
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.925,
+            "frequency": 1728,
+            "amplitude": 0.004741
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.945,
+            "frequency": 1728,
+            "amplitude": 0.003943
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.965,
+            "frequency": 1728,
+            "amplitude": 0.003228
+          },
+          {
+            "voiceNo": 0,
+            "time": 0.99,
+            "frequency": 1732,
+            "amplitude": 0.002675
+          },
+          {
+            "voiceNo": 0,
+            "time": 1.005,
+            "frequency": 1732,
+            "amplitude": 0.002225
+          },
+          {
+            "voiceNo": 0,
+            "time": 1.025,
+            "frequency": 1732,
+            "amplitude": 0.001892
+          },
+          {
+            "voiceNo": 0,
+            "time": 1.04,
+            "frequency": 1732,
+            "amplitude": 0.001635
+          },
+          {
+            "voiceNo": 0,
+            "time": 1.05,
+            "frequency": 1732,
+            "amplitude": 0.001446
+          },
+          {
+            "voiceNo": 0,
+            "time": 1.06,
+            "frequency": 1732,
+            "amplitude": 0.001334
+          },
+          {
+            "voiceNo": 0,
+            "time": 1.07,
+            "frequency": 1732,
+            "amplitude": 0.001235
+          },
+          {
+            "voiceNo": 0,
+            "time": 1.075,
+            "frequency": 1732,
+            "amplitude": 0.001199
+          },
+          { "voiceNo": 0, "time": 1.08, "frequency": 1732, "amplitude": 0 },
+          { "voiceNo": 1, "time": 0.64, "frequency": 1284, "amplitude": 0 },
+          {
+            "voiceNo": 1,
+            "time": 0.645,
+            "frequency": 1284,
+            "amplitude": 0.001995
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.65,
+            "frequency": 1284,
+            "amplitude": 0.002051
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.655,
+            "frequency": 1284,
+            "amplitude": 0.002178
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.665,
+            "frequency": 1284,
+            "amplitude": 0.002368
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.68,
+            "frequency": 1284,
+            "amplitude": 0.00259
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.69,
+            "frequency": 1284,
+            "amplitude": 0.002876
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.705,
+            "frequency": 1284,
+            "amplitude": 0.003189
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.72,
+            "frequency": 1284,
+            "amplitude": 0.003516
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.735,
+            "frequency": 1284,
+            "amplitude": 0.003964
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.755,
+            "frequency": 1284,
+            "amplitude": 0.004486
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.77,
+            "frequency": 1284,
+            "amplitude": 0.005141
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.79,
+            "frequency": 1284,
+            "amplitude": 0.005822
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.81,
+            "frequency": 1284,
+            "amplitude": 0.00677
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.835,
+            "frequency": 1284,
+            "amplitude": 0.00789
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.855,
+            "frequency": 1284,
+            "amplitude": 0.009091
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.875,
+            "frequency": 1284,
+            "amplitude": 0.010253
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.895,
+            "frequency": 1284,
+            "amplitude": 0.011492
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.915,
+            "frequency": 1284,
+            "amplitude": 0.012807
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.935,
+            "frequency": 1284,
+            "amplitude": 0.014033
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.95,
+            "frequency": 1284,
+            "amplitude": 0.015166
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.97,
+            "frequency": 1284,
+            "amplitude": 0.01591
+          },
+          {
+            "voiceNo": 1,
+            "time": 0.985,
+            "frequency": 1284,
+            "amplitude": 0.01686
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.005,
+            "frequency": 1284,
+            "amplitude": 0.017731
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.02,
+            "frequency": 1284,
+            "amplitude": 0.01853
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.035,
+            "frequency": 1284,
+            "amplitude": 0.019487
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.055,
+            "frequency": 1284,
+            "amplitude": 0.020581
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.075,
+            "frequency": 1288,
+            "amplitude": 0.021795
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.09,
+            "frequency": 1288,
+            "amplitude": 0.023383
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.115,
+            "frequency": 1292,
+            "amplitude": 0.025317
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.135,
+            "frequency": 1296,
+            "amplitude": 0.027581
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.155,
+            "frequency": 1300,
+            "amplitude": 0.030163
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.175,
+            "frequency": 1304,
+            "amplitude": 0.032302
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.2,
+            "frequency": 1308,
+            "amplitude": 0.034414
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.22,
+            "frequency": 1312,
+            "amplitude": 0.036499
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.24,
+            "frequency": 1316,
+            "amplitude": 0.038554
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.26,
+            "frequency": 1324,
+            "amplitude": 0.040113
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.275,
+            "frequency": 1328,
+            "amplitude": 0.04172
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.3,
+            "frequency": 1332,
+            "amplitude": 0.043863
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.32,
+            "frequency": 1336,
+            "amplitude": 0.046474
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.34,
+            "frequency": 1340,
+            "amplitude": 0.049503
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.365,
+            "frequency": 1344,
+            "amplitude": 0.05352
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.39,
+            "frequency": 1344,
+            "amplitude": 0.058477
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.415,
+            "frequency": 1348,
+            "amplitude": 0.063627
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.445,
+            "frequency": 1348,
+            "amplitude": 0.068938
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.47,
+            "frequency": 1352,
+            "amplitude": 0.074393
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.505,
+            "frequency": 1352,
+            "amplitude": 0.079975
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.535,
+            "frequency": 1356,
+            "amplitude": 0.085666
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.575,
+            "frequency": 1356,
+            "amplitude": 0.091447
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.61,
+            "frequency": 1356,
+            "amplitude": 0.097299
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.655,
+            "frequency": 1356,
+            "amplitude": 0.103206
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.7,
+            "frequency": 1356,
+            "amplitude": 0.109149
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.75,
+            "frequency": 1356,
+            "amplitude": 0.115111
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.795,
+            "frequency": 1356,
+            "amplitude": 0.121077
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.845,
+            "frequency": 1352,
+            "amplitude": 0.127031
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.9,
+            "frequency": 1352,
+            "amplitude": 0.132958
+          },
+          {
+            "voiceNo": 1,
+            "time": 1.95,
+            "frequency": 1352,
+            "amplitude": 0.138844
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.005,
+            "frequency": 1348,
+            "amplitude": 0.144678
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.06,
+            "frequency": 1344,
+            "amplitude": 0.150446
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.11,
+            "frequency": 1344,
+            "amplitude": 0.156139
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.16,
+            "frequency": 1340,
+            "amplitude": 0.161747
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.215,
+            "frequency": 1336,
+            "amplitude": 0.167261
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.265,
+            "frequency": 1328,
+            "amplitude": 0.172673
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.31,
+            "frequency": 1324,
+            "amplitude": 0.177977
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.36,
+            "frequency": 1320,
+            "amplitude": 0.183166
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.41,
+            "frequency": 1312,
+            "amplitude": 0.188236
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.46,
+            "frequency": 1304,
+            "amplitude": 0.193183
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.51,
+            "frequency": 1296,
+            "amplitude": 0.198002
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.56,
+            "frequency": 1288,
+            "amplitude": 0.202692
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.61,
+            "frequency": 1280,
+            "amplitude": 0.20725
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.66,
+            "frequency": 1272,
+            "amplitude": 0.211675
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.705,
+            "frequency": 1264,
+            "amplitude": 0.215967
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.745,
+            "frequency": 1260,
+            "amplitude": 0.220124
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.785,
+            "frequency": 1252,
+            "amplitude": 0.224147
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.825,
+            "frequency": 1248,
+            "amplitude": 0.228038
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.86,
+            "frequency": 1240,
+            "amplitude": 0.231796
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.89,
+            "frequency": 1236,
+            "amplitude": 0.235424
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.915,
+            "frequency": 1228,
+            "amplitude": 0.238923
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.94,
+            "frequency": 1224,
+            "amplitude": 0.238886
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.96,
+            "frequency": 1220,
+            "amplitude": 0.228748
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.975,
+            "frequency": 1216,
+            "amplitude": 0.212056
+          },
+          {
+            "voiceNo": 1,
+            "time": 2.99,
+            "frequency": 1212,
+            "amplitude": 0.17892
+          },
+          { "voiceNo": 1, "time": 3, "frequency": 1212, "amplitude": 0 },
+          { "voiceNo": 2, "time": 0.705, "frequency": 3292, "amplitude": 0 },
+          {
+            "voiceNo": 2,
+            "time": 0.71,
+            "frequency": 3292,
+            "amplitude": 0.001585
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.72,
+            "frequency": 3296,
+            "amplitude": 0.001715
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.73,
+            "frequency": 3296,
+            "amplitude": 0.001895
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.75,
+            "frequency": 3296,
+            "amplitude": 0.002069
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.775,
+            "frequency": 3296,
+            "amplitude": 0.002626
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.805,
+            "frequency": 3292,
+            "amplitude": 0.003337
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.84,
+            "frequency": 3284,
+            "amplitude": 0.004014
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.875,
+            "frequency": 3276,
+            "amplitude": 0.004994
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.925,
+            "frequency": 3260,
+            "amplitude": 0.006145
+          },
+          {
+            "voiceNo": 2,
+            "time": 0.995,
+            "frequency": 3236,
+            "amplitude": 0.007483
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.07,
+            "frequency": 3204,
+            "amplitude": 0.009023
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.15,
+            "frequency": 3172,
+            "amplitude": 0.010779
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.225,
+            "frequency": 3136,
+            "amplitude": 0.012763
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.295,
+            "frequency": 3100,
+            "amplitude": 0.014985
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.355,
+            "frequency": 3072,
+            "amplitude": 0.017454
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.41,
+            "frequency": 3044,
+            "amplitude": 0.020174
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.46,
+            "frequency": 3016,
+            "amplitude": 0.02315
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.515,
+            "frequency": 2992,
+            "amplitude": 0.026383
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.57,
+            "frequency": 2972,
+            "amplitude": 0.029871
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.63,
+            "frequency": 2956,
+            "amplitude": 0.033612
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.695,
+            "frequency": 2948,
+            "amplitude": 0.037598
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.76,
+            "frequency": 2940,
+            "amplitude": 0.041823
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.835,
+            "frequency": 2940,
+            "amplitude": 0.046274
+          },
+          {
+            "voiceNo": 2,
+            "time": 1.915,
+            "frequency": 2944,
+            "amplitude": 0.050942
+          },
+          { "voiceNo": 2, "time": 2, "frequency": 2952, "amplitude": 0.055811 },
+          {
+            "voiceNo": 2,
+            "time": 2.09,
+            "frequency": 2964,
+            "amplitude": 0.060867
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.17,
+            "frequency": 2976,
+            "amplitude": 0.066094
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.255,
+            "frequency": 2988,
+            "amplitude": 0.071475
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.335,
+            "frequency": 3004,
+            "amplitude": 0.076992
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.405,
+            "frequency": 3016,
+            "amplitude": 0.082628
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.48,
+            "frequency": 3028,
+            "amplitude": 0.088363
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.54,
+            "frequency": 3036,
+            "amplitude": 0.094179
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.59,
+            "frequency": 3044,
+            "amplitude": 0.10006
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.63,
+            "frequency": 3048,
+            "amplitude": 0.105985
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.665,
+            "frequency": 3048,
+            "amplitude": 0.111939
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.69,
+            "frequency": 3044,
+            "amplitude": 0.117905
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.715,
+            "frequency": 3036,
+            "amplitude": 0.123867
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.74,
+            "frequency": 3024,
+            "amplitude": 0.12457
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.765,
+            "frequency": 3008,
+            "amplitude": 0.125861
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.785,
+            "frequency": 2992,
+            "amplitude": 0.11954
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.805,
+            "frequency": 2976,
+            "amplitude": 0.122901
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.835,
+            "frequency": 2956,
+            "amplitude": 0.128848
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.865,
+            "frequency": 2932,
+            "amplitude": 0.12943
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.91,
+            "frequency": 2908,
+            "amplitude": 0.135342
+          },
+          {
+            "voiceNo": 2,
+            "time": 2.96,
+            "frequency": 2884,
+            "amplitude": 0.141208
+          },
+          {
+            "voiceNo": 2,
+            "time": 3.065,
+            "frequency": 2852,
+            "amplitude": 0.147017
+          },
+          {
+            "voiceNo": 2,
+            "time": 3.17,
+            "frequency": 2820,
+            "amplitude": 0.152756
+          },
+          {
+            "voiceNo": 2,
+            "time": 3.275,
+            "frequency": 2796,
+            "amplitude": 0.158416
+          },
+          {
+            "voiceNo": 2,
+            "time": 3.435,
+            "frequency": 2764,
+            "amplitude": 0.163987
+          },
+          {
+            "voiceNo": 2,
+            "time": 3.67,
+            "frequency": 2732,
+            "amplitude": 0.169461
+          },
+          { "voiceNo": 2, "time": 3.895, "frequency": 2704, "amplitude": 0 },
+          { "voiceNo": 3, "time": 0.775, "frequency": 456, "amplitude": 0 },
+          {
+            "voiceNo": 3,
+            "time": 0.79,
+            "frequency": 460,
+            "amplitude": 0.039811
+          },
+          {
+            "voiceNo": 3,
+            "time": 0.82,
+            "frequency": 460,
+            "amplitude": 0.044157
+          },
+          {
+            "voiceNo": 3,
+            "time": 0.855,
+            "frequency": 464,
+            "amplitude": 0.048725
+          },
+          {
+            "voiceNo": 3,
+            "time": 0.905,
+            "frequency": 468,
+            "amplitude": 0.053501
+          },
+          {
+            "voiceNo": 3,
+            "time": 0.98,
+            "frequency": 472,
+            "amplitude": 0.058472
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.06,
+            "frequency": 472,
+            "amplitude": 0.063621
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.16,
+            "frequency": 472,
+            "amplitude": 0.068931
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.26,
+            "frequency": 464,
+            "amplitude": 0.074387
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.355,
+            "frequency": 456,
+            "amplitude": 0.079969
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.445,
+            "frequency": 448,
+            "amplitude": 0.085659
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.52,
+            "frequency": 436,
+            "amplitude": 0.09144
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.585,
+            "frequency": 424,
+            "amplitude": 0.097293
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.635,
+            "frequency": 412,
+            "amplitude": 0.103199
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.675,
+            "frequency": 392,
+            "amplitude": 0.106596
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.705,
+            "frequency": 368,
+            "amplitude": 0.112552
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.73,
+            "frequency": 348,
+            "amplitude": 0.117391
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.75,
+            "frequency": 332,
+            "amplitude": 0.116904
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.77,
+            "frequency": 316,
+            "amplitude": 0.110847
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.79,
+            "frequency": 308,
+            "amplitude": 0.116028
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.825,
+            "frequency": 300,
+            "amplitude": 0.121993
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.88,
+            "frequency": 304,
+            "amplitude": 0.127943
+          },
+          {
+            "voiceNo": 3,
+            "time": 1.95,
+            "frequency": 312,
+            "amplitude": 0.133865
+          },
+          {
+            "voiceNo": 3,
+            "time": 2.045,
+            "frequency": 328,
+            "amplitude": 0.139744
+          },
+          {
+            "voiceNo": 3,
+            "time": 2.175,
+            "frequency": 360,
+            "amplitude": 0.145568
+          },
+          {
+            "voiceNo": 3,
+            "time": 2.33,
+            "frequency": 400,
+            "amplitude": 0.151326
+          },
+          {
+            "voiceNo": 3,
+            "time": 2.485,
+            "frequency": 444,
+            "amplitude": 0.157006
+          },
+          { "voiceNo": 3, "time": 2.65, "frequency": 492, "amplitude": 0.1626 },
+          {
+            "voiceNo": 3,
+            "time": 2.815,
+            "frequency": 548,
+            "amplitude": 0.168099
+          },
+          {
+            "voiceNo": 3,
+            "time": 3.07,
+            "frequency": 640,
+            "amplitude": 0.173495
+          },
+          {
+            "voiceNo": 3,
+            "time": 3.335,
+            "frequency": 752,
+            "amplitude": 0.178782
+          },
+          {
+            "voiceNo": 3,
+            "time": 3.59,
+            "frequency": 864,
+            "amplitude": 0.183953
+          },
+          {
+            "voiceNo": 3,
+            "time": 3.8,
+            "frequency": 960,
+            "amplitude": 0.189004
+          },
+          {
+            "voiceNo": 3,
+            "time": 4.015,
+            "frequency": 1068,
+            "amplitude": 0.193931
+          },
+          {
+            "voiceNo": 3,
+            "time": 4.195,
+            "frequency": 1160,
+            "amplitude": 0.198731
+          },
+          {
+            "voiceNo": 3,
+            "time": 4.355,
+            "frequency": 1244,
+            "amplitude": 0.2034
+          },
+          {
+            "voiceNo": 3,
+            "time": 4.51,
+            "frequency": 1324,
+            "amplitude": 0.207938
+          },
+          {
+            "voiceNo": 3,
+            "time": 4.645,
+            "frequency": 1396,
+            "amplitude": 0.212343
+          },
+          {
+            "voiceNo": 3,
+            "time": 4.825,
+            "frequency": 1496,
+            "amplitude": 0.216614
+          },
+          {
+            "voiceNo": 3,
+            "time": 4.99,
+            "frequency": 1580,
+            "amplitude": 0.22075
+          },
+          {
+            "voiceNo": 3,
+            "time": 5.145,
+            "frequency": 1660,
+            "amplitude": 0.224753
+          },
+          {
+            "voiceNo": 3,
+            "time": 5.285,
+            "frequency": 1732,
+            "amplitude": 0.228624
+          },
+          {
+            "voiceNo": 3,
+            "time": 5.415,
+            "frequency": 1800,
+            "amplitude": 0.232362
+          },
+          {
+            "voiceNo": 3,
+            "time": 5.53,
+            "frequency": 1868,
+            "amplitude": 0.23597
+          },
+          { "voiceNo": 3, "time": 5.625, "frequency": 1932, "amplitude": 0 },
+          { "voiceNo": 4, "time": 0.775, "frequency": 408, "amplitude": 0 },
+          {
+            "voiceNo": 4,
+            "time": 0.885,
+            "frequency": 472,
+            "amplitude": 0.23474
+          },
+          {
+            "voiceNo": 4,
+            "time": 0.995,
+            "frequency": 556,
+            "amplitude": 0.231087
+          },
+          {
+            "voiceNo": 4,
+            "time": 1.115,
+            "frequency": 656,
+            "amplitude": 0.227303
+          },
+          {
+            "voiceNo": 4,
+            "time": 1.255,
+            "frequency": 776,
+            "amplitude": 0.223387
+          },
+          {
+            "voiceNo": 4,
+            "time": 1.41,
+            "frequency": 924,
+            "amplitude": 0.219338
+          },
+          {
+            "voiceNo": 4,
+            "time": 1.59,
+            "frequency": 1100,
+            "amplitude": 0.215155
+          },
+          {
+            "voiceNo": 4,
+            "time": 1.785,
+            "frequency": 1296,
+            "amplitude": 0.210838
+          },
+          {
+            "voiceNo": 4,
+            "time": 1.985,
+            "frequency": 1504,
+            "amplitude": 0.206388
+          },
+          {
+            "voiceNo": 4,
+            "time": 2.215,
+            "frequency": 1740,
+            "amplitude": 0.201804
+          },
+          {
+            "voiceNo": 4,
+            "time": 2.465,
+            "frequency": 1984,
+            "amplitude": 0.197089
+          },
+          {
+            "voiceNo": 4,
+            "time": 2.705,
+            "frequency": 2188,
+            "amplitude": 0.192245
+          },
+          {
+            "voiceNo": 4,
+            "time": 2.955,
+            "frequency": 2384,
+            "amplitude": 0.187275
+          },
+          {
+            "voiceNo": 4,
+            "time": 3.225,
+            "frequency": 2576,
+            "amplitude": 0.182182
+          },
+          {
+            "voiceNo": 4,
+            "time": 3.52,
+            "frequency": 2768,
+            "amplitude": 0.17697
+          },
+          {
+            "voiceNo": 4,
+            "time": 3.83,
+            "frequency": 2956,
+            "amplitude": 0.171645
+          },
+          {
+            "voiceNo": 4,
+            "time": 4.125,
+            "frequency": 3116,
+            "amplitude": 0.166213
+          },
+          {
+            "voiceNo": 4,
+            "time": 4.41,
+            "frequency": 3248,
+            "amplitude": 0.160681
+          },
+          {
+            "voiceNo": 4,
+            "time": 4.685,
+            "frequency": 3364,
+            "amplitude": 0.155056
+          },
+          {
+            "voiceNo": 4,
+            "time": 4.92,
+            "frequency": 3444,
+            "amplitude": 0.149347
+          },
+          {
+            "voiceNo": 4,
+            "time": 5.125,
+            "frequency": 3500,
+            "amplitude": 0.143565
+          },
+          {
+            "voiceNo": 4,
+            "time": 5.3,
+            "frequency": 3540,
+            "amplitude": 0.137721
+          },
+          {
+            "voiceNo": 4,
+            "time": 5.42,
+            "frequency": 3556,
+            "amplitude": 0.131826
+          },
+          {
+            "voiceNo": 4,
+            "time": 5.51,
+            "frequency": 3564,
+            "amplitude": 0.125893
+          },
+          { "voiceNo": 4, "time": 5.53, "frequency": 3560, "amplitude": 0 },
+          { "voiceNo": 5, "time": 0.935, "frequency": 704, "amplitude": 0 },
+          {
+            "voiceNo": 5,
+            "time": 0.94,
+            "frequency": 708,
+            "amplitude": 0.001701
+          },
+          {
+            "voiceNo": 5,
+            "time": 0.945,
+            "frequency": 712,
+            "amplitude": 0.001804
+          },
+          {
+            "voiceNo": 5,
+            "time": 0.955,
+            "frequency": 716,
+            "amplitude": 0.001963
+          },
+          {
+            "voiceNo": 5,
+            "time": 0.97,
+            "frequency": 724,
+            "amplitude": 0.002281
+          },
+          {
+            "voiceNo": 5,
+            "time": 0.99,
+            "frequency": 736,
+            "amplitude": 0.002747
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.015,
+            "frequency": 744,
+            "amplitude": 0.003475
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.05,
+            "frequency": 756,
+            "amplitude": 0.004354
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.085,
+            "frequency": 764,
+            "amplitude": 0.005394
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.135,
+            "frequency": 776,
+            "amplitude": 0.006612
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.195,
+            "frequency": 784,
+            "amplitude": 0.008023
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.25,
+            "frequency": 792,
+            "amplitude": 0.009641
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.32,
+            "frequency": 796,
+            "amplitude": 0.011479
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.39,
+            "frequency": 800,
+            "amplitude": 0.013549
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.47,
+            "frequency": 800,
+            "amplitude": 0.015861
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.55,
+            "frequency": 796,
+            "amplitude": 0.018421
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.63,
+            "frequency": 792,
+            "amplitude": 0.021234
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.705,
+            "frequency": 780,
+            "amplitude": 0.024305
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.78,
+            "frequency": 768,
+            "amplitude": 0.027631
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.87,
+            "frequency": 752,
+            "amplitude": 0.031213
+          },
+          {
+            "voiceNo": 5,
+            "time": 1.955,
+            "frequency": 736,
+            "amplitude": 0.035044
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.045,
+            "frequency": 724,
+            "amplitude": 0.039119
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.135,
+            "frequency": 720,
+            "amplitude": 0.043428
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.225,
+            "frequency": 724,
+            "amplitude": 0.04796
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.315,
+            "frequency": 740,
+            "amplitude": 0.052703
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.415,
+            "frequency": 776,
+            "amplitude": 0.057642
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.53,
+            "frequency": 836,
+            "amplitude": 0.062763
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.645,
+            "frequency": 916,
+            "amplitude": 0.068049
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.78,
+            "frequency": 1016,
+            "amplitude": 0.073482
+          },
+          {
+            "voiceNo": 5,
+            "time": 2.91,
+            "frequency": 1124,
+            "amplitude": 0.079044
+          },
+          {
+            "voiceNo": 5,
+            "time": 3.065,
+            "frequency": 1244,
+            "amplitude": 0.084718
+          },
+          {
+            "voiceNo": 5,
+            "time": 3.215,
+            "frequency": 1360,
+            "amplitude": 0.090485
+          },
+          {
+            "voiceNo": 5,
+            "time": 3.385,
+            "frequency": 1472,
+            "amplitude": 0.096327
+          },
+          {
+            "voiceNo": 5,
+            "time": 3.545,
+            "frequency": 1580,
+            "amplitude": 0.102226
+          },
+          {
+            "voiceNo": 5,
+            "time": 3.71,
+            "frequency": 1676,
+            "amplitude": 0.108164
+          },
+          {
+            "voiceNo": 5,
+            "time": 3.895,
+            "frequency": 1772,
+            "amplitude": 0.114124
+          },
+          {
+            "voiceNo": 5,
+            "time": 4.07,
+            "frequency": 1860,
+            "amplitude": 0.120091
+          },
+          {
+            "voiceNo": 5,
+            "time": 4.235,
+            "frequency": 1936,
+            "amplitude": 0.126048
+          },
+          {
+            "voiceNo": 5,
+            "time": 4.39,
+            "frequency": 2004,
+            "amplitude": 0.13198
+          },
+          { "voiceNo": 5, "time": 4.54, "frequency": 2068, "amplitude": 0 },
+          { "voiceNo": 6, "time": 0.975, "frequency": 1488, "amplitude": 0 },
+          {
+            "voiceNo": 6,
+            "time": 0.98,
+            "frequency": 1488,
+            "amplitude": 0.001289
+          },
+          {
+            "voiceNo": 6,
+            "time": 0.995,
+            "frequency": 1488,
+            "amplitude": 0.001417
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.015,
+            "frequency": 1488,
+            "amplitude": 0.001691
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.03,
+            "frequency": 1488,
+            "amplitude": 0.002038
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.05,
+            "frequency": 1488,
+            "amplitude": 0.002498
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.07,
+            "frequency": 1488,
+            "amplitude": 0.003027
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.09,
+            "frequency": 1488,
+            "amplitude": 0.003585
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.11,
+            "frequency": 1488,
+            "amplitude": 0.004215
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.13,
+            "frequency": 1488,
+            "amplitude": 0.00492
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.15,
+            "frequency": 1488,
+            "amplitude": 0.005769
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.17,
+            "frequency": 1488,
+            "amplitude": 0.006547
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.185,
+            "frequency": 1488,
+            "amplitude": 0.007239
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.205,
+            "frequency": 1488,
+            "amplitude": 0.007929
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.22,
+            "frequency": 1488,
+            "amplitude": 0.008715
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.24,
+            "frequency": 1488,
+            "amplitude": 0.009595
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.255,
+            "frequency": 1488,
+            "amplitude": 0.010447
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.275,
+            "frequency": 1488,
+            "amplitude": 0.0114
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.29,
+            "frequency": 1492,
+            "amplitude": 0.012448
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.31,
+            "frequency": 1492,
+            "amplitude": 0.013747
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.33,
+            "frequency": 1492,
+            "amplitude": 0.015121
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.35,
+            "frequency": 1496,
+            "amplitude": 0.016377
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.37,
+            "frequency": 1500,
+            "amplitude": 0.017516
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.385,
+            "frequency": 1500,
+            "amplitude": 0.017764
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.4,
+            "frequency": 1504,
+            "amplitude": 0.018518
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.415,
+            "frequency": 1504,
+            "amplitude": 0.01846
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.43,
+            "frequency": 1508,
+            "amplitude": 0.018727
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.44,
+            "frequency": 1508,
+            "amplitude": 0.018346
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.455,
+            "frequency": 1512,
+            "amplitude": 0.018318
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.465,
+            "frequency": 1512,
+            "amplitude": 0.018186
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.48,
+            "frequency": 1512,
+            "amplitude": 0.017979
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.49,
+            "frequency": 1512,
+            "amplitude": 0.017923
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.505,
+            "frequency": 1512,
+            "amplitude": 0.017983
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.515,
+            "frequency": 1516,
+            "amplitude": 0.018131
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.53,
+            "frequency": 1516,
+            "amplitude": 0.018346
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.545,
+            "frequency": 1516,
+            "amplitude": 0.018828
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.56,
+            "frequency": 1516,
+            "amplitude": 0.019752
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.58,
+            "frequency": 1516,
+            "amplitude": 0.021304
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.605,
+            "frequency": 1516,
+            "amplitude": 0.023722
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.63,
+            "frequency": 1516,
+            "amplitude": 0.027002
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.655,
+            "frequency": 1516,
+            "amplitude": 0.030338
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.685,
+            "frequency": 1516,
+            "amplitude": 0.034111
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.715,
+            "frequency": 1516,
+            "amplitude": 0.038128
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.75,
+            "frequency": 1516,
+            "amplitude": 0.042382
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.79,
+            "frequency": 1516,
+            "amplitude": 0.046863
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.825,
+            "frequency": 1516,
+            "amplitude": 0.051557
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.865,
+            "frequency": 1516,
+            "amplitude": 0.056451
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.9,
+            "frequency": 1516,
+            "amplitude": 0.06153
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.94,
+            "frequency": 1512,
+            "amplitude": 0.066778
+          },
+          {
+            "voiceNo": 6,
+            "time": 1.98,
+            "frequency": 1508,
+            "amplitude": 0.072177
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.025,
+            "frequency": 1504,
+            "amplitude": 0.077711
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.065,
+            "frequency": 1496,
+            "amplitude": 0.08336
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.105,
+            "frequency": 1488,
+            "amplitude": 0.089106
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.15,
+            "frequency": 1476,
+            "amplitude": 0.094932
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.19,
+            "frequency": 1464,
+            "amplitude": 0.100819
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.235,
+            "frequency": 1456,
+            "amplitude": 0.106749
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.285,
+            "frequency": 1444,
+            "amplitude": 0.112706
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.335,
+            "frequency": 1432,
+            "amplitude": 0.118672
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.39,
+            "frequency": 1420,
+            "amplitude": 0.124633
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.45,
+            "frequency": 1408,
+            "amplitude": 0.130572
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.505,
+            "frequency": 1396,
+            "amplitude": 0.136477
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.56,
+            "frequency": 1384,
+            "amplitude": 0.142333
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.61,
+            "frequency": 1372,
+            "amplitude": 0.148129
+          },
+          {
+            "voiceNo": 6,
+            "time": 2.66,
+            "frequency": 1360,
+            "amplitude": 0.153854
+          },
+          { "voiceNo": 6, "time": 2.7, "frequency": 1348, "amplitude": 0 },
+          { "voiceNo": 7, "time": 1.08, "frequency": 1748, "amplitude": 0 },
+          {
+            "voiceNo": 7,
+            "time": 1.085,
+            "frequency": 1748,
+            "amplitude": 0.001225
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.09,
+            "frequency": 1748,
+            "amplitude": 0.001282
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.095,
+            "frequency": 1748,
+            "amplitude": 0.001341
+          },
+          { "voiceNo": 7, "time": 1.1, "frequency": 1748, "amplitude": 0.0014 },
+          {
+            "voiceNo": 7,
+            "time": 1.105,
+            "frequency": 1748,
+            "amplitude": 0.001458
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.11,
+            "frequency": 1748,
+            "amplitude": 0.001533
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.115,
+            "frequency": 1752,
+            "amplitude": 0.001604
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.12,
+            "frequency": 1752,
+            "amplitude": 0.001672
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.13,
+            "frequency": 1756,
+            "amplitude": 0.001756
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.135,
+            "frequency": 1756,
+            "amplitude": 0.001834
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.14,
+            "frequency": 1756,
+            "amplitude": 0.001906
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.145,
+            "frequency": 1760,
+            "amplitude": 0.001972
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.155,
+            "frequency": 1760,
+            "amplitude": 0.002034
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.16,
+            "frequency": 1764,
+            "amplitude": 0.002091
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.165,
+            "frequency": 1764,
+            "amplitude": 0.002145
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.17,
+            "frequency": 1768,
+            "amplitude": 0.00217
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.175,
+            "frequency": 1772,
+            "amplitude": 0.002199
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.18,
+            "frequency": 1772,
+            "amplitude": 0.002191
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.185,
+            "frequency": 1776,
+            "amplitude": 0.002199
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.19,
+            "frequency": 1776,
+            "amplitude": 0.002213
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.195,
+            "frequency": 1780,
+            "amplitude": 0.002209
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.2,
+            "frequency": 1784,
+            "amplitude": 0.002194
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.205,
+            "frequency": 1788,
+            "amplitude": 0.002143
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.21,
+            "frequency": 1788,
+            "amplitude": 0.002078
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.215,
+            "frequency": 1792,
+            "amplitude": 0.002013
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.22,
+            "frequency": 1792,
+            "amplitude": 0.001968
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.225,
+            "frequency": 1796,
+            "amplitude": 0.001972
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.23,
+            "frequency": 1796,
+            "amplitude": 0.002006
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.235,
+            "frequency": 1792,
+            "amplitude": 0.002052
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.24,
+            "frequency": 1792,
+            "amplitude": 0.002121
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.245,
+            "frequency": 1792,
+            "amplitude": 0.002183
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.25,
+            "frequency": 1792,
+            "amplitude": 0.00224
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.26,
+            "frequency": 1792,
+            "amplitude": 0.002293
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.265,
+            "frequency": 1792,
+            "amplitude": 0.002341
+          },
+          {
+            "voiceNo": 7,
+            "time": 1.27,
+            "frequency": 1788,
+            "amplitude": 0.002358
+          },
+          { "voiceNo": 7, "time": 1.275, "frequency": 1788, "amplitude": 0 },
+          { "voiceNo": 8, "time": 1.235, "frequency": 2008, "amplitude": 0 },
+          {
+            "voiceNo": 8,
+            "time": 1.24,
+            "frequency": 2008,
+            "amplitude": 0.001153
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.245,
+            "frequency": 2008,
+            "amplitude": 0.001233
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.25,
+            "frequency": 2008,
+            "amplitude": 0.001277
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.255,
+            "frequency": 2008,
+            "amplitude": 0.001324
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.26,
+            "frequency": 2008,
+            "amplitude": 0.001381
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.265,
+            "frequency": 2008,
+            "amplitude": 0.001444
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.27,
+            "frequency": 2008,
+            "amplitude": 0.001506
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.275,
+            "frequency": 2008,
+            "amplitude": 0.001585
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.28,
+            "frequency": 2008,
+            "amplitude": 0.001658
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.29,
+            "frequency": 2008,
+            "amplitude": 0.001725
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.295,
+            "frequency": 2008,
+            "amplitude": 0.001807
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.3,
+            "frequency": 2008,
+            "amplitude": 0.001883
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.305,
+            "frequency": 2008,
+            "amplitude": 0.001952
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.31,
+            "frequency": 2008,
+            "amplitude": 0.001963
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.32,
+            "frequency": 2008,
+            "amplitude": 0.002002
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.325,
+            "frequency": 2008,
+            "amplitude": 0.002059
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.33,
+            "frequency": 2012,
+            "amplitude": 0.002089
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.335,
+            "frequency": 2012,
+            "amplitude": 0.002153
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.34,
+            "frequency": 2016,
+            "amplitude": 0.002161
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.345,
+            "frequency": 2016,
+            "amplitude": 0.002176
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.35,
+            "frequency": 2016,
+            "amplitude": 0.002132
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.355,
+            "frequency": 2020,
+            "amplitude": 0.002112
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.36,
+            "frequency": 2020,
+            "amplitude": 0.002104
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.365,
+            "frequency": 2024,
+            "amplitude": 0.002145
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.37,
+            "frequency": 2024,
+            "amplitude": 0.002237
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.38,
+            "frequency": 2028,
+            "amplitude": 0.002333
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.395,
+            "frequency": 2032,
+            "amplitude": 0.002563
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.41,
+            "frequency": 2040,
+            "amplitude": 0.002922
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.425,
+            "frequency": 2048,
+            "amplitude": 0.003383
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.445,
+            "frequency": 2056,
+            "amplitude": 0.004097
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.475,
+            "frequency": 2072,
+            "amplitude": 0.005091
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.505,
+            "frequency": 2088,
+            "amplitude": 0.006258
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.535,
+            "frequency": 2104,
+            "amplitude": 0.007614
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.575,
+            "frequency": 2124,
+            "amplitude": 0.009174
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.615,
+            "frequency": 2144,
+            "amplitude": 0.01095
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.66,
+            "frequency": 2164,
+            "amplitude": 0.012956
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.705,
+            "frequency": 2188,
+            "amplitude": 0.0152
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.76,
+            "frequency": 2208,
+            "amplitude": 0.017691
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.815,
+            "frequency": 2228,
+            "amplitude": 0.020434
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.87,
+            "frequency": 2244,
+            "amplitude": 0.023433
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.925,
+            "frequency": 2264,
+            "amplitude": 0.02669
+          },
+          {
+            "voiceNo": 8,
+            "time": 1.975,
+            "frequency": 2276,
+            "amplitude": 0.030201
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.025,
+            "frequency": 2292,
+            "amplitude": 0.033965
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.075,
+            "frequency": 2300,
+            "amplitude": 0.037973
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.125,
+            "frequency": 2308,
+            "amplitude": 0.042218
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.17,
+            "frequency": 2316,
+            "amplitude": 0.04669
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.22,
+            "frequency": 2320,
+            "amplitude": 0.051376
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.265,
+            "frequency": 2328,
+            "amplitude": 0.056263
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.305,
+            "frequency": 2328,
+            "amplitude": 0.061336
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.35,
+            "frequency": 2332,
+            "amplitude": 0.066578
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.39,
+            "frequency": 2336,
+            "amplitude": 0.071972
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.435,
+            "frequency": 2336,
+            "amplitude": 0.0775
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.485,
+            "frequency": 2336,
+            "amplitude": 0.083146
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.53,
+            "frequency": 2336,
+            "amplitude": 0.088889
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.575,
+            "frequency": 2336,
+            "amplitude": 0.094712
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.615,
+            "frequency": 2336,
+            "amplitude": 0.100597
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.655,
+            "frequency": 2332,
+            "amplitude": 0.106526
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.7,
+            "frequency": 2328,
+            "amplitude": 0.112482
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.745,
+            "frequency": 2324,
+            "amplitude": 0.118448
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.795,
+            "frequency": 2320,
+            "amplitude": 0.124409
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.84,
+            "frequency": 2312,
+            "amplitude": 0.13035
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.89,
+            "frequency": 2308,
+            "amplitude": 0.136255
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.945,
+            "frequency": 2300,
+            "amplitude": 0.142114
+          },
+          {
+            "voiceNo": 8,
+            "time": 2.995,
+            "frequency": 2288,
+            "amplitude": 0.147912
+          },
+          {
+            "voiceNo": 8,
+            "time": 3.045,
+            "frequency": 2276,
+            "amplitude": 0.15364
+          },
+          {
+            "voiceNo": 8,
+            "time": 3.09,
+            "frequency": 2260,
+            "amplitude": 0.159286
+          },
+          {
+            "voiceNo": 8,
+            "time": 3.135,
+            "frequency": 2244,
+            "amplitude": 0.164843
+          },
+          {
+            "voiceNo": 8,
+            "time": 3.175,
+            "frequency": 2228,
+            "amplitude": 0.170301
+          },
+          {
+            "voiceNo": 8,
+            "time": 3.21,
+            "frequency": 2212,
+            "amplitude": 0.175653
+          },
+          {
+            "voiceNo": 8,
+            "time": 3.24,
+            "frequency": 2196,
+            "amplitude": 0.180893
+          },
+          {
+            "voiceNo": 8,
+            "time": 3.265,
+            "frequency": 2180,
+            "amplitude": 0.186017
+          },
+          { "voiceNo": 8, "time": 3.29, "frequency": 2164, "amplitude": 0 },
+          { "voiceNo": 9, "time": 1.3, "frequency": 1784, "amplitude": 0 },
+          {
+            "voiceNo": 9,
+            "time": 1.305,
+            "frequency": 1780,
+            "amplitude": 0.00105
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.31,
+            "frequency": 1776,
+            "amplitude": 0.001077
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.315,
+            "frequency": 1772,
+            "amplitude": 0.00116
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.32,
+            "frequency": 1772,
+            "amplitude": 0.001192
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.325,
+            "frequency": 1764,
+            "amplitude": 0.0012
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.33,
+            "frequency": 1760,
+            "amplitude": 0.00125
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.335,
+            "frequency": 1760,
+            "amplitude": 0.001292
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.34,
+            "frequency": 1756,
+            "amplitude": 0.001337
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.345,
+            "frequency": 1752,
+            "amplitude": 0.001384
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.35,
+            "frequency": 1748,
+            "amplitude": 0.001465
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.355,
+            "frequency": 1744,
+            "amplitude": 0.001502
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.36,
+            "frequency": 1744,
+            "amplitude": 0.001542
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.365,
+            "frequency": 1740,
+            "amplitude": 0.001539
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.37,
+            "frequency": 1736,
+            "amplitude": 0.001549
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.375,
+            "frequency": 1732,
+            "amplitude": 0.001559
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.38,
+            "frequency": 1728,
+            "amplitude": 0.001593
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.385,
+            "frequency": 1724,
+            "amplitude": 0.001636
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.39,
+            "frequency": 1720,
+            "amplitude": 0.001712
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.395,
+            "frequency": 1716,
+            "amplitude": 0.001759
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.4,
+            "frequency": 1712,
+            "amplitude": 0.001806
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.405,
+            "frequency": 1708,
+            "amplitude": 0.001852
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.41,
+            "frequency": 1708,
+            "amplitude": 0.001899
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.415,
+            "frequency": 1704,
+            "amplitude": 0.001945
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.42,
+            "frequency": 1700,
+            "amplitude": 0.001949
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.425,
+            "frequency": 1696,
+            "amplitude": 0.001994
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.43,
+            "frequency": 1692,
+            "amplitude": 0.002039
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.435,
+            "frequency": 1688,
+            "amplitude": 0.002083
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.44,
+            "frequency": 1684,
+            "amplitude": 0.002126
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.445,
+            "frequency": 1680,
+            "amplitude": 0.002168
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.45,
+            "frequency": 1680,
+            "amplitude": 0.002208
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.455,
+            "frequency": 1676,
+            "amplitude": 0.002248
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.46,
+            "frequency": 1672,
+            "amplitude": 0.00226
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.465,
+            "frequency": 1668,
+            "amplitude": 0.002276
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.47,
+            "frequency": 1668,
+            "amplitude": 0.002254
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.475,
+            "frequency": 1660,
+            "amplitude": 0.002259
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.48,
+            "frequency": 1660,
+            "amplitude": 0.002263
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.485,
+            "frequency": 1656,
+            "amplitude": 0.002299
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.49,
+            "frequency": 1652,
+            "amplitude": 0.002335
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.495,
+            "frequency": 1648,
+            "amplitude": 0.002369
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.5,
+            "frequency": 1644,
+            "amplitude": 0.002403
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.505,
+            "frequency": 1644,
+            "amplitude": 0.002422
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.51,
+            "frequency": 1640,
+            "amplitude": 0.002454
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.515,
+            "frequency": 1636,
+            "amplitude": 0.002427
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.52,
+            "frequency": 1632,
+            "amplitude": 0.002376
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.525,
+            "frequency": 1628,
+            "amplitude": 0.002364
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.53,
+            "frequency": 1628,
+            "amplitude": 0.002216
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.535,
+            "frequency": 1628,
+            "amplitude": 0.002226
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.54,
+            "frequency": 1628,
+            "amplitude": 0.002241
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.545,
+            "frequency": 1628,
+            "amplitude": 0.002238
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.55,
+            "frequency": 1632,
+            "amplitude": 0.002274
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.555,
+            "frequency": 1632,
+            "amplitude": 0.002309
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.56,
+            "frequency": 1636,
+            "amplitude": 0.002371
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.565,
+            "frequency": 1636,
+            "amplitude": 0.002426
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.575,
+            "frequency": 1640,
+            "amplitude": 0.002475
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.58,
+            "frequency": 1640,
+            "amplitude": 0.002549
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.585,
+            "frequency": 1644,
+            "amplitude": 0.002612
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.59,
+            "frequency": 1648,
+            "amplitude": 0.002666
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.595,
+            "frequency": 1648,
+            "amplitude": 0.002712
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.605,
+            "frequency": 1652,
+            "amplitude": 0.002693
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.61,
+            "frequency": 1656,
+            "amplitude": 0.00273
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.615,
+            "frequency": 1660,
+            "amplitude": 0.002736
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.62,
+            "frequency": 1664,
+            "amplitude": 0.002743
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.625,
+            "frequency": 1664,
+            "amplitude": 0.002698
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.63,
+            "frequency": 1668,
+            "amplitude": 0.002711
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.635,
+            "frequency": 1668,
+            "amplitude": 0.002726
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.64,
+            "frequency": 1672,
+            "amplitude": 0.002741
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.645,
+            "frequency": 1672,
+            "amplitude": 0.002694
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.65,
+            "frequency": 1676,
+            "amplitude": 0.002712
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.655,
+            "frequency": 1676,
+            "amplitude": 0.002762
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.66,
+            "frequency": 1676,
+            "amplitude": 0.002804
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.67,
+            "frequency": 1680,
+            "amplitude": 0.00284
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.675,
+            "frequency": 1680,
+            "amplitude": 0.002885
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.68,
+            "frequency": 1684,
+            "amplitude": 0.002938
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.685,
+            "frequency": 1684,
+            "amplitude": 0.003015
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.695,
+            "frequency": 1684,
+            "amplitude": 0.003112
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.705,
+            "frequency": 1684,
+            "amplitude": 0.003263
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.715,
+            "frequency": 1684,
+            "amplitude": 0.003388
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.72,
+            "frequency": 1688,
+            "amplitude": 0.003551
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.73,
+            "frequency": 1688,
+            "amplitude": 0.003652
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.745,
+            "frequency": 1688,
+            "amplitude": 0.003867
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.755,
+            "frequency": 1688,
+            "amplitude": 0.003997
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.765,
+            "frequency": 1692,
+            "amplitude": 0.004203
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.775,
+            "frequency": 1692,
+            "amplitude": 0.004358
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.785,
+            "frequency": 1692,
+            "amplitude": 0.004556
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.795,
+            "frequency": 1696,
+            "amplitude": 0.004657
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.805,
+            "frequency": 1696,
+            "amplitude": 0.004847
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.815,
+            "frequency": 1696,
+            "amplitude": 0.004976
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.825,
+            "frequency": 1696,
+            "amplitude": 0.005111
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.83,
+            "frequency": 1700,
+            "amplitude": 0.005252
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.84,
+            "frequency": 1700,
+            "amplitude": 0.005396
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.85,
+            "frequency": 1704,
+            "amplitude": 0.005479
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.86,
+            "frequency": 1708,
+            "amplitude": 0.005512
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.865,
+            "frequency": 1708,
+            "amplitude": 0.005571
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.875,
+            "frequency": 1712,
+            "amplitude": 0.005502
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.88,
+            "frequency": 1712,
+            "amplitude": 0.005485
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.885,
+            "frequency": 1716,
+            "amplitude": 0.005348
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.895,
+            "frequency": 1716,
+            "amplitude": 0.005243
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.9,
+            "frequency": 1720,
+            "amplitude": 0.005139
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.905,
+            "frequency": 1720,
+            "amplitude": 0.004948
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.91,
+            "frequency": 1724,
+            "amplitude": 0.004711
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.915,
+            "frequency": 1728,
+            "amplitude": 0.004361
+          },
+          {
+            "voiceNo": 9,
+            "time": 1.92,
+            "frequency": 1732,
+            "amplitude": 0.004078
+          },
+          { "voiceNo": 9, "time": 1.925, "frequency": 1740, "amplitude": 0 },
+          { "voiceNo": 10, "time": 1.35, "frequency": 3292, "amplitude": 0 },
+          {
+            "voiceNo": 10,
+            "time": 1.36,
+            "frequency": 3296,
+            "amplitude": 0.015849
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.385,
+            "frequency": 3308,
+            "amplitude": 0.018113
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.42,
+            "frequency": 3320,
+            "amplitude": 0.020898
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.455,
+            "frequency": 3328,
+            "amplitude": 0.023938
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.495,
+            "frequency": 3336,
+            "amplitude": 0.027236
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.54,
+            "frequency": 3344,
+            "amplitude": 0.030788
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.595,
+            "frequency": 3344,
+            "amplitude": 0.034591
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.65,
+            "frequency": 3340,
+            "amplitude": 0.038638
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.73,
+            "frequency": 3320,
+            "amplitude": 0.042921
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.805,
+            "frequency": 3300,
+            "amplitude": 0.047428
+          },
+          {
+            "voiceNo": 10,
+            "time": 1.91,
+            "frequency": 3264,
+            "amplitude": 0.052147
+          },
+          {
+            "voiceNo": 10,
+            "time": 2.03,
+            "frequency": 3220,
+            "amplitude": 0.057065
+          },
+          {
+            "voiceNo": 10,
+            "time": 2.195,
+            "frequency": 3148,
+            "amplitude": 0.062166
+          },
+          {
+            "voiceNo": 10,
+            "time": 2.37,
+            "frequency": 3064,
+            "amplitude": 0.067433
+          },
+          {
+            "voiceNo": 10,
+            "time": 2.575,
+            "frequency": 2956,
+            "amplitude": 0.07285
+          },
+          {
+            "voiceNo": 10,
+            "time": 2.805,
+            "frequency": 2832,
+            "amplitude": 0.078398
+          },
+          {
+            "voiceNo": 10,
+            "time": 3.06,
+            "frequency": 2692,
+            "amplitude": 0.084061
+          },
+          {
+            "voiceNo": 10,
+            "time": 3.315,
+            "frequency": 2548,
+            "amplitude": 0.089818
+          },
+          {
+            "voiceNo": 10,
+            "time": 3.565,
+            "frequency": 2404,
+            "amplitude": 0.095652
+          },
+          {
+            "voiceNo": 10,
+            "time": 3.815,
+            "frequency": 2260,
+            "amplitude": 0.101545
+          },
+          {
+            "voiceNo": 10,
+            "time": 4.075,
+            "frequency": 2116,
+            "amplitude": 0.10748
+          },
+          {
+            "voiceNo": 10,
+            "time": 4.335,
+            "frequency": 1968,
+            "amplitude": 0.113439
+          },
+          {
+            "voiceNo": 10,
+            "time": 4.565,
+            "frequency": 1836,
+            "amplitude": 0.119405
+          },
+          {
+            "voiceNo": 10,
+            "time": 4.785,
+            "frequency": 1708,
+            "amplitude": 0.125364
+          },
+          {
+            "voiceNo": 10,
+            "time": 4.975,
+            "frequency": 1596,
+            "amplitude": 0.131299
+          },
+          { "voiceNo": 10, "time": 5.145, "frequency": 1500, "amplitude": 0 },
+          { "voiceNo": 11, "time": 1.515, "frequency": 1340, "amplitude": 0 },
+          {
+            "voiceNo": 11,
+            "time": 1.52,
+            "frequency": 1344,
+            "amplitude": 0.001582
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.525,
+            "frequency": 1344,
+            "amplitude": 0.001576
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.53,
+            "frequency": 1340,
+            "amplitude": 0.001655
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.54,
+            "frequency": 1332,
+            "amplitude": 0.001811
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.555,
+            "frequency": 1320,
+            "amplitude": 0.002079
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.585,
+            "frequency": 1300,
+            "amplitude": 0.002673
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.62,
+            "frequency": 1280,
+            "amplitude": 0.003394
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.67,
+            "frequency": 1256,
+            "amplitude": 0.004257
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.725,
+            "frequency": 1232,
+            "amplitude": 0.00528
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.785,
+            "frequency": 1204,
+            "amplitude": 0.006479
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.855,
+            "frequency": 1172,
+            "amplitude": 0.00787
+          },
+          {
+            "voiceNo": 11,
+            "time": 1.945,
+            "frequency": 1132,
+            "amplitude": 0.009466
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.05,
+            "frequency": 1084,
+            "amplitude": 0.011281
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.15,
+            "frequency": 1040,
+            "amplitude": 0.013327
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.265,
+            "frequency": 984,
+            "amplitude": 0.015613
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.39,
+            "frequency": 920,
+            "amplitude": 0.018148
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.525,
+            "frequency": 848,
+            "amplitude": 0.020935
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.645,
+            "frequency": 784,
+            "amplitude": 0.023979
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.775,
+            "frequency": 708,
+            "amplitude": 0.02728
+          },
+          {
+            "voiceNo": 11,
+            "time": 2.92,
+            "frequency": 624,
+            "amplitude": 0.030836
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.065,
+            "frequency": 544,
+            "amplitude": 0.034642
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.195,
+            "frequency": 472,
+            "amplitude": 0.038692
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.315,
+            "frequency": 408,
+            "amplitude": 0.042977
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.43,
+            "frequency": 352,
+            "amplitude": 0.047487
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.535,
+            "frequency": 308,
+            "amplitude": 0.052209
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.635,
+            "frequency": 268,
+            "amplitude": 0.05713
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.725,
+            "frequency": 236,
+            "amplitude": 0.062233
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.815,
+            "frequency": 216,
+            "amplitude": 0.067502
+          },
+          {
+            "voiceNo": 11,
+            "time": 3.895,
+            "frequency": 196,
+            "amplitude": 0.072921
+          },
+          { "voiceNo": 11, "time": 3.97, "frequency": 184, "amplitude": 0 },
+          { "voiceNo": 12, "time": 1.665, "frequency": 2208, "amplitude": 0 },
+          {
+            "voiceNo": 12,
+            "time": 1.67,
+            "frequency": 2208,
+            "amplitude": 0.001995
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.68,
+            "frequency": 2208,
+            "amplitude": 0.002074
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.685,
+            "frequency": 2212,
+            "amplitude": 0.002153
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.69,
+            "frequency": 2212,
+            "amplitude": 0.002232
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.7,
+            "frequency": 2212,
+            "amplitude": 0.002317
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.705,
+            "frequency": 2212,
+            "amplitude": 0.00239
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.71,
+            "frequency": 2212,
+            "amplitude": 0.002483
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.72,
+            "frequency": 2212,
+            "amplitude": 0.002562
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.725,
+            "frequency": 2212,
+            "amplitude": 0.00266
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.735,
+            "frequency": 2212,
+            "amplitude": 0.002741
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.74,
+            "frequency": 2212,
+            "amplitude": 0.002842
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.75,
+            "frequency": 2212,
+            "amplitude": 0.002957
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.755,
+            "frequency": 2212,
+            "amplitude": 0.00305
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.765,
+            "frequency": 2212,
+            "amplitude": 0.00316
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.77,
+            "frequency": 2212,
+            "amplitude": 0.003284
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.78,
+            "frequency": 2212,
+            "amplitude": 0.003459
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.79,
+            "frequency": 2212,
+            "amplitude": 0.003678
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.805,
+            "frequency": 2212,
+            "amplitude": 0.003938
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.815,
+            "frequency": 2212,
+            "amplitude": 0.004235
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.83,
+            "frequency": 2212,
+            "amplitude": 0.004567
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.84,
+            "frequency": 2212,
+            "amplitude": 0.00493
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.855,
+            "frequency": 2212,
+            "amplitude": 0.005324
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.87,
+            "frequency": 2212,
+            "amplitude": 0.005746
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.885,
+            "frequency": 2212,
+            "amplitude": 0.006193
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.9,
+            "frequency": 2212,
+            "amplitude": 0.006664
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.915,
+            "frequency": 2212,
+            "amplitude": 0.007239
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.93,
+            "frequency": 2212,
+            "amplitude": 0.007824
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.945,
+            "frequency": 2212,
+            "amplitude": 0.008513
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.96,
+            "frequency": 2212,
+            "amplitude": 0.009198
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.98,
+            "frequency": 2212,
+            "amplitude": 0.00999
+          },
+          {
+            "voiceNo": 12,
+            "time": 1.995,
+            "frequency": 2212,
+            "amplitude": 0.010761
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.01,
+            "frequency": 2216,
+            "amplitude": 0.01151
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.025,
+            "frequency": 2216,
+            "amplitude": 0.012379
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.045,
+            "frequency": 2220,
+            "amplitude": 0.013359
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.065,
+            "frequency": 2228,
+            "amplitude": 0.01461
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.085,
+            "frequency": 2232,
+            "amplitude": 0.016127
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.105,
+            "frequency": 2240,
+            "amplitude": 0.01791
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.13,
+            "frequency": 2248,
+            "amplitude": 0.020191
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.155,
+            "frequency": 2256,
+            "amplitude": 0.023169
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.185,
+            "frequency": 2268,
+            "amplitude": 0.026403
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.215,
+            "frequency": 2276,
+            "amplitude": 0.029893
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.245,
+            "frequency": 2288,
+            "amplitude": 0.033635
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.275,
+            "frequency": 2296,
+            "amplitude": 0.037623
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.315,
+            "frequency": 2304,
+            "amplitude": 0.041849
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.355,
+            "frequency": 2312,
+            "amplitude": 0.046302
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.4,
+            "frequency": 2320,
+            "amplitude": 0.05097
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.445,
+            "frequency": 2324,
+            "amplitude": 0.055841
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.49,
+            "frequency": 2332,
+            "amplitude": 0.060898
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.545,
+            "frequency": 2336,
+            "amplitude": 0.066126
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.605,
+            "frequency": 2344,
+            "amplitude": 0.071508
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.68,
+            "frequency": 2348,
+            "amplitude": 0.077026
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.765,
+            "frequency": 2356,
+            "amplitude": 0.082662
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.865,
+            "frequency": 2364,
+            "amplitude": 0.088398
+          },
+          {
+            "voiceNo": 12,
+            "time": 2.97,
+            "frequency": 2372,
+            "amplitude": 0.094215
+          },
+          {
+            "voiceNo": 12,
+            "time": 3.07,
+            "frequency": 2376,
+            "amplitude": 0.100095
+          },
+          {
+            "voiceNo": 12,
+            "time": 3.16,
+            "frequency": 2380,
+            "amplitude": 0.106021
+          },
+          {
+            "voiceNo": 12,
+            "time": 3.245,
+            "frequency": 2384,
+            "amplitude": 0.111975
+          },
+          {
+            "voiceNo": 12,
+            "time": 3.325,
+            "frequency": 2384,
+            "amplitude": 0.117941
+          },
+          {
+            "voiceNo": 12,
+            "time": 3.405,
+            "frequency": 2388,
+            "amplitude": 0.123903
+          },
+          { "voiceNo": 12, "time": 3.475, "frequency": 2388, "amplitude": 0 },
+          { "voiceNo": 13, "time": 1.79, "frequency": 2128, "amplitude": 0 },
+          {
+            "voiceNo": 13,
+            "time": 1.795,
+            "frequency": 2128,
+            "amplitude": 0.001099
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.8,
+            "frequency": 2128,
+            "amplitude": 0.001146
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.805,
+            "frequency": 2128,
+            "amplitude": 0.001251
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.815,
+            "frequency": 2128,
+            "amplitude": 0.001381
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.83,
+            "frequency": 2128,
+            "amplitude": 0.001554
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.845,
+            "frequency": 2128,
+            "amplitude": 0.001792
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.86,
+            "frequency": 2128,
+            "amplitude": 0.002128
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.88,
+            "frequency": 2128,
+            "amplitude": 0.002549
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.9,
+            "frequency": 2128,
+            "amplitude": 0.003104
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.925,
+            "frequency": 2124,
+            "amplitude": 0.003819
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.95,
+            "frequency": 2124,
+            "amplitude": 0.004727
+          },
+          {
+            "voiceNo": 13,
+            "time": 1.975,
+            "frequency": 2120,
+            "amplitude": 0.005833
+          },
+          {
+            "voiceNo": 13,
+            "time": 2,
+            "frequency": 2116,
+            "amplitude": 0.007122
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.03,
+            "frequency": 2108,
+            "amplitude": 0.008609
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.06,
+            "frequency": 2100,
+            "amplitude": 0.010309
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.1,
+            "frequency": 2092,
+            "amplitude": 0.012233
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.145,
+            "frequency": 2080,
+            "amplitude": 0.014393
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.195,
+            "frequency": 2064,
+            "amplitude": 0.016798
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.25,
+            "frequency": 2044,
+            "amplitude": 0.019453
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.315,
+            "frequency": 2024,
+            "amplitude": 0.022364
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.385,
+            "frequency": 2004,
+            "amplitude": 0.025531
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.46,
+            "frequency": 1976,
+            "amplitude": 0.028954
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.54,
+            "frequency": 1948,
+            "amplitude": 0.032631
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.63,
+            "frequency": 1916,
+            "amplitude": 0.036555
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.73,
+            "frequency": 1880,
+            "amplitude": 0.040719
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.85,
+            "frequency": 1836,
+            "amplitude": 0.045114
+          },
+          {
+            "voiceNo": 13,
+            "time": 2.975,
+            "frequency": 1784,
+            "amplitude": 0.049727
+          },
+          {
+            "voiceNo": 13,
+            "time": 3.1,
+            "frequency": 1732,
+            "amplitude": 0.054546
+          },
+          {
+            "voiceNo": 13,
+            "time": 3.24,
+            "frequency": 1676,
+            "amplitude": 0.059556
+          },
+          {
+            "voiceNo": 13,
+            "time": 3.38,
+            "frequency": 1608,
+            "amplitude": 0.064741
+          },
+          {
+            "voiceNo": 13,
+            "time": 3.525,
+            "frequency": 1540,
+            "amplitude": 0.070084
+          },
+          {
+            "voiceNo": 13,
+            "time": 3.675,
+            "frequency": 1460,
+            "amplitude": 0.075568
+          },
+          {
+            "voiceNo": 13,
+            "time": 3.825,
+            "frequency": 1372,
+            "amplitude": 0.081175
+          },
+          {
+            "voiceNo": 13,
+            "time": 3.985,
+            "frequency": 1272,
+            "amplitude": 0.086886
+          },
+          { "voiceNo": 13, "time": 4.15, "frequency": 1160, "amplitude": 0 },
+          { "voiceNo": 14, "time": 1.935, "frequency": 1752, "amplitude": 0 },
+          {
+            "voiceNo": 14,
+            "time": 1.94,
+            "frequency": 1752,
+            "amplitude": 0.001194
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.945,
+            "frequency": 1752,
+            "amplitude": 0.001272
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.95,
+            "frequency": 1752,
+            "amplitude": 0.001316
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.955,
+            "frequency": 1752,
+            "amplitude": 0.001378
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.96,
+            "frequency": 1752,
+            "amplitude": 0.001456
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.965,
+            "frequency": 1752,
+            "amplitude": 0.001547
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.975,
+            "frequency": 1752,
+            "amplitude": 0.001651
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.985,
+            "frequency": 1752,
+            "amplitude": 0.001787
+          },
+          {
+            "voiceNo": 14,
+            "time": 1.995,
+            "frequency": 1752,
+            "amplitude": 0.00193
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.005,
+            "frequency": 1752,
+            "amplitude": 0.002105
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.015,
+            "frequency": 1752,
+            "amplitude": 0.002284
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.025,
+            "frequency": 1752,
+            "amplitude": 0.002494
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.04,
+            "frequency": 1752,
+            "amplitude": 0.002767
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.05,
+            "frequency": 1756,
+            "amplitude": 0.003104
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.065,
+            "frequency": 1756,
+            "amplitude": 0.003467
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.085,
+            "frequency": 1756,
+            "amplitude": 0.0039
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.1,
+            "frequency": 1760,
+            "amplitude": 0.004456
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.115,
+            "frequency": 1760,
+            "amplitude": 0.005028
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.135,
+            "frequency": 1760,
+            "amplitude": 0.00568
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.15,
+            "frequency": 1760,
+            "amplitude": 0.006339
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.17,
+            "frequency": 1760,
+            "amplitude": 0.007083
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.185,
+            "frequency": 1764,
+            "amplitude": 0.007822
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.205,
+            "frequency": 1764,
+            "amplitude": 0.008653
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.22,
+            "frequency": 1764,
+            "amplitude": 0.009465
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.24,
+            "frequency": 1764,
+            "amplitude": 0.010256
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.255,
+            "frequency": 1764,
+            "amplitude": 0.011152
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.275,
+            "frequency": 1760,
+            "amplitude": 0.012148
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.29,
+            "frequency": 1760,
+            "amplitude": 0.013241
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.31,
+            "frequency": 1756,
+            "amplitude": 0.01426
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.325,
+            "frequency": 1756,
+            "amplitude": 0.015207
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.345,
+            "frequency": 1752,
+            "amplitude": 0.016087
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.36,
+            "frequency": 1748,
+            "amplitude": 0.016709
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.375,
+            "frequency": 1744,
+            "amplitude": 0.017308
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.39,
+            "frequency": 1740,
+            "amplitude": 0.017681
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.4,
+            "frequency": 1740,
+            "amplitude": 0.017867
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.415,
+            "frequency": 1736,
+            "amplitude": 0.017906
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.425,
+            "frequency": 1732,
+            "amplitude": 0.017831
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.44,
+            "frequency": 1728,
+            "amplitude": 0.017672
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.45,
+            "frequency": 1724,
+            "amplitude": 0.017654
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.465,
+            "frequency": 1724,
+            "amplitude": 0.017744
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.475,
+            "frequency": 1720,
+            "amplitude": 0.017711
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.49,
+            "frequency": 1716,
+            "amplitude": 0.017585
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.5,
+            "frequency": 1716,
+            "amplitude": 0.017391
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.51,
+            "frequency": 1712,
+            "amplitude": 0.017349
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.525,
+            "frequency": 1708,
+            "amplitude": 0.017222
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.535,
+            "frequency": 1704,
+            "amplitude": 0.016838
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.545,
+            "frequency": 1700,
+            "amplitude": 0.016466
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.555,
+            "frequency": 1700,
+            "amplitude": 0.0153
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.56,
+            "frequency": 1696,
+            "amplitude": 0.014705
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.57,
+            "frequency": 1692,
+            "amplitude": 0.013891
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.575,
+            "frequency": 1688,
+            "amplitude": 0.013107
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.58,
+            "frequency": 1684,
+            "amplitude": 0.012011
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.585,
+            "frequency": 1684,
+            "amplitude": 0.01135
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.59,
+            "frequency": 1680,
+            "amplitude": 0.010735
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.6,
+            "frequency": 1676,
+            "amplitude": 0.010164
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.605,
+            "frequency": 1672,
+            "amplitude": 0.009638
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.61,
+            "frequency": 1672,
+            "amplitude": 0.009154
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.615,
+            "frequency": 1668,
+            "amplitude": 0.008709
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.62,
+            "frequency": 1664,
+            "amplitude": 0.008301
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.625,
+            "frequency": 1664,
+            "amplitude": 0.007836
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.63,
+            "frequency": 1660,
+            "amplitude": 0.007432
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.635,
+            "frequency": 1656,
+            "amplitude": 0.006644
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.64,
+            "frequency": 1656,
+            "amplitude": 0.00625
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.645,
+            "frequency": 1656,
+            "amplitude": 0.006092
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.655,
+            "frequency": 1656,
+            "amplitude": 0.005935
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.66,
+            "frequency": 1656,
+            "amplitude": 0.005849
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.665,
+            "frequency": 1660,
+            "amplitude": 0.005816
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.675,
+            "frequency": 1660,
+            "amplitude": 0.005822
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.68,
+            "frequency": 1664,
+            "amplitude": 0.005859
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.69,
+            "frequency": 1668,
+            "amplitude": 0.005918
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.7,
+            "frequency": 1676,
+            "amplitude": 0.005995
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.71,
+            "frequency": 1680,
+            "amplitude": 0.006156
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.72,
+            "frequency": 1688,
+            "amplitude": 0.006239
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.73,
+            "frequency": 1692,
+            "amplitude": 0.006406
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.74,
+            "frequency": 1700,
+            "amplitude": 0.006565
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.75,
+            "frequency": 1708,
+            "amplitude": 0.006717
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.76,
+            "frequency": 1716,
+            "amplitude": 0.006862
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.77,
+            "frequency": 1724,
+            "amplitude": 0.006932
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.78,
+            "frequency": 1728,
+            "amplitude": 0.007133
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.79,
+            "frequency": 1736,
+            "amplitude": 0.007232
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.805,
+            "frequency": 1744,
+            "amplitude": 0.007398
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.815,
+            "frequency": 1752,
+            "amplitude": 0.007549
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.825,
+            "frequency": 1760,
+            "amplitude": 0.007688
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.835,
+            "frequency": 1768,
+            "amplitude": 0.007816
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.845,
+            "frequency": 1772,
+            "amplitude": 0.008025
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.855,
+            "frequency": 1780,
+            "amplitude": 0.008113
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.865,
+            "frequency": 1788,
+            "amplitude": 0.008197
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.875,
+            "frequency": 1792,
+            "amplitude": 0.008278
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.885,
+            "frequency": 1796,
+            "amplitude": 0.008356
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.895,
+            "frequency": 1800,
+            "amplitude": 0.008431
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.905,
+            "frequency": 1804,
+            "amplitude": 0.008601
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.915,
+            "frequency": 1808,
+            "amplitude": 0.008746
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.93,
+            "frequency": 1812,
+            "amplitude": 0.008972
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.94,
+            "frequency": 1812,
+            "amplitude": 0.009264
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.955,
+            "frequency": 1816,
+            "amplitude": 0.009609
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.97,
+            "frequency": 1816,
+            "amplitude": 0.010114
+          },
+          {
+            "voiceNo": 14,
+            "time": 2.985,
+            "frequency": 1816,
+            "amplitude": 0.01076
+          },
+          {
+            "voiceNo": 14,
+            "time": 3,
+            "frequency": 1816,
+            "amplitude": 0.011532
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.02,
+            "frequency": 1816,
+            "amplitude": 0.012565
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.035,
+            "frequency": 1816,
+            "amplitude": 0.013693
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.055,
+            "frequency": 1816,
+            "amplitude": 0.01491
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.07,
+            "frequency": 1812,
+            "amplitude": 0.015844
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.09,
+            "frequency": 1812,
+            "amplitude": 0.016708
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.105,
+            "frequency": 1808,
+            "amplitude": 0.017507
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.12,
+            "frequency": 1804,
+            "amplitude": 0.018039
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.135,
+            "frequency": 1800,
+            "amplitude": 0.018135
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.145,
+            "frequency": 1796,
+            "amplitude": 0.0181
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.155,
+            "frequency": 1788,
+            "amplitude": 0.017762
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.165,
+            "frequency": 1784,
+            "amplitude": 0.017209
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.175,
+            "frequency": 1780,
+            "amplitude": 0.016518
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.185,
+            "frequency": 1776,
+            "amplitude": 0.015749
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.19,
+            "frequency": 1772,
+            "amplitude": 0.014776
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.195,
+            "frequency": 1768,
+            "amplitude": 0.013584
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.2,
+            "frequency": 1764,
+            "amplitude": 0.012617
+          },
+          {
+            "voiceNo": 14,
+            "time": 3.205,
+            "frequency": 1756,
+            "amplitude": 0.011415
+          },
+          { "voiceNo": 14, "time": 3.21, "frequency": 1748, "amplitude": 0 },
+          { "voiceNo": 15, "time": 2.135, "frequency": 2544, "amplitude": 0 },
+          {
+            "voiceNo": 15,
+            "time": 2.425,
+            "frequency": 2324,
+            "amplitude": 0.020648
+          },
+          {
+            "voiceNo": 15,
+            "time": 2.685,
+            "frequency": 2112,
+            "amplitude": 0.017885
+          },
+          {
+            "voiceNo": 15,
+            "time": 2.935,
+            "frequency": 1904,
+            "amplitude": 0.015376
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.14,
+            "frequency": 1720,
+            "amplitude": 0.013114
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.32,
+            "frequency": 1548,
+            "amplitude": 0.011091
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.455,
+            "frequency": 1404,
+            "amplitude": 0.009298
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.585,
+            "frequency": 1260,
+            "amplitude": 0.007723
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.69,
+            "frequency": 1140,
+            "amplitude": 0.006352
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.735,
+            "frequency": 1076,
+            "amplitude": 0.005171
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.77,
+            "frequency": 1016,
+            "amplitude": 0.004165
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.8,
+            "frequency": 964,
+            "amplitude": 0.003512
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.83,
+            "frequency": 916,
+            "amplitude": 0.002771
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.855,
+            "frequency": 876,
+            "amplitude": 0.002192
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.875,
+            "frequency": 832,
+            "amplitude": 0.001718
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.895,
+            "frequency": 796,
+            "amplitude": 0.001419
+          },
+          {
+            "voiceNo": 15,
+            "time": 3.915,
+            "frequency": 764,
+            "amplitude": 0.001265
+          },
+          { "voiceNo": 15, "time": 3.92, "frequency": 752, "amplitude": 0 },
+          { "voiceNo": 16, "time": 3.26, "frequency": 1744, "amplitude": 0 },
+          {
+            "voiceNo": 16,
+            "time": 3.265,
+            "frequency": 1740,
+            "amplitude": 0.001114
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.27,
+            "frequency": 1732,
+            "amplitude": 0.001174
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.275,
+            "frequency": 1724,
+            "amplitude": 0.001218
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.28,
+            "frequency": 1716,
+            "amplitude": 0.001262
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.285,
+            "frequency": 1708,
+            "amplitude": 0.001303
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.29,
+            "frequency": 1700,
+            "amplitude": 0.001342
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.295,
+            "frequency": 1696,
+            "amplitude": 0.001354
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.3,
+            "frequency": 1688,
+            "amplitude": 0.001376
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.305,
+            "frequency": 1688,
+            "amplitude": 0.001418
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.31,
+            "frequency": 1688,
+            "amplitude": 0.001459
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.315,
+            "frequency": 1688,
+            "amplitude": 0.001489
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.32,
+            "frequency": 1688,
+            "amplitude": 0.001552
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.325,
+            "frequency": 1692,
+            "amplitude": 0.001612
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.33,
+            "frequency": 1692,
+            "amplitude": 0.001707
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.34,
+            "frequency": 1696,
+            "amplitude": 0.00177
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.345,
+            "frequency": 1700,
+            "amplitude": 0.001871
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.355,
+            "frequency": 1704,
+            "amplitude": 0.001961
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.36,
+            "frequency": 1708,
+            "amplitude": 0.002067
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.365,
+            "frequency": 1716,
+            "amplitude": 0.002159
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.375,
+            "frequency": 1720,
+            "amplitude": 0.002241
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.38,
+            "frequency": 1724,
+            "amplitude": 0.00234
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.39,
+            "frequency": 1728,
+            "amplitude": 0.002426
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.395,
+            "frequency": 1732,
+            "amplitude": 0.002447
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.4,
+            "frequency": 1740,
+            "amplitude": 0.002512
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.405,
+            "frequency": 1740,
+            "amplitude": 0.002568
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.41,
+            "frequency": 1744,
+            "amplitude": 0.00256
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.415,
+            "frequency": 1748,
+            "amplitude": 0.002575
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.42,
+            "frequency": 1752,
+            "amplitude": 0.002592
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.425,
+            "frequency": 1752,
+            "amplitude": 0.00261
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.43,
+            "frequency": 1752,
+            "amplitude": 0.002629
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.435,
+            "frequency": 1756,
+            "amplitude": 0.002624
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.44,
+            "frequency": 1756,
+            "amplitude": 0.002644
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.445,
+            "frequency": 1756,
+            "amplitude": 0.00264
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.45,
+            "frequency": 1756,
+            "amplitude": 0.002661
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.455,
+            "frequency": 1752,
+            "amplitude": 0.002657
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.46,
+            "frequency": 1752,
+            "amplitude": 0.002678
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.465,
+            "frequency": 1748,
+            "amplitude": 0.002699
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.47,
+            "frequency": 1748,
+            "amplitude": 0.002676
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.475,
+            "frequency": 1744,
+            "amplitude": 0.002697
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.48,
+            "frequency": 1740,
+            "amplitude": 0.002718
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.485,
+            "frequency": 1736,
+            "amplitude": 0.002738
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.49,
+            "frequency": 1732,
+            "amplitude": 0.002731
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.495,
+            "frequency": 1732,
+            "amplitude": 0.002783
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.505,
+            "frequency": 1728,
+            "amplitude": 0.002859
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.51,
+            "frequency": 1724,
+            "amplitude": 0.002955
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.52,
+            "frequency": 1720,
+            "amplitude": 0.003103
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.53,
+            "frequency": 1716,
+            "amplitude": 0.003258
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.54,
+            "frequency": 1712,
+            "amplitude": 0.003419
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.55,
+            "frequency": 1712,
+            "amplitude": 0.003627
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.56,
+            "frequency": 1708,
+            "amplitude": 0.003793
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.57,
+            "frequency": 1708,
+            "amplitude": 0.004032
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.58,
+            "frequency": 1704,
+            "amplitude": 0.004262
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.59,
+            "frequency": 1704,
+            "amplitude": 0.004483
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.605,
+            "frequency": 1704,
+            "amplitude": 0.004697
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.615,
+            "frequency": 1708,
+            "amplitude": 0.004903
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.625,
+            "frequency": 1708,
+            "amplitude": 0.005044
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.63,
+            "frequency": 1708,
+            "amplitude": 0.005129
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.64,
+            "frequency": 1712,
+            "amplitude": 0.00517
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.645,
+            "frequency": 1712,
+            "amplitude": 0.00492
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.65,
+            "frequency": 1712,
+            "amplitude": 0.004867
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.655,
+            "frequency": 1716,
+            "amplitude": 0.004547
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.66,
+            "frequency": 1712,
+            "amplitude": 0.004272
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.665,
+            "frequency": 1716,
+            "amplitude": 0.003984
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.67,
+            "frequency": 1716,
+            "amplitude": 0.003738
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.675,
+            "frequency": 1720,
+            "amplitude": 0.003708
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.68,
+            "frequency": 1724,
+            "amplitude": 0.003721
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.685,
+            "frequency": 1728,
+            "amplitude": 0.003725
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.695,
+            "frequency": 1732,
+            "amplitude": 0.003766
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.7,
+            "frequency": 1736,
+            "amplitude": 0.003834
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.71,
+            "frequency": 1740,
+            "amplitude": 0.003924
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.715,
+            "frequency": 1744,
+            "amplitude": 0.004031
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.725,
+            "frequency": 1752,
+            "amplitude": 0.004152
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.735,
+            "frequency": 1756,
+            "amplitude": 0.004284
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.745,
+            "frequency": 1760,
+            "amplitude": 0.004425
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.755,
+            "frequency": 1764,
+            "amplitude": 0.004572
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.76,
+            "frequency": 1772,
+            "amplitude": 0.004723
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.77,
+            "frequency": 1776,
+            "amplitude": 0.004823
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.78,
+            "frequency": 1780,
+            "amplitude": 0.004879
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.785,
+            "frequency": 1784,
+            "amplitude": 0.004901
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.795,
+            "frequency": 1784,
+            "amplitude": 0.004896
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.8,
+            "frequency": 1788,
+            "amplitude": 0.004871
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.805,
+            "frequency": 1792,
+            "amplitude": 0.004831
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.81,
+            "frequency": 1792,
+            "amplitude": 0.00466
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.815,
+            "frequency": 1796,
+            "amplitude": 0.00461
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.825,
+            "frequency": 1796,
+            "amplitude": 0.004458
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.83,
+            "frequency": 1796,
+            "amplitude": 0.004381
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.835,
+            "frequency": 1796,
+            "amplitude": 0.004329
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.84,
+            "frequency": 1796,
+            "amplitude": 0.004326
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.845,
+            "frequency": 1800,
+            "amplitude": 0.004261
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.855,
+            "frequency": 1800,
+            "amplitude": 0.004287
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.86,
+            "frequency": 1800,
+            "amplitude": 0.004266
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.865,
+            "frequency": 1800,
+            "amplitude": 0.004309
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.875,
+            "frequency": 1800,
+            "amplitude": 0.004314
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.88,
+            "frequency": 1800,
+            "amplitude": 0.004407
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.89,
+            "frequency": 1800,
+            "amplitude": 0.004442
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.9,
+            "frequency": 1796,
+            "amplitude": 0.004564
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.91,
+            "frequency": 1796,
+            "amplitude": 0.00466
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.92,
+            "frequency": 1796,
+            "amplitude": 0.004901
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.93,
+            "frequency": 1796,
+            "amplitude": 0.005071
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.94,
+            "frequency": 1796,
+            "amplitude": 0.005287
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.955,
+            "frequency": 1792,
+            "amplitude": 0.005382
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.965,
+            "frequency": 1792,
+            "amplitude": 0.005579
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.975,
+            "frequency": 1792,
+            "amplitude": 0.005705
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.985,
+            "frequency": 1792,
+            "amplitude": 0.005886
+          },
+          {
+            "voiceNo": 16,
+            "time": 3.995,
+            "frequency": 1792,
+            "amplitude": 0.005991
+          },
+          {
+            "voiceNo": 16,
+            "time": 4,
+            "frequency": 1788,
+            "amplitude": 0.006102
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.01,
+            "frequency": 1788,
+            "amplitude": 0.006148
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.02,
+            "frequency": 1788,
+            "amplitude": 0.006142
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.025,
+            "frequency": 1788,
+            "amplitude": 0.006097
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.035,
+            "frequency": 1788,
+            "amplitude": 0.006023
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.04,
+            "frequency": 1788,
+            "amplitude": 0.005929
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.045,
+            "frequency": 1788,
+            "amplitude": 0.005822
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.05,
+            "frequency": 1784,
+            "amplitude": 0.005549
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.055,
+            "frequency": 1784,
+            "amplitude": 0.005221
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.06,
+            "frequency": 1780,
+            "amplitude": 0.00508
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.065,
+            "frequency": 1780,
+            "amplitude": 0.004806
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.07,
+            "frequency": 1776,
+            "amplitude": 0.004567
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.075,
+            "frequency": 1772,
+            "amplitude": 0.004086
+          },
+          {
+            "voiceNo": 16,
+            "time": 4.08,
+            "frequency": 1772,
+            "amplitude": 0.003883
+          },
+          { "voiceNo": 16, "time": 4.085, "frequency": 1764, "amplitude": 0 }
+        ]
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "id": "ece77c87-214d-4a1b-9468-4b6c253fc73c",
+          "name": "midi out",
+          "moduleId": "a7e6a42d-c182-4af9-97c4-8e5fa4e07c33",
+          "moduleName": "Sequencer"
+        }
+      ],
+      "initialId": "72fbe206-bfcf-4271-ba7b-4c96eefc9143",
+      "layoutId": "46df298c-7dff-4de5-9120-36b31c034ed4"
+    },
+    {
+      "id": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+      "name": "Volume",
+      "type": "Volume",
+      "props": { "volume": -100 },
+      "inputs": [
+        {
+          "id": "cf886d0c-3ec3-4637-9a9f-2ae9c7de4d63",
+          "name": "number of voices",
+          "moduleId": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+          "moduleName": "Volume"
+        },
+        {
+          "id": "68fe96b0-bcee-4e16-bc43-bffd3a686125",
+          "name": "input",
+          "moduleId": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+          "moduleName": "Volume"
+        },
+        {
+          "id": "7d6ad2d4-a0fc-4e5c-8c30-c683ac8d18ed",
+          "name": "midi in",
+          "moduleId": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+          "moduleName": "Volume"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "24164f61-a47f-4c5e-8872-fd1a638404c1",
+          "name": "output",
+          "moduleId": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+          "moduleName": "Volume"
+        }
+      ],
+      "initialId": "770f4472-f02b-4e85-bbba-7802cc4bccb5",
+      "layoutId": "04dd1e8d-7a22-4f4d-9f25-7c2d79c36325"
+    }
+  ],
+  "routes": [
+    {
+      "sourceId": "cbb0ea7c-f353-4e72-b185-8c00f0518cd3",
+      "outputName": "output",
+      "destinationId": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+      "inputName": "input",
+      "id": "995ef81a-4717-4132-9aa5-cea981b1532a"
+    },
+    {
+      "sourceId": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+      "outputName": "output",
+      "destinationId": "29ab3796-d18f-49a7-9e2a-6285cf083e1a",
+      "inputName": "input",
+      "id": "8831fb14-eaaf-49c7-8ac9-6cbcce79b695"
+    },
+    {
+      "sourceId": "a7e6a42d-c182-4af9-97c4-8e5fa4e07c33",
+      "outputName": "midi out",
+      "destinationId": "cbb0ea7c-f353-4e72-b185-8c00f0518cd3",
+      "inputName": "midi in",
+      "id": "5ae1eae5-ba18-4bfc-82b1-03cc2e1de69c"
+    },
+    {
+      "sourceId": "a7e6a42d-c182-4af9-97c4-8e5fa4e07c33",
+      "outputName": "midi out",
+      "destinationId": "e079c654-6cf6-45d6-abc8-74db15a15c30",
+      "inputName": "midi in",
+      "id": "2ea34c7a-edf4-4783-b618-204ae9197fec"
+    }
+  ],
+  "layouts": [
+    {
+      "i": "73eda0f5-2c48-44e3-91d8-bcee7622a269",
+      "type": "Oscillator",
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 17,
+      "moved": false,
+      "static": false
+    },
+    {
+      "i": "04dd1e8d-7a22-4f4d-9f25-7c2d79c36325",
+      "type": "Volume",
+      "x": 32,
+      "y": 0,
+      "w": 11,
+      "h": 18,
+      "moved": false,
+      "static": false
+    },
+    {
+      "i": "46df298c-7dff-4de5-9120-36b31c034ed4",
+      "type": "DataSequencer",
+      "x": 0,
+      "y": 17,
+      "w": 29,
+      "h": 40,
+      "moved": false,
+      "static": false
+    }
+  ]
+}
+
