@@ -13,7 +13,6 @@ import Delay from "./Delay";
 import Distortion from "./Distortion";
 import BitCrusher from "./BitCrusher";
 import Sequencer from "./Sequencer";
-import DataSequencer from "./DataSequencer";
 
 export interface AudioModuleProps {
   id: string;
@@ -74,9 +73,6 @@ export default function AudioModule(audioModuleProps: {
       break;
     case "Sequencer":
       Component = Sequencer;
-      break;
-    case "DataSequencer":
-      Component = DataSequencer;
       break;
     default:
       throw Error(`Unknown audio module type ${type}`);
