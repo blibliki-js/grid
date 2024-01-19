@@ -94,7 +94,7 @@ export const modulesSlice = createSlice({
       } = action.payload;
       const props = { ...initialProps, ...action.payload.props };
 
-      const payload = Engine.registerModule(name, type, props);
+      const payload = Engine.addModule({ name, type, props });
       return modulesAdapter.addOne(state, { ...payload, initialId, layoutId });
     },
     updateModule: (state: EntityState<any>, update: PayloadAction<any>) => {
@@ -151,7 +151,7 @@ export const removeModule =
     const audioModule = modulesSelector.selectById(getState(), id);
     if (!audioModule) throw Error(`Audio module with id ${id} not exists`);
 
-    const routeIds = Engine.unregisterModule(id);
+    const routeIds = Engine.removeModule(id);
     dispatch(modulesSlice.actions.removeModule(id));
     routeIds.forEach((routeId) => dispatch(plainRemoveRoute(routeId)));
     dispatch(removeLayout(audioModule?.layoutId));
