@@ -1,4 +1,3 @@
-import { RouteInterface } from "@blibliki/engine/build/routes";
 import {
   Box,
   Button,
@@ -19,6 +18,7 @@ import { ReactNode } from "react";
 import AddRoute from "./AddRoute";
 import { removeRoute, routesSelector } from "./routesSlice";
 import { removeModule } from "../components/AudioModule/modulesSlice";
+import { RouteInterface } from "@blibliki/engine";
 
 export default function Routes() {
   return (
