@@ -59,10 +59,6 @@ export const AvailableModules: { [key: string]: ModuleInterface } = {
     name: "Sequencer",
     type: "Sequencer",
   },
-  DataSequencer: {
-    name: "DataSequencer",
-    type: "DataSequencer",
-  },
 };
 
 const modulesAdapter = createEntityAdapter<ModuleProps>({});
