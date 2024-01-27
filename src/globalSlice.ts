@@ -3,7 +3,8 @@ import { AppDispatch, RootState } from "store";
 import Engine from "@blibliki/engine";
 
 import { updatePlainModule } from "components/AudioModule/modulesSlice";
-import { initialize as patchInitialize } from "patchSlice";
+import { initialize as patchInitialize, loadById } from "patchSlice";
+import { getPatchIdFromUrl } from "utils";
 
 interface IContext {
   latencyHint: "interactive" | "playback";
@@ -45,7 +46,14 @@ export const initialize =
 
     Engine.initialize({ context });
     Engine.bpm = bpm;
-    dispatch(patchInitialize());
+
+    const patchId = getPatchIdFromUrl();
+
+    if (patchId) {
+      dispatch(loadById(patchId));
+    } else {
+      dispatch(patchInitialize());
+    }
 
     Engine.onPropsUpdate((id, props) => {
       dispatch(updatePlainModule({ id, changes: { props } }));

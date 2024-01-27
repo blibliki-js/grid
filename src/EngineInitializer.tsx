@@ -12,7 +12,6 @@ export default function EngineInitializer() {
 
     setEnabled(true);
     dispatch(initialize());
-    dispatch(open("patch"));
 
     return () => {
       dispatch(dispose());

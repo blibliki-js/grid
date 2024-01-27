@@ -81,6 +81,11 @@ export const loadById = createAsyncThunk(
     const patchConfig = await PatchConfig.findByPatchId(id);
     const { modules, routes, layouts } = patchConfig.config;
 
+    const url = `/patch/${id}`;
+    if (window.location.pathname !== url) {
+      window.location.href = url;
+    }
+
     dispatch(clearEngine());
     dispatch(loadModules(modules));
     dispatch(fixModuleIds(routes));
