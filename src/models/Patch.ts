@@ -18,12 +18,6 @@ export default class Patch implements IPatch {
   static populate() {
     staticPatches.forEach((data) => {
       const { id: staticId, name, ...config } = data;
-      const patch = new Patch({
-        staticId,
-        name,
-        config: config,
-      });
-      patch.save();
     });
   }
 
