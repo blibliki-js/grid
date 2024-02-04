@@ -1,50 +1,38 @@
-import GridLayout, { Layout } from "react-grid-layout";
 import styled from "@emotion/styled";
+import ReactFlow, {
+  MiniMap,
+  Controls,
+  Background,
+  BackgroundVariant,
+} from "reactflow";
 
-import GridItem from "./GridItem";
-import { useAppDispatch, useAppSelector } from "hooks";
-import { layoutsSelector, updateLayout } from "./layoutsSlice";
-
-const draggableHandle = "draggable-item";
+import { NodeTypes } from "./AudioNode";
+import { useGridNodes } from "hooks";
 
 const Root = styled.div`
-  padding: 16px;
+  padding: 5px;
+  width: calc(100vw -10px);
+  height: calc(100vh - 130px);
 `;
 
 export default function Grid() {
-  const dispatch = useAppDispatch();
-  const layouts = useAppSelector((state) => layoutsSelector.selectAll(state));
-
-  const onLayoutChange = (layouts: Layout[]) => {
-    layouts.forEach((layout) => {
-      dispatch(updateLayout({ id: layout.i, changes: { ...layout } }));
-    });
-  };
+  const { nodes, edges, onNodesChange, onEdgesChange, onConnect } =
+    useGridNodes();
 
   return (
     <Root>
-      <GridLayout
-        layout={layouts}
-        onLayoutChange={onLayoutChange}
-        cols={200}
-        autoSize
-        isDroppable
-        isResizable={false}
-        width={2000}
-        rowHeight={10}
-        margin={[0, 0]}
-        preventCollision
-        draggableHandle={`.${draggableHandle}`}
-        compactType={null}
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={NodeTypes}
       >
-        {layouts.map((layout) => (
-          <GridItem
-            key={layout.i}
-            layout={layout}
-            draggableHandle={draggableHandle}
-          />
-        ))}
-      </GridLayout>
+        <Controls />
+        <MiniMap />
+        <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
+      </ReactFlow>
     </Root>
   );
 }

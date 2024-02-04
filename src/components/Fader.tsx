@@ -99,6 +99,7 @@ export default function Fader(props: FaderProps) {
         step={step || 0.01}
         marks={marks}
         track={track}
+        className="nodrag"
       />
       <div>{name}</div>
     </Container>

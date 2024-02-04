@@ -1,5 +1,5 @@
 import { ModuleProps } from "components/AudioModule/modulesSlice";
-import { ExtendedLayout } from "Grid/layoutsSlice";
+import { IGridNodes } from "Grid/gridNodesSlice";
 import { RouteProps } from "Routes/routesSlice";
 
 import db from "./db";
@@ -13,7 +13,7 @@ export interface IPatchConfig {
 export interface IConfig {
   modules: ModuleProps[];
   routes: RouteProps[];
-  layouts: ExtendedLayout[];
+  gridNodes: IGridNodes;
 }
 
 export default class PatchConfig implements IPatchConfig {

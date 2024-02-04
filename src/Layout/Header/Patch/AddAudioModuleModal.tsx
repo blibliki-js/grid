@@ -11,7 +11,7 @@ import { useState } from "react";
 
 import { AvailableModules } from "components/AudioModule/modulesSlice";
 import Modal from "components/Modal";
-import { addLayout } from "Grid/layoutsSlice";
+import { addNewAudioNode } from "Grid/gridNodesSlice";
 
 export default function AddAudioModule() {
   const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ export default function AddAudioModule() {
   };
 
   const addAudioModule = () => {
-    dispatch(addLayout(type));
+    dispatch(addNewAudioNode(type));
   };
 
   return (

@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Provider } from "react-redux";
 import { StyledEngineProvider } from "@mui/material/styles";
 
+import "reactflow/dist/style.css";
 import "App.scss";
 
 import "models/db";
