@@ -1,6 +1,4 @@
 import { Note } from "@blibliki/engine";
-import styled from "@emotion/styled";
-
 import Key from "./Key";
 
 const toneWidth = 25.3;
@@ -11,18 +9,17 @@ const semiToneHeight = 24 * 4;
 const toneWidthColumn = `${(toneWidth * 2.0) / 3}px`;
 const semiToneWidthColumn = `${(toneWidth * 1.0) / 3}px`;
 
-const OctaveContainer = styled.div`
-  display: inline-grid;
-  grid-template-columns:
-    ${toneWidthColumn} ${semiToneWidthColumn}
+const style = {
+  display: "inline-grid",
+  "grid-template-columns": `${toneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${semiToneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${toneWidthColumn}
     ${toneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${semiToneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${semiToneWidthColumn} ${semiToneWidthColumn}
-    ${semiToneWidthColumn} ${toneWidthColumn};
-  grid-template-rows: ${semiToneHeight}px;
-`;
+    ${semiToneWidthColumn} ${toneWidthColumn}`,
+  "grid-template-rows": `${semiToneHeight}px`,
+};
 
 interface OctaveProps {
   id: string;
@@ -40,7 +37,7 @@ export default function Octave(params: OctaveProps) {
   } = params;
 
   return (
-    <OctaveContainer>
+    <div style={style}>
       {Note.notes(octave).map((note: Note) => (
         <Key
           key={note.fullName}
@@ -54,7 +51,7 @@ export default function Octave(params: OctaveProps) {
           active={activeNote(activeNotes, note)}
         />
       ))}
-    </OctaveContainer>
+    </div>
   );
 }
 

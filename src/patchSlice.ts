@@ -11,11 +11,7 @@ import {
   modulesSelector,
   removeAllModules,
 } from "components/AudioModule/modulesSlice";
-import {
-  addPlainLayout,
-  layoutsSelector,
-  removeAllLayouts,
-} from "Grid/layoutsSlice";
+
 import {
   addRoute,
   removeAllRoutes,
@@ -23,6 +19,7 @@ import {
   routesSelector,
 } from "Routes/routesSlice";
 import { RootState } from "store";
+import { removeAllGridNodes, setGridNodes } from "Grid/gridNodesSlice";
 
 interface PatchProps {
   patch: IPatch;
@@ -70,7 +67,7 @@ export const initialize = createAsyncThunk(
   async (_, { dispatch }) => {
     dispatch(setAttributes(initialState));
     const master = Engine.master;
-    dispatch(addMaster({ ...master, initialId: master.id, layoutId: "" }));
+    dispatch(addMaster({ ...master, initialId: master.id, gridNodeId: "" }));
   }
 );
 
@@ -79,7 +76,7 @@ export const loadById = createAsyncThunk(
   async (id: number, { dispatch }) => {
     const patch = await Patch.find(id);
     const patchConfig = await PatchConfig.findByPatchId(id);
-    const { modules, routes, layouts } = patchConfig.config;
+    const { modules, routes, gridNodes } = patchConfig.config;
 
     const url = `/patch/${id}`;
     if (window.location.pathname !== url) {
@@ -89,7 +86,7 @@ export const loadById = createAsyncThunk(
     dispatch(clearEngine());
     dispatch(loadModules(modules));
     dispatch(fixModuleIds(routes));
-    layouts.forEach((resource) => dispatch(addPlainLayout(resource)));
+    dispatch(setGridNodes(gridNodes));
 
     return { id: patch.id, name: patch.name, staticId: patch.staticId };
   }
@@ -102,8 +99,8 @@ export const save = createAsyncThunk(
     const { patch: originalPatch } = state.patch;
     const modules = modulesSelector.selectAll(state);
     const routes = routesSelector.selectAll(state);
-    const layouts = layoutsSelector.selectAll(state);
-    const config = { modules, routes, layouts };
+    const gridNodes = state.gridNodes;
+    const config = { modules, routes, gridNodes };
 
     let id = asNew ? undefined : originalPatch.id;
     const patch = new Patch({ id, name: originalPatch.name, config });
@@ -135,7 +132,7 @@ const clearEngine = createAsyncThunk(
     Engine.dispose();
     dispatch(removeAllModules());
     dispatch(removeAllRoutes());
-    dispatch(removeAllLayouts());
+    dispatch(removeAllGridNodes());
   }
 );
 
@@ -146,7 +143,7 @@ const loadModules = createAsyncThunk(
 
     modules.forEach((m) => {
       if (m.type === "Master") {
-        dispatch(addMaster({ ...master, initialId: m.id, layoutId: "" }));
+        dispatch(addMaster({ ...master, initialId: m.id, gridNodeId: "" }));
         return;
       }
 

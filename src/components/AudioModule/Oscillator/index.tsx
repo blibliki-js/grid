@@ -1,32 +1,15 @@
-import styled from "@emotion/styled";
-
 import Fader, { MarkProps } from "components/Fader";
-import Name from "../attributes/Name";
+import Container from "../Container";
 
 const Center: MarkProps[] = [{ value: 0, label: "-" }];
 
-const OscillatorContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-around;
-`;
+const WAVES = ["sine", "triangle", "square", "sawtooth"];
 
-const FaderContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
-
-const Title = styled.div`
-  text-align: center;
-  margin-bottom: 5px;
-`;
-
-const WAVES: MarkProps[] = [
-  { value: 0, label: "sine" },
-  { value: 1, label: "triangle" },
-  { value: 2, label: "square" },
-  { value: 3, label: "sawtooth" },
+const WAVE_MARKS: MarkProps[] = [
+  { value: 0, label: "sin" },
+  { value: 1, label: "tri" },
+  { value: 2, label: "sqr" },
+  { value: 3, label: "saw" },
 ];
 
 const RANGES: MarkProps[] = [
@@ -45,57 +28,49 @@ export default function Oscillator(props: {
   const {
     id,
     updateProps,
-    name: title,
     props: { range, coarse, fine, wave: waveName },
   } = props;
 
-  const wave = WAVES.find((w) => w.label === waveName)?.value;
+  const waveIndex = WAVES.findIndex((w) => w === waveName);
 
-  const updateProp = (propName: string) => (value: number | string) => {
-    if (propName === "wave")
-      value = WAVES.find((w) => w.value === value)?.label || WAVES[0].label;
+  const updateProp = (propName: string) => (value: number) => {
+    const updatedValue = propName === "wave" ? WAVES[value] : value;
 
-    updateProps(id, { [propName]: value });
+    updateProps(id, { [propName]: updatedValue });
   };
 
   return (
-    <OscillatorContainer>
-      <Title>
-        <Name id={id} value={title} />
-      </Title>
-
-      <FaderContainer>
-        <Fader
-          name="Octave"
-          marks={RANGES}
-          min={-1}
-          max={2}
-          onChange={updateProp("range")}
-          value={range}
-        />
-        <Fader
-          name="Coarse"
-          marks={Center}
-          min={-12}
-          max={12}
-          onChange={updateProp("coarse")}
-          value={coarse}
-        />
-        <Fader
-          name="Fine"
-          marks={Center}
-          min={-100}
-          max={100}
-          onChange={updateProp("fine")}
-          value={fine}
-        />
-        <Fader
-          name="Wave"
-          marks={WAVES}
-          onChange={updateProp("wave")}
-          value={wave}
-        />
-      </FaderContainer>
-    </OscillatorContainer>
+    <Container>
+      <Fader
+        name="Octave"
+        marks={RANGES}
+        min={-1}
+        max={2}
+        onChange={updateProp("range")}
+        value={range}
+      />
+      <Fader
+        name="Coarse"
+        marks={Center}
+        min={-12}
+        max={12}
+        onChange={updateProp("coarse")}
+        value={coarse}
+      />
+      <Fader
+        name="Fine"
+        marks={Center}
+        min={-100}
+        max={100}
+        onChange={updateProp("fine")}
+        value={fine}
+      />
+      <Fader
+        name="Wave"
+        marks={WAVE_MARKS}
+        onChange={updateProp("wave")}
+        value={waveIndex}
+      />
+    </Container>
   );
 }

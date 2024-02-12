@@ -16,14 +16,12 @@ interface GlobalProps {
   isStarted: boolean;
   context: IContext;
   bpm: number;
-  activeTab: number;
 }
 
 const initialState: GlobalProps = {
   isInitialized: false,
   isStarted: false,
   context: { latencyHint: "interactive", lookAhead: 0.05 },
-  activeTab: 0,
   bpm: 120,
 };
 
@@ -33,9 +31,6 @@ export const globalSlice = createSlice({
   reducers: {
     setAttributes: (state, action) => {
       return { ...state, ...action.payload };
-    },
-    setActiveTab: (state, action: PayloadAction<number>) => {
-      state.activeTab = action.payload;
     },
   },
 });
@@ -87,6 +82,6 @@ export const dispose = () => () => {
   Engine.stop();
 };
 
-export const { setAttributes, setActiveTab } = globalSlice.actions;
+export const { setAttributes } = globalSlice.actions;
 
 export default globalSlice.reducer;

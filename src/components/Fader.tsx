@@ -1,11 +1,7 @@
-import { Slider } from "@mui/material";
 import styled from "@emotion/styled";
+import { Slider } from "./ui";
 import { throttle } from "lodash";
-
-const StyledSlider = styled(Slider)`
-  margin-bottom: 10px;
-  height: 100px;
-`;
+import { ChangeEvent } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -20,25 +16,23 @@ export interface MarkProps {
 
 interface FaderProps {
   name: String;
-  onChange(values: any, calculatedValues: any): void;
-  defaultValue?: number | Array<number>;
-  value?: number | Array<number>;
+  onChange(value: number, calculatedValue: number): void;
+  defaultValue?: number;
+  value?: number;
   marks?: MarkProps[];
   max?: number;
   min?: number;
   step?: number;
   exp?: number;
-  track?: false | "normal" | "inverted";
 }
 
 const calcValue = function (
-  value: number | number[] | undefined,
+  value: number,
   min: number,
   max: number,
   exp?: number
 ) {
   if (!value || !exp) return value;
-  if (Array.isArray(value)) throw Error("Array not supported yet");
 
   const range = max - min;
   const coeff = Math.pow((value - min) / range, exp);
@@ -47,29 +41,19 @@ const calcValue = function (
 };
 
 const revCalcValue = function (
-  value: number | number[] | undefined,
+  value: number,
   min: number,
   max: number,
   exp?: number
 ) {
   if (!value || !exp) return value;
-  if (Array.isArray(value)) throw Error("Array not supported yet");
 
   const range = max - min;
   return Math.round(Math.pow((value - min) / range, 1 / exp) * range + min);
 };
 
 export default function Fader(props: FaderProps) {
-  const {
-    name,
-    onChange,
-    value,
-    defaultValue,
-    marks,
-    exp,
-    min = 0,
-    track = false,
-  } = props;
+  const { name, onChange, value, defaultValue, marks, exp, min = 0 } = props;
 
   let { max, step } = props;
 
@@ -81,15 +65,16 @@ export default function Fader(props: FaderProps) {
     max = marks ? marks.length - 1 : 1;
   }
 
-  const revValue = revCalcValue(value, min, max, exp);
+  const revValue = value && revCalcValue(value, min, max, exp);
 
-  const internalOnChange = (_: any, newValue?: number | number[]) =>
+  const internalOnChange = (newValue: number) => {
     onChange(newValue, calcValue(newValue, min, max || 1, exp));
+  };
   const debouncedOnChange = throttle(internalOnChange, 500);
 
   return (
     <Container>
-      <StyledSlider
+      <Slider
         orientation="vertical"
         onChange={debouncedOnChange}
         value={revValue}
@@ -98,9 +83,8 @@ export default function Fader(props: FaderProps) {
         max={max}
         step={step || 0.01}
         marks={marks}
-        track={track}
       />
-      <div>{name}</div>
+      <div className="text-gray-900 dark:text-white">{name}</div>
     </Container>
   );
 }

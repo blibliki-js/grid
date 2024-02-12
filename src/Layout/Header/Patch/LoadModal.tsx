@@ -1,16 +1,9 @@
-import {
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Paper,
-} from "@mui/material";
-import { useLiveQuery } from "dexie-react-hooks";
-
 import db from "models/db";
 import Modal, { close as closeModal } from "components/Modal";
 import { useAppDispatch } from "hooks";
 import { loadById } from "patchSlice";
+import { useLiveQuery } from "dexie-react-hooks";
+import { ReactNode } from "react";
 
 export default function SavePatch() {
   const dispatch = useAppDispatch();
@@ -31,22 +24,26 @@ export default function SavePatch() {
   return (
     <Modal modalName="patch">
       <h2>Select a patch</h2>
-      <Paper style={{ maxHeight: 300, overflow: "auto" }}>
-        <List>
-          <ListItem>
-            <ListItemButton component="button" onClick={close}>
-              <ListItemText primary="New patch" />
-            </ListItemButton>
-          </ListItem>
+      <div>
+        <ul>
+          <li onClick={close}>
+            <MenuItem>New patch</MenuItem>
+          </li>
           {patches.map(({ id, name }) => (
-            <ListItem key={id}>
-              <ListItemButton component="button" onClick={select(id)}>
-                <ListItemText primary={name} />
-              </ListItemButton>
-            </ListItem>
+            <li key={id} className="w-full" onClick={select(id)}>
+              <MenuItem>{name}</MenuItem>
+            </li>
           ))}
-        </List>
-      </Paper>
+        </ul>
+      </div>
     </Modal>
+  );
+}
+
+function MenuItem({ children }: { children: ReactNode }) {
+  return (
+    <button className="block w-full py-2 text-sm text-gray-700 hover:bg-blue-100">
+      {children}
+    </button>
   );
 }

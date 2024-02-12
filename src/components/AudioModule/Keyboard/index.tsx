@@ -1,12 +1,6 @@
 import { useState } from "react";
-import styled from "@emotion/styled";
-
 import ComputerMidiKeyboard from "./ComputerMidiKeyboard";
 import Octave from "./Octave";
-
-const OctaveContainer = styled.div`
-  display: flex;
-`;
 
 export default function Keyboard(params: {
   id: string;
@@ -25,7 +19,7 @@ export default function Keyboard(params: {
   };
 
   return (
-    <OctaveContainer
+    <div
       onMouseDown={enableTriggering}
       onMouseUp={disableTriggering}
       onMouseLeave={disableTriggering}
@@ -34,6 +28,6 @@ export default function Keyboard(params: {
       <Octave id={id} props={props} triggerable={triggerable} octave={2} />
       <Octave id={id} props={props} triggerable={triggerable} octave={3} />
       <Octave id={id} props={props} triggerable={triggerable} octave={4} />
-    </OctaveContainer>
+    </div>
   );
 }

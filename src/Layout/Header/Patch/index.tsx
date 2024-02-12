@@ -1,5 +1,4 @@
 import { MouseEvent, ReactNode, useState } from "react";
-import { Button, Divider, Menu, MenuItem } from "@mui/material";
 import { TriggerModal } from "components/Modal";
 
 import Export from "./Export";
@@ -7,69 +6,59 @@ import { useAppDispatch, useAppSelector } from "hooks";
 import { destroy, save } from "patchSlice";
 
 export default function Patch() {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { patch } = useAppSelector((state) => state.patch);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const open = Boolean(anchorEl);
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
-    <div>
-      <Button
-        id="basic-button"
-        aria-controls={open ? "basic-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-      >
+    <div className="relative">
+      <button onClick={handleClick} className="px-4 py-2 text-blue-700">
         Patch
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-      >
-        <MenuItem onClick={handleClose}>
-          <Save asNew={false} disabled={Boolean(patch.staticId)}>
-            Save
-          </Save>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Save asNew={true} disabled={!Boolean(patch.id)}>
-            Copy
-          </Save>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <TriggerModal modalName="patch" type="open">
-            Load
-          </TriggerModal>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Destroy disabled={!Boolean(patch.id) || Boolean(patch.staticId)}>
-            Delete
-          </Destroy>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Export />
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-          <TriggerModal modalName="addAudioModule" type="open">
-            Add module
-          </TriggerModal>
-        </MenuItem>
-      </Menu>
+      </button>
+      {isOpen && (
+        <div className="absolute -left-[15px] w-40 z-10 mt-3 bg-white border shadow-xl">
+          <MenuItem>
+            <Save asNew={false} disabled={Boolean(patch.staticId)}>
+              Save
+            </Save>
+          </MenuItem>
+          <MenuItem>
+            <Save asNew={true} disabled={!Boolean(patch.id)}>
+              Copy
+            </Save>
+          </MenuItem>
+          <MenuItem>
+            <TriggerModal modalName="patch" type="open">
+              Load
+            </TriggerModal>
+          </MenuItem>
+          <MenuItem>
+            <Destroy disabled={!Boolean(patch.id) || Boolean(patch.staticId)}>
+              Delete
+            </Destroy>
+          </MenuItem>
+          <MenuItem>
+            <Export />
+          </MenuItem>
+          <MenuItem>
+            <TriggerModal modalName="addAudioModule" type="open">
+              Add module
+            </TriggerModal>
+          </MenuItem>
+        </div>
+      )}
     </div>
+  );
+}
+
+function MenuItem({ children }: { children: ReactNode }) {
+  return (
+    <button className="block w-full py-2 text-sm text-gray-700 hover:bg-blue-100">
+      {children}
+    </button>
   );
 }
 
@@ -86,9 +75,9 @@ function Save(props: {
   };
 
   return (
-    <Button onClick={onSave} disabled={disabled}>
+    <button onClick={onSave} disabled={disabled}>
       {children}
-    </Button>
+    </button>
   );
 }
 
@@ -101,8 +90,8 @@ function Destroy(props: { disabled: boolean; children: ReactNode }) {
   };
 
   return (
-    <Button onClick={onDestroy} disabled={disabled}>
+    <button onClick={onDestroy} disabled={disabled}>
       {children}
-    </Button>
+    </button>
   );
 }

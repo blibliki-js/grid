@@ -9,17 +9,17 @@ import {
 import { AppDispatch, RootState } from "store";
 import Engine, { IOProps } from "@blibliki/engine";
 import { plainRemoveRoute } from "Routes/routesSlice";
-import { removeLayout } from "Grid/layoutsSlice";
+import { Optional } from "types";
 
 interface ModuleInterface {
   name: string;
   type: string;
-  props?: { [key: string]: any };
+  props: any;
 }
 
-interface AddModuleInterface extends ModuleInterface {
+interface AddModuleInterface extends Optional<ModuleInterface, "props"> {
   id?: string;
-  layoutId: string;
+  gridNodeId: string;
 }
 
 export interface ModuleProps extends AddModuleInterface {
@@ -29,7 +29,9 @@ export interface ModuleProps extends AddModuleInterface {
   outputs: IOProps[];
 }
 
-export const AvailableModules: { [key: string]: ModuleInterface } = {
+export const AvailableModules: {
+  [key: string]: Optional<ModuleInterface, "props">;
+} = {
   Oscillator: { name: "Oscilator", type: "Oscillator" },
   AmpEnvelope: {
     name: "Amp Envelope",
@@ -85,13 +87,17 @@ export const modulesSlice = createSlice({
       const {
         id: initialId = "",
         name = initialName,
-        layoutId,
+        gridNodeId,
         type,
       } = action.payload;
       const props = { ...initialProps, ...action.payload.props };
 
       const payload = Engine.addModule({ name, type, props });
-      return modulesAdapter.addOne(state, { ...payload, initialId, layoutId });
+      return modulesAdapter.addOne(state, {
+        ...payload,
+        initialId,
+        gridNodeId,
+      });
     },
     updateModule: (state: EntityState<any>, update: PayloadAction<any>) => {
       const {
@@ -128,11 +134,11 @@ export const modulesSelector = modulesAdapter.getSelectors(
   (state: RootState) => state.modules
 );
 
-export const selectModuleByLayoutId = createSelector(
+export const selectModuleByGridNodeId = createSelector(
   (state: RootState) => modulesSelector.selectAll(state),
   (_: RootState, layoutId: string) => layoutId,
   (modules: ModuleProps[], layoutId: string) =>
-    modules.find((m) => m.layoutId === layoutId)
+    modules.find((m) => m.gridNodeId === layoutId)
 );
 
 export const selectModulesByType = createSelector(
@@ -150,7 +156,6 @@ export const removeModule =
     const routeIds = Engine.removeModule(id);
     dispatch(modulesSlice.actions.removeModule(id));
     routeIds.forEach((routeId) => dispatch(plainRemoveRoute(routeId)));
-    dispatch(removeLayout(audioModule?.layoutId));
   };
 
 export const {

@@ -1,17 +1,10 @@
 import { useState } from "react";
-import styled from "@emotion/styled";
-import { Box, List } from "@mui/material";
 import { ISequence } from "@blibliki/engine";
 
 import GlobalProps from "./GlobalProps";
 import StepProps from "./StepProps";
 import Step from "./Step";
-import Name from "../attributes/Name";
-
-const Title = styled.div`
-  text-align: center;
-  margin-bottom: 5px;
-`;
+import Container from "../Container";
 
 export interface SequenceProps extends ISequence {
   duration: string;
@@ -19,14 +12,12 @@ export interface SequenceProps extends ISequence {
 
 export default function Sequencer(props: {
   id: string;
-  name: string;
   props: { bars: number; steps: number; sequences: SequenceProps[][] };
   updateProps: Function;
 }) {
   const {
     id,
     updateProps,
-    name: title,
     props: { bars, steps, sequences },
   } = props;
   const [bar, setBar] = useState<number>(0);
@@ -62,11 +53,7 @@ export default function Sequencer(props: {
   };
 
   return (
-    <Box>
-      <Title>
-        <Name id={id} value={title} />
-      </Title>
-
+    <Container className="flex-col">
       <GlobalProps
         id={id}
         currentBar={bar}
@@ -82,7 +69,7 @@ export default function Sequencer(props: {
         updateCallback={update(selectedStep)}
       />
 
-      <List sx={{ display: "flex", flexDirection: "row" }}>
+      <ul className="flex">
         {barSequences.map((sequence, i) => (
           <Step
             key={i}
@@ -93,7 +80,7 @@ export default function Sequencer(props: {
             selectCallback={onSelectStep(i)}
           />
         ))}
-      </List>
-    </Box>
+      </ul>
+    </Container>
   );
 }

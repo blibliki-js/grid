@@ -1,8 +1,8 @@
 import { useEffect, useState, ChangeEvent } from "react";
 import { INote } from "@blibliki/engine";
-import { Autocomplete, Box, TextField } from "@mui/material";
 
 import { SequenceProps } from ".";
+import { InputText } from "components/ui";
 
 const INITIAL_DURATION = "16n";
 
@@ -50,21 +50,18 @@ export default function StepProps(props: IStepProps) {
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-      <TextField
-        id="duration"
-        sx={{ width: "100px" }}
+    <div className="flex ml-2">
+      <InputText
         label="duration"
-        variant="standard"
         onChange={onDurationChange}
-        value={sequence.duration}
-        defaultValue={"16n"}
+        value={sequence.duration || "16n"}
+        className="w-[92px] mr-2"
       />
 
       {Array.from({ length: 7 }, (_, i) => (
         <Note key={i} note={notes[i]} setNote={setNote(i)} />
       ))}
-    </Box>
+    </div>
   );
 }
 
@@ -81,19 +78,16 @@ function Note(props: {
   const { note, setNote } = props;
   const noteName = note?.note || "";
 
-  const onChange = (_: any, value: string | null) => {
-    setNote(value);
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setNote(event.target.value);
   };
 
   return (
-    <Autocomplete
-      options={allNotes}
-      sx={{ width: "80px" }}
+    <InputText
       value={noteName}
       onChange={onChange}
-      renderInput={(params: any) => (
-        <TextField {...params} label="note" variant="standard" />
-      )}
+      label="Note"
+      className="w-[78px] mr-2"
     />
   );
 }
