@@ -1,19 +1,31 @@
-// Colors
-$bg-color: white;
-$dot-color: white;
+.v-range {
+  appearance: slider-vertical;
+}
 
-// Dimensions
-$dot-size: 1px;
-$dot-space: 9px;
+.grid-container {
+  width: 100vw;
+  height: calc(100vh - 62px);
+}
 
-body {
-  background: linear-gradient(
-        90deg,
-        $bg-color ($dot-space - $dot-size),
-        transparent 1%
-      )
-      center,
-    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-    $dot-color;
-  background-size: $dot-space $dot-space;
+.primary {
+  @apply 
+    text-white bg-blue-700 hover:bg-blue-800
+    dark:bg-blue-600 dark:hover:bg-blue-700;
+}
+
+
+.secondary {
+  @apply 
+    bg-white hover:bg-gray-100 hover:text-blue-700 
+    dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+}
+
+.btn {
+  @apply rounded-lg p-2
+}
+
+.btn-circle {
+  @apply 
+    font-medium rounded-full text-sm 
+    focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800;
 }

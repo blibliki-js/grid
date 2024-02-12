@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { Box, TextField } from "@mui/material";
+import { InputText } from "components/ui";
 
 interface IGlobalProps {
   id: string;
@@ -14,7 +14,7 @@ export default function GlobalProps(props: IGlobalProps) {
   const { id, currentBar, bars, steps, setCurrentBar, updateProps } = props;
 
   return (
-    <Box sx={{ padding: "8px 0" }}>
+    <div className="flex p-2">
       <Steps id={id} steps={steps} updateProps={updateProps} />
       <Bars id={id} bars={bars} updateProps={updateProps} />
       <CurrenrBar
@@ -22,7 +22,7 @@ export default function GlobalProps(props: IGlobalProps) {
         bars={bars}
         setCurrentBar={setCurrentBar}
       />
-    </Box>
+    </div>
   );
 }
 
@@ -34,14 +34,12 @@ function Bars(props: { id: string; bars: number; updateProps: Function }) {
   };
 
   return (
-    <TextField
-      sx={{ width: "120px", paddingRight: "8px" }}
+    <InputText
       label="Number of Bars"
-      variant="outlined"
       type="number"
-      InputProps={{ inputProps: { min: 0 } }}
       onChange={onChange}
-      value={bars}
+      className="w-[120px] mr-2"
+      value={bars.toString()}
     />
   );
 }
@@ -54,13 +52,11 @@ function Steps(props: { id: string; steps: number; updateProps: Function }) {
   };
 
   return (
-    <TextField
-      sx={{ width: "120px", paddingRight: "8px" }}
+    <InputText
       label="Number of Steps"
-      variant="outlined"
       type="number"
-      InputProps={{ inputProps: { min: 0 } }}
       onChange={onChange}
+      className="w-[120px] mr-2"
       value={steps}
     />
   );
@@ -79,13 +75,11 @@ function CurrenrBar(props: {
   };
 
   return (
-    <TextField
-      sx={{ width: "100px" }}
+    <InputText
       label="Current bar"
-      variant="outlined"
       type="number"
-      InputProps={{ inputProps: { min: 0 } }}
       onChange={onChange}
+      className="w-[100px]"
       value={currentBar + 1}
     />
   );

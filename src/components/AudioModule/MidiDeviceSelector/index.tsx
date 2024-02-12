@@ -1,25 +1,16 @@
-import { useEffect } from "react";
-import {
-  FormControl,
-  Select,
-  SelectChangeEvent,
-  MenuItem,
-} from "@mui/material";
-
+import { ChangeEvent, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "hooks";
-
 import { initialize, devicesSelector } from "./midiDevicesSlice";
-import Name from "../attributes/Name";
+import Container from "../Container";
+import { Select } from "components/ui";
 
 export default function MidiDeviceSelector(props: {
   id: string;
-  name: string;
   props: { selectedId: string };
   updateProps: Function;
 }) {
   const {
     id,
-    name,
     updateProps,
     props: { selectedId },
   } = props;
@@ -31,26 +22,18 @@ export default function MidiDeviceSelector(props: {
     dispatch(initialize());
   }, [dispatch]);
 
-  const updateSelectedId = (event: SelectChangeEvent<string>) => {
+  const updateSelectedId = (event: ChangeEvent<HTMLSelectElement>) => {
     updateProps(id, { selectedId: event.target.value });
   };
 
   return (
-    <FormControl sx={{ width: 200 }} fullWidth>
-      <Name id={id} value={name} />
+    <Container>
       <Select
-        labelId="midi-select"
-        id="midi-select"
+        label="Select MIDI device"
         value={selectedId || ""}
-        label="select MIDI devide"
+        options={devices}
         onChange={updateSelectedId}
-      >
-        {devices.map((device) => (
-          <MenuItem key={device.id} value={device.id}>
-            {device.name}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
+      />
+    </Container>
   );
 }

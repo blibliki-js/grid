@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
 import type { RootState, AppDispatch } from "store";
 import { selectModuleByGridNodeId } from "components/AudioModule/modulesSlice";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   onNodesChange as _onNodesChange,
   onEdgesChange as _onEdgesChange,
@@ -50,4 +50,34 @@ export function useGridNodes() {
   );
 
   return { nodes, edges, addNode, onNodesChange, onEdgesChange, onConnect };
+}
+
+export enum ColorScheme {
+  Light = "light",
+  Dark = "dark",
+}
+
+export function useColorScheme() {
+  const [color, setColor] = useState<ColorScheme>(ColorScheme.Light);
+
+  useEffect(() => {
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setColor(isDark ? ColorScheme.Dark : ColorScheme.Light);
+
+    const onColorSchemeUpdate = (event: MediaQueryListEvent) => {
+      setColor(event.matches ? ColorScheme.Dark : ColorScheme.Light);
+    };
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", onColorSchemeUpdate);
+
+    return () => {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", onColorSchemeUpdate);
+    };
+  }, []);
+
+  return color;
 }

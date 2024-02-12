@@ -84,7 +84,7 @@ export default function Fader(props: FaderProps) {
         step={step || 0.01}
         marks={marks}
       />
-      <div>{name}</div>
+      <div className="text-gray-900 dark:text-white">{name}</div>
     </Container>
   );
 }

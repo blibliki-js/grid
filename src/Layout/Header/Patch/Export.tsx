@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { modulesSelector } from "components/AudioModule/modulesSlice";
 import { routesSelector } from "Routes/routesSlice";
 import { useAppSelector } from "hooks";
@@ -21,5 +20,5 @@ export default function Export() {
     URL.revokeObjectURL(url);
   };
 
-  return <Button onClick={exportJSON}>Export</Button>;
+  return <button onClick={exportJSON}>Export</button>;
 }

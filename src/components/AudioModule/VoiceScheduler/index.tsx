@@ -1,45 +1,30 @@
-import {
-  FormControl,
-  Select,
-  SelectChangeEvent,
-  MenuItem,
-} from "@mui/material";
-import Name from "../attributes/Name";
+import { Select } from "components/ui";
+import { ChangeEvent } from "react";
+import Container from "../Container";
 
 const VOICE_SELECTIONS = [1, 2, 3, 4, 5, 6];
 
 export default function VoiceScheduler(props: {
   id: string;
-  name: string;
   props: { polyNumber: number };
   updateProps: Function;
 }) {
   const {
     id,
-    name,
     updateProps,
     props: { polyNumber },
   } = props;
-  const updateSelectedId = (event: SelectChangeEvent<string>) => {
-    updateProps(id, { polyNumber: event.target.value });
+  const updateSelectedId = (event: ChangeEvent<HTMLSelectElement>) => {
+    updateProps(id, { polyNumber: Number(event.target.value) });
   };
 
   return (
-    <FormControl sx={{ width: 70 }} fullWidth>
-      <Name id={id} value={name} />
+    <Container>
       <Select
-        labelId="voice-select"
-        id="voice-select"
-        value={polyNumber.toString()}
-        label="select number of voices"
+        value={polyNumber}
+        options={VOICE_SELECTIONS}
         onChange={updateSelectedId}
-      >
-        {VOICE_SELECTIONS.map((number) => (
-          <MenuItem key={number} value={number}>
-            {number}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
+      />
+    </Container>
   );
 }

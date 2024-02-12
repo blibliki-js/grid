@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import ReactFlow, {
   MiniMap,
   Controls,
@@ -9,18 +8,12 @@ import ReactFlow, {
 import { NodeTypes } from "./AudioNode";
 import { useGridNodes } from "hooks";
 
-const Root = styled.div`
-  padding: 5px;
-  width: calc(100vw -10px);
-  height: calc(100vh - 130px);
-`;
-
 export default function Grid() {
   const { nodes, edges, onNodesChange, onEdgesChange, onConnect } =
     useGridNodes();
 
   return (
-    <Root>
+    <div className="grid-container">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -31,8 +24,13 @@ export default function Grid() {
       >
         <Controls />
         <MiniMap />
-        <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
+        <Background
+          className="dark:bg-gray-700"
+          variant={BackgroundVariant.Dots}
+          gap={12}
+          size={1}
+        />
       </ReactFlow>
-    </Root>
+    </div>
   );
 }

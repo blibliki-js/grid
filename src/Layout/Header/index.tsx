@@ -1,42 +1,20 @@
 import { ChangeEvent, ReactNode } from "react";
-import { Box, Button, Link, Tab, Tabs, TextField } from "@mui/material";
-import styled from "@emotion/styled";
 
 import { useAppDispatch, useAppSelector } from "hooks";
-import { setActiveTab, start, stop, setBpm } from "globalSlice";
+import { start, stop, setBpm } from "globalSlice";
 import Patch from "./Patch";
 import { setName as setPatchName } from "patchSlice";
 
 import LoadModal from "./Patch/LoadModal";
 import AddAudioModuleModal from "./Patch/AddAudioModuleModal";
-
-const HeaderContainer = styled(Box)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  box-sizing: border-box;
-`;
-
-const Item = styled.div`
-  margin: 10px;
-`;
-
-const Group = styled.div`
-  display: flex;
-  align-items: center;
-`;
+import { InputText } from "components/ui";
 
 export default function Header() {
   const dispatch = useAppDispatch();
-  const { activeTab, isStarted, bpm } = useAppSelector((state) => state.global);
+  const { isStarted, bpm } = useAppSelector((state) => state.global);
   const {
     patch: { name: patchName },
   } = useAppSelector((state) => state.patch);
-
-  const onChangeTab = (_: any, newValue: number) => {
-    dispatch(setActiveTab(newValue));
-  };
 
   const togglePlay = () => {
     const toggle = isStarted ? stop : start;
@@ -44,15 +22,13 @@ export default function Header() {
   };
 
   return (
-    <HeaderContainer sx={{ px: 1, borderBottom: 1, borderColor: "divider" }}>
-      <Group>
+    <div className="flex items-center justify-between p-2 border-b-2 bg-gray-50 dark:bg-gray-800 dark:border-gray-900">
+      <div className="flex">
         <HeaderItem>
           <Patch />
         </HeaderItem>
         <HeaderItem>
-          <TextField
-            id="patchName"
-            variant="standard"
+          <InputText
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               dispatch(setPatchName(event.target.value))
             }
@@ -60,9 +36,7 @@ export default function Header() {
           />
         </HeaderItem>
         <HeaderItem>
-          <TextField
-            sx={{ width: "50px" }}
-            variant="standard"
+          <InputText
             type="number"
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               dispatch(setBpm(+event.target.value))
@@ -71,40 +45,31 @@ export default function Header() {
           />
         </HeaderItem>
         <HeaderItem>
-          <Button variant="outlined" onClick={togglePlay}>
+          <button className="btn secondary border-2" onClick={togglePlay}>
             {isStarted ? "Stop" : "Start"}
-          </Button>
+          </button>
         </HeaderItem>
-      </Group>
-      <Group>
-        <Tabs value={activeTab} onChange={onChangeTab}>
-          <Tab label="Grid" {...a11yProps(0)} />
-          <Tab label="Routes" {...a11yProps(1)} />
-        </Tabs>
-      </Group>
-      <Group>
+      </div>
+      <div>
         <HeaderItem>
-          <Link href="https://github.com/blibliki-js/grid" target="_blank">
+          <a
+            href="https://github.com/blibliki-js/grid"
+            target="_blank"
+            rel="noreferrer"
+          >
             Github
-          </Link>
+          </a>
         </HeaderItem>
-      </Group>
+      </div>
 
       <LoadModal />
       <AddAudioModuleModal />
-    </HeaderContainer>
+    </div>
   );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
 }
 
 function HeaderItem(props: { children: ReactNode }) {
   const { children } = props;
 
-  return <Item>{children}</Item>;
+  return <div className="mx-2">{children}</div>;
 }

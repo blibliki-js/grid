@@ -1,7 +1,5 @@
-import styled from "@emotion/styled";
-
 import Fader from "components/Fader";
-import Name from "../attributes/Name";
+import Container from "../Container";
 
 interface VolumeProps {
   id: string;
@@ -9,18 +7,6 @@ interface VolumeProps {
   updateProps: Function;
   props: any;
 }
-
-const VolumeContainer = styled.div`
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const Title = styled.div`
-  text-align: center;
-  margin-bottom: 5px;
-`;
 
 export default function Volume(props: VolumeProps) {
   const {
@@ -35,11 +21,7 @@ export default function Volume(props: VolumeProps) {
   };
 
   return (
-    <VolumeContainer>
-      <Title>
-        <Name id={id} value={name} />
-      </Title>
-
+    <Container>
       <Fader
         name={name || ""}
         onChange={updateVolume}
@@ -48,6 +30,6 @@ export default function Volume(props: VolumeProps) {
         max={0}
         step={1}
       />
-    </VolumeContainer>
+    </Container>
   );
 }

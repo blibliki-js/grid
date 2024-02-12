@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import PropTypes from "prop-types";
-import { Box, Modal as MuiModal } from "@mui/material";
 
 import { close as _close } from "./modalSlice";
 import { useAppDispatch, useAppSelector } from "hooks";
@@ -15,19 +14,8 @@ interface ModalProps {
   onClose?: Function;
 }
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
 export default function Modal(props: ModalProps) {
-  const { children, modalName, className, onClose } = props;
+  const { children, modalName, onClose } = props;
 
   const dispatch = useAppDispatch();
   const { isOpen, modalName: currentModalName } = useAppSelector(
@@ -35,6 +23,7 @@ export default function Modal(props: ModalProps) {
   );
 
   if (currentModalName !== modalName) return null;
+  if (!isOpen) return null;
 
   const close = () => {
     dispatch(_close(modalName));
@@ -42,15 +31,16 @@ export default function Modal(props: ModalProps) {
   };
 
   return (
-    <MuiModal
-      className={className}
-      open={isOpen}
-      onClose={close}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
-      <Box sx={style}>{children}</Box>
-    </MuiModal>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+      <div className="bg-white p-4 rounded-lg shadow-lg max-w-sm w-full dark:bg-gray-800">
+        <div className="flex justify-end">
+          <button onClick={close} className="text-black">
+            <span className="text-xl">&times;</span>
+          </button>
+        </div>
+        {children}
+      </div>
+    </div>
   );
 }
 

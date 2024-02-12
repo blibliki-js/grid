@@ -83,7 +83,9 @@ function Labels({
   };
 
   return (
-    <div className={`flex ${labelDirection} ${justify}`}>
+    <div
+      className={`flex ${labelDirection} ${justify} text-gray-900 dark:text-white`}
+    >
       {marks.map((mark, index) => (
         <button key={index} className="text-xs" onClick={_onClick(mark.value)}>
           {mark.label}
