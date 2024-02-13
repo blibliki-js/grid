@@ -1,13 +1,5 @@
-import styled from "@emotion/styled";
 import { Slider } from "./ui";
 import { throttle } from "lodash";
-import { ChangeEvent } from "react";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 export interface MarkProps {
   value: number;
@@ -73,7 +65,7 @@ export default function Fader(props: FaderProps) {
   const debouncedOnChange = throttle(internalOnChange, 500);
 
   return (
-    <Container>
+    <div className="flex flex-col justify-center items-center">
       <Slider
         orientation="vertical"
         onChange={debouncedOnChange}
@@ -85,6 +77,6 @@ export default function Fader(props: FaderProps) {
         marks={marks}
       />
       <div className="text-gray-900 dark:text-white">{name}</div>
-    </Container>
+    </div>
   );
 }
