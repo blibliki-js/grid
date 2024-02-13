@@ -1,4 +1,3 @@
-import staticPatches from "staticPatches";
 import db from "./db";
 import PatchConfig, { IConfig } from "./PatchConfig";
 
@@ -14,12 +13,6 @@ export default class Patch implements IPatch {
   name: string;
   staticId: string;
   config: IConfig;
-
-  static populate() {
-    staticPatches.forEach((data) => {
-      const { id: staticId, name, ...config } = data;
-    });
-  }
 
   static async find(id: number) {
     const patch = await db.patches.where("id").equals(id).first();

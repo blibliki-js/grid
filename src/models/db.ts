@@ -20,10 +20,5 @@ export class GridDatabase extends Dexie {
 }
 
 const db = new GridDatabase();
-db.on("populate", populate);
-
-function populate() {
-  Patch.populate();
-}
 
 export default db;
