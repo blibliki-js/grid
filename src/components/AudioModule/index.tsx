@@ -13,6 +13,7 @@ import Delay from "./Delay";
 import Distortion from "./Distortion";
 import BitCrusher from "./BitCrusher";
 import Sequencer from "./Sequencer";
+import Master from "./Master";
 
 export interface AudioModuleProps {
   id: string;
@@ -36,6 +37,9 @@ export default function AudioModule(audioModuleProps: {
   };
 
   switch (type) {
+    case "Master":
+      Component = Master;
+      break;
     case "Oscillator":
       Component = Oscillator;
       break;

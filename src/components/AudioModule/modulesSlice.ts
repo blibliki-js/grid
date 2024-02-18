@@ -32,6 +32,7 @@ export interface ModuleProps extends AddModuleInterface {
 export const AvailableModules: {
   [key: string]: Optional<ModuleInterface, "props">;
 } = {
+  Master: { name: "Master", type: "Master" },
   Oscillator: { name: "Oscilator", type: "Oscillator" },
   AmpEnvelope: {
     name: "Amp Envelope",
