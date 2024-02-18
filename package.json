@@ -21,7 +21,6 @@
     "dexie-react-hooks": "^1.1.3",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
-    "react-circular-input": "^0.2.4",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
