@@ -1,6 +1,5 @@
 import { ModuleProps } from "components/AudioModule/modulesSlice";
 import { IGridNodes } from "Grid/gridNodesSlice";
-import { RouteProps } from "Routes/routesSlice";
 
 import db from "./db";
 
@@ -12,7 +11,6 @@ export interface IPatchConfig {
 
 export interface IConfig {
   modules: ModuleProps[];
-  routes: RouteProps[];
   gridNodes: IGridNodes;
 }
 

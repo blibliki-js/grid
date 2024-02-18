@@ -1,5 +1,6 @@
-import { v4 as uuidv4 } from "uuid";
+import Engine, { RouteInterface, RouteProps } from "@blibliki/engine";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { removeModule } from "components/AudioModule/modulesSlice";
 import {
   Connection,
   Edge,
@@ -10,11 +11,7 @@ import {
   applyNodeChanges,
   applyEdgeChanges,
 } from "reactflow";
-import { AppDispatch } from "store";
-import {
-  addModule,
-  AvailableModules,
-} from "components/AudioModule/modulesSlice";
+import { AppDispatch, RootState } from "store";
 
 export interface IGridNodes {
   nodes: Node[];
@@ -31,43 +28,76 @@ export const gridNodesSlice = createSlice({
   initialState,
   reducers: {
     setGridNodes: (_, action: PayloadAction<IGridNodes>) => {
+      action.payload.edges.forEach((edge) => {
+        const route: RouteInterface = {
+          id: edge.id,
+          ...connectionToRoute(edge as Connection),
+        };
+        Engine.addRoute(route);
+      });
       return action.payload;
     },
     removeAllGridNodes: () => {
       return { nodes: [], edges: [] };
     },
+    setNodes: (state, action: PayloadAction<Node[]>) => {
+      state.nodes = action.payload;
+    },
     addNode: (state, action: PayloadAction<Node>) => {
       state.nodes.push(action.payload);
     },
-    onNodesChange: (state, action: PayloadAction<NodeChange[]>) => {
-      state.nodes = applyNodeChanges(action.payload, state.nodes);
-    },
     onEdgesChange: (state, action: PayloadAction<EdgeChange[]>) => {
-      state.edges = applyEdgeChanges(action.payload, state.edges);
+      const changes = action.payload;
+      state.edges = applyEdgeChanges(changes, state.edges);
+
+      changes.forEach((change) => {
+        if (change.type !== "remove") return;
+
+        Engine.removeRoute(change.id);
+      });
     },
     onConnect: (state, action: PayloadAction<Connection>) => {
-      state.edges = addEdge(action.payload, state.edges);
+      const route = Engine.addRoute(connectionToRoute(action.payload));
+      state.edges = addEdge({ id: route.id, ...action.payload }, state.edges);
     },
   },
 });
+
+const { setNodes } = gridNodesSlice.actions;
 
 export const {
   setGridNodes,
   removeAllGridNodes,
   addNode,
-  onNodesChange,
   onEdgesChange,
   onConnect,
 } = gridNodesSlice.actions;
 
-export const addNewAudioNode = (type: string) => (dispatch: AppDispatch) => {
-  const id = uuidv4();
-  dispatch(
-    addNode({ id, type: "audioNode", position: { x: 0, y: 0 }, data: { type } })
-  );
+export const onNodesChange =
+  (changes: NodeChange[]) =>
+  (dispatch: AppDispatch, getState: () => RootState) => {
+    const nodes = getState().gridNodes.nodes;
+    dispatch(setNodes(applyNodeChanges(changes, nodes)));
 
-  const modulePayload = AvailableModules[type];
-  dispatch(addModule({ ...modulePayload, gridNodeId: id }));
-};
+    changes.forEach((change) => {
+      if (change.type !== "remove") return;
+
+      dispatch(removeModule(change.id));
+    });
+  };
+
+function connectionToRoute(connection: Connection): RouteProps {
+  const {
+    source: sourceId,
+    sourceHandle: sourceIOId,
+    target: destinationId,
+    targetHandle: destinationIOId,
+  } = connection;
+
+  if (!sourceId || !sourceIOId || !destinationId || !destinationIOId)
+    throw Error("Some value is null");
+
+  return { sourceId, sourceIOId, destinationId, destinationIOId };
+}
 
 export default gridNodesSlice.reducer;

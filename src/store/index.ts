@@ -3,7 +3,6 @@ import globalReducer from "globalSlice";
 import midiDevicesReducer from "components/AudioModule/MidiDeviceSelector/midiDevicesSlice";
 import modulesReducer from "components/AudioModule/modulesSlice";
 import modalReducer from "components/Modal/modalSlice";
-import routesReducer from "Routes/routesSlice";
 import patchReducer from "patchSlice";
 import gridNodesReducer from "Grid/gridNodesSlice";
 
@@ -14,7 +13,6 @@ export const store = configureStore({
     modules: modulesReducer,
     modal: modalReducer,
     gridNodes: gridNodesReducer,
-    routes: routesReducer,
     patch: patchReducer,
   },
 });

@@ -2,7 +2,6 @@ import { Connection, EdgeChange, Node, NodeChange } from "reactflow";
 import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
 import type { RootState, AppDispatch } from "store";
-import { selectModuleByGridNodeId } from "components/AudioModule/modulesSlice";
 import { useCallback, useEffect, useState } from "react";
 import {
   onNodesChange as _onNodesChange,
@@ -10,6 +9,7 @@ import {
   onConnect as _onConnect,
   addNode as _addNode,
 } from "Grid/gridNodesSlice";
+import { modulesSelector } from "components/AudioModule/modulesSlice";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch: () => AppDispatch = useDispatch;
@@ -17,10 +17,10 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const useAudioModule = (id: string) => {
   const audioModule = useAppSelector((state) =>
-    selectModuleByGridNodeId(state, id)
+    modulesSelector.selectById(state, id)
   );
 
-  if (!audioModule) throw Error(`Audio module with ${id} not found`);
+  if (!audioModule) return;
 
   return audioModule;
 };

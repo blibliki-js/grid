@@ -1,6 +1,5 @@
 import { IOProps } from "@blibliki/engine";
 import AudioModule from "components/AudioModule";
-import Name from "components/AudioModule/attributes/Name";
 import { useAudioModule } from "hooks";
 import { ReactNode, useMemo } from "react";
 import { Handle, HandleType, NodeProps, Position } from "reactflow";
@@ -10,8 +9,11 @@ export const NodeTypes = {
 };
 
 export default function AudioNode(props: NodeProps) {
-  const { id: gridNodeId } = props;
-  const { inputs, outputs, ...audioModuleProps } = useAudioModule(gridNodeId);
+  const { id } = props;
+  const audioModule = useAudioModule(id);
+  if (!audioModule) return null;
+
+  const { inputs, outputs, ...audioModuleProps } = audioModule;
 
   return (
     <div className="flex gap-3 items-stretch shadow-md rounded-md bg-white dark:bg-gray-800 border-2 border-stone-400">

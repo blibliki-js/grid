@@ -1,9 +1,11 @@
 import { useAppDispatch } from "hooks";
 import { ChangeEvent, useState } from "react";
 
-import { AvailableModules } from "components/AudioModule/modulesSlice";
+import {
+  addNewModule,
+  AvailableModules,
+} from "components/AudioModule/modulesSlice";
 import Modal from "components/Modal";
-import { addNewAudioNode } from "Grid/gridNodesSlice";
 import { Select } from "components/ui";
 
 const Options = Object.values(AvailableModules).map((am) => ({
@@ -20,7 +22,7 @@ export default function AddAudioModule() {
   };
 
   const addAudioModule = () => {
-    dispatch(addNewAudioNode(type));
+    dispatch(addNewModule(type));
   };
 
   return (
