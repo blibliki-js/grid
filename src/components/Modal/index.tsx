@@ -19,7 +19,7 @@ export default function Modal(props: ModalProps) {
 
   const dispatch = useAppDispatch();
   const { isOpen, modalName: currentModalName } = useAppSelector(
-    (state) => state.modal
+    (state) => state.modal,
   );
 
   if (currentModalName !== modalName) return null;

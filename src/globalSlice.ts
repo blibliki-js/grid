@@ -57,7 +57,7 @@ export const initialize =
         isInitialized: true,
         isStarted: Engine.isStarted,
         bpm: Engine.bpm,
-      })
+      }),
     );
   };
 

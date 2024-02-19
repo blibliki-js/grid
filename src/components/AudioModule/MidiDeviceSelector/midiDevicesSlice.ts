@@ -37,7 +37,7 @@ export const initialize =
   };
 
 export const devicesSelector = devicesAdapter.getSelectors(
-  (state: RootState) => state.midiDevices
+  (state: RootState) => state.midiDevices,
 );
 
 export default midiDevicesSlice.reducer;

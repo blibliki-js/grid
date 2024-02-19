@@ -19,7 +19,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const useAudioModule = (id: string) => {
   const audioModule = useAppSelector((state) =>
-    modulesSelector.selectById(state, id)
+    modulesSelector.selectById(state, id),
   );
 
   if (!audioModule) return;
@@ -33,22 +33,22 @@ export function useGridNodes() {
 
   const onNodesChange = useCallback(
     (changes: NodeChange[]) => dispatch(_onNodesChange(changes)),
-    [dispatch]
+    [dispatch],
   );
 
   const onEdgesChange = useCallback(
     (changes: EdgeChange[]) => dispatch(_onEdgesChange(changes)),
-    [dispatch]
+    [dispatch],
   );
 
   const onConnect = useCallback(
     (connection: Connection) => dispatch(_onConnect(connection)),
-    [dispatch]
+    [dispatch],
   );
 
   const addNode = useCallback(
     (node: Node) => dispatch(_addNode(node)),
-    [dispatch]
+    [dispatch],
   );
 
   return { nodes, edges, addNode, onNodesChange, onEdgesChange, onConnect };

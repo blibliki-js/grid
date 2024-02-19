@@ -37,11 +37,11 @@ export default function Sequencer(props: {
     }
 
     const newBarSequences = barSequences.map((_, i) =>
-      i === step ? sequence : barSequences[i]
+      i === step ? sequence : barSequences[i],
     );
 
     const newSequences = sequences.map((_, i) =>
-      i === bar ? newBarSequences : sequences[i]
+      i === bar ? newBarSequences : sequences[i],
     );
 
     updateProps(id, { sequences: newSequences });

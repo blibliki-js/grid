@@ -80,7 +80,7 @@ export const modulesSlice = createSlice({
     updatePlainModule: modulesAdapter.updateOne,
     updateModuleName: (
       state: EntityState<any>,
-      update: PayloadAction<{ id: string; name: string }>
+      update: PayloadAction<{ id: string; name: string }>,
     ) => {
       const { id, name } = update.payload;
       const audioModule = Engine.updateNameModule(id, name);
@@ -114,7 +114,7 @@ export const addModule =
         type: "audioNode",
         position: { x: 0, y: 0 },
         data: {},
-      })
+      }),
     );
   };
 
@@ -133,14 +133,14 @@ export const removeModule =
   };
 
 export const modulesSelector = modulesAdapter.getSelectors(
-  (state: RootState) => state.modules
+  (state: RootState) => state.modules,
 );
 
 export const selectModulesByType = createSelector(
   (state: RootState) => modulesSelector.selectAll(state),
   (_: RootState, type: string) => type,
   (modules: ModuleProps[], type: string) =>
-    modules.filter((m) => m.type === type)
+    modules.filter((m) => m.type === type),
 );
 
 export default modulesSlice.reducer;

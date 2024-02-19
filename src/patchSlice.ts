@@ -62,7 +62,7 @@ export const initialize = createAsyncThunk(
   "patch/initialze",
   async (_, { dispatch }) => {
     dispatch(setAttributes(initialState));
-  }
+  },
 );
 
 export const loadById = createAsyncThunk(
@@ -77,7 +77,7 @@ export const loadById = createAsyncThunk(
     dispatch(setGridNodes(gridNodes));
 
     return { id: patch.id, name: patch.name, staticId: patch.staticId };
-  }
+  },
 );
 
 export const save = createAsyncThunk(
@@ -94,7 +94,7 @@ export const save = createAsyncThunk(
     await patch.save();
 
     dispatch(loadById(patch.id));
-  }
+  },
 );
 
 export const destroy = createAsyncThunk(
@@ -108,7 +108,7 @@ export const destroy = createAsyncThunk(
 
     dispatch(clearEngine());
     dispatch(initialize());
-  }
+  },
 );
 
 export const { setAttributes, setId, setName } = patchSlice.actions;
@@ -119,7 +119,7 @@ const clearEngine = createAsyncThunk(
     Engine.dispose();
     dispatch(removeAllModules());
     dispatch(removeAllGridNodes());
-  }
+  },
 );
 
 const loadModules = createAsyncThunk(
@@ -128,7 +128,7 @@ const loadModules = createAsyncThunk(
     modules.forEach((m) => {
       (dispatch as AppDispatch)(addModule(m));
     });
-  }
+  },
 );
 
 export default patchSlice.reducer;

@@ -22,7 +22,7 @@ const calcValue = function (
   value: number,
   min: number,
   max: number,
-  exp?: number
+  exp?: number,
 ) {
   if (!value || !exp) return value;
 
@@ -36,7 +36,7 @@ const revCalcValue = function (
   value: number,
   min: number,
   max: number,
-  exp?: number
+  exp?: number,
 ) {
   if (!value || !exp) return value;
 

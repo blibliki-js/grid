@@ -16,7 +16,7 @@ export default function StepProps(props: IStepProps) {
   const { step, sequence, updateCallback } = props;
   const [duration, setDuration] = useState<string>(INITIAL_DURATION);
   const [notes, setNotes] = useState<Array<INote | null>>(
-    Array.from({ length: 7 }, () => null)
+    Array.from({ length: 7 }, () => null),
   );
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function StepProps(props: IStepProps) {
   const onDurationChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newDuration = event.target.value;
     const newNotes = notes.map(
-      (note) => note && ({ ...note, duration: newDuration } as INote)
+      (note) => note && ({ ...note, duration: newDuration } as INote),
     );
 
     updateCallback({
