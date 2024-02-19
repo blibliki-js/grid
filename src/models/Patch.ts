@@ -1,4 +1,4 @@
-import db from "./db";
+import { getDb } from "./db";
 import PatchConfig, { IConfig } from "./PatchConfig";
 
 export interface IPatch {
@@ -15,7 +15,7 @@ export default class Patch implements IPatch {
   config: IConfig;
 
   static async find(id: number) {
-    const patch = await db.patches.where("id").equals(id).first();
+    const patch = await getDb().patches.where("id").equals(id).first();
 
     if (!patch) throw Error("Patch not found");
 
@@ -32,6 +32,7 @@ export default class Patch implements IPatch {
   }
 
   async save() {
+    const db = getDb();
     const { id, name, staticId } = this;
     if (staticId && id) throw Error("Static patch can't be saved");
 
@@ -43,6 +44,7 @@ export default class Patch implements IPatch {
   }
 
   async delete() {
+    const db = getDb();
     return await db.transaction("rw", db.patches, db.patchConfigs, async () => {
       await db.patches.where("id").equals(this.id).delete();
       await db.patchConfigs.where("patchId").equals(this.id).delete();
@@ -52,8 +54,8 @@ export default class Patch implements IPatch {
   private async patchConfig() {
     if (!this.id) throw Error("Patch not initialized");
 
-    const existedConfig = await db.patchConfigs
-      .where("patchId")
+    const existedConfig = await getDb()
+      .patchConfigs.where("patchId")
       .equals(this.id)
       .first();
 

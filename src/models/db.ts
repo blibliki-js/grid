@@ -2,6 +2,8 @@ import Dexie from "dexie";
 import Patch from "./Patch";
 import PatchConfig from "./PatchConfig";
 
+let db: GridDatabase;
+
 export class GridDatabase extends Dexie {
   patches!: Dexie.Table<Patch, number>;
   patchConfigs!: Dexie.Table<PatchConfig, number>;
@@ -19,6 +21,9 @@ export class GridDatabase extends Dexie {
   }
 }
 
-const db = new GridDatabase();
+export function getDb(): GridDatabase {
+  if (db) return db;
 
-export default db;
+  db = new GridDatabase();
+  return db;
+}

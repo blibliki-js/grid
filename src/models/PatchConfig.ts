@@ -1,7 +1,7 @@
 import { ModuleProps } from "@/components/AudioModule/modulesSlice";
 import { IGridNodes } from "@/components/Grid/gridNodesSlice";
 
-import db from "./db";
+import { getDb } from "./db";
 
 export interface IPatchConfig {
   id?: number;
@@ -20,6 +20,7 @@ export default class PatchConfig implements IPatchConfig {
   config: IConfig;
 
   static async findByPatchId(patchId: number) {
+    const db = getDb();
     const patchConfig = await db.patchConfigs
       .where("patchId")
       .equals(patchId)
@@ -35,6 +36,7 @@ export default class PatchConfig implements IPatchConfig {
   }
 
   async save() {
+    const db = getDb();
     return await db.transaction("rw", db.patchConfigs, async () => {
       this.id = await db.patchConfigs.put(this);
     });

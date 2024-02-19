@@ -2,7 +2,6 @@
 
 import { Provider } from "react-redux";
 import { ReactNode } from "react";
-import "@/models/db";
 
 import { store } from "@/store";
 import EngineInitializer from "@/EngineInitializer";
