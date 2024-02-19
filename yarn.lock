@@ -19,12 +19,13 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@blibliki/engine@^0.1.8":
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.17.tgz#eb9238a41e23aa0b53310651a3164f689a143711"
-  integrity sha512-c6YnCEgrxbu7jtCYyevWVPjUYnAZYjMcf46lI2VzEx5rbvx47KlaME79Jay8Qtx9eOM031ddXL5IZFq0DKyigg==
+"@blibliki/engine@^0.1.18":
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/@blibliki/engine/-/engine-0.1.19.tgz#a4e1f60ffe6245007427b8b01218e79d93256684"
+  integrity sha512-YkvQStEd4bC55vJxXiP4kT98haQP+z7R2DGeNbYrpu1C8RcCACeKI2Jcpzp8renCvfPBfMjXqno2eTdHofLoJg==
   dependencies:
     "@types/lodash" "^4.14.186"
+    crypto-js "^4.2.0"
     lodash "^4.17.21"
     tone "^14.7.77"
     uuid "^8.3.2"
@@ -1095,6 +1096,11 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+crypto-js@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.2.0.tgz#4d931639ecdfd12ff80e8186dba6af2c2e856631"
+  integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
 
 cssesc@^3.0.0:
   version "3.0.0"
@@ -3036,6 +3042,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -3096,6 +3103,7 @@ string.prototype.trimstart@^1.0.7:
     es-abstract "^1.22.1"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
