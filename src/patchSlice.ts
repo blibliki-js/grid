@@ -89,7 +89,7 @@ export const save = createAsyncThunk(
     const gridNodes = state.gridNodes;
     const config = { modules, gridNodes };
 
-    let id = asNew ? undefined : originalPatch.id;
+    const id = asNew ? undefined : originalPatch.id;
     const patch = new Patch({ id, name: originalPatch.name, config });
     await patch.save();
 

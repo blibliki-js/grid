@@ -28,7 +28,7 @@ export default function Patch() {
             </Save>
           </MenuItem>
           <MenuItem>
-            <Save asNew={true} disabled={!Boolean(patch.id)}>
+            <Save asNew={true} disabled={!patch.id}>
               Copy
             </Save>
           </MenuItem>
@@ -38,7 +38,7 @@ export default function Patch() {
             </TriggerModal>
           </MenuItem>
           <MenuItem>
-            <Destroy disabled={!Boolean(patch.id) || Boolean(patch.staticId)}>
+            <Destroy disabled={!patch.id || Boolean(patch.staticId)}>
               Delete
             </Destroy>
           </MenuItem>
