@@ -1,4 +1,4 @@
-import Fader, { MarkProps } from "components/Fader";
+import Fader, { MarkProps } from "@/components/Fader";
 
 interface FilterTypeProps {
   id: string;

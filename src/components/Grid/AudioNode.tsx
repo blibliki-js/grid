@@ -1,6 +1,6 @@
 import { IOProps } from "@blibliki/engine";
-import AudioModule from "components/AudioModule";
-import { useAudioModule } from "hooks";
+import AudioModule from "@/components/AudioModule";
+import { useAudioModule } from "@/hooks";
 import { ReactNode, useMemo } from "react";
 import { Handle, HandleType, NodeProps, Position } from "reactflow";
 

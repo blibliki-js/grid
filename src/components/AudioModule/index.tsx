@@ -1,5 +1,5 @@
 import { updateModule } from "./modulesSlice";
-import { useAppDispatch } from "hooks";
+import { useAppDispatch } from "@/hooks";
 
 import Oscillator from "./Oscillator";
 import Envelope from "./Envelope";

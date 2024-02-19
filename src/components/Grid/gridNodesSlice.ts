@@ -1,6 +1,5 @@
 import Engine, { RouteInterface, RouteProps } from "@blibliki/engine";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { removeModule } from "components/AudioModule/modulesSlice";
 import {
   Connection,
   Edge,
@@ -11,7 +10,9 @@ import {
   applyNodeChanges,
   applyEdgeChanges,
 } from "reactflow";
-import { AppDispatch, RootState } from "store";
+
+import { AppDispatch, RootState } from "@/store";
+import { removeModule } from "@/components/AudioModule/modulesSlice";
 
 export interface IGridNodes {
   nodes: Node[];

@@ -6,7 +6,7 @@ import ReactFlow, {
 } from "reactflow";
 
 import { NodeTypes } from "./AudioNode";
-import { useGridNodes } from "hooks";
+import { useGridNodes } from "@/hooks";
 
 export default function Grid() {
   const { nodes, edges, onNodesChange, onEdgesChange, onConnect } =

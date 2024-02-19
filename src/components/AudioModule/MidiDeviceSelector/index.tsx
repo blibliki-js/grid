@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "hooks";
+import { useAppSelector, useAppDispatch } from "@/hooks";
 import { initialize, devicesSelector } from "./midiDevicesSlice";
 import Container from "../Container";
-import { Select } from "components/ui";
+import { Select } from "@/components/ui";
 
 export default function MidiDeviceSelector(props: {
   id: string;

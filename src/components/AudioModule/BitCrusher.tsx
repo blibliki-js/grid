@@ -1,4 +1,4 @@
-import Fader from "components/Fader";
+import Fader from "@/components/Fader";
 import Container from "./Container";
 
 interface BitCrusherProps {

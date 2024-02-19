@@ -1,18 +1,21 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Engine from "@blibliki/engine";
 
-import Patch, { IPatch } from "models/Patch";
-import PatchConfig from "models/PatchConfig";
+import Patch, { IPatch } from "@/models/Patch";
+import PatchConfig from "@/models/PatchConfig";
 
 import {
   addModule,
   ModuleProps,
   modulesSelector,
   removeAllModules,
-} from "components/AudioModule/modulesSlice";
+} from "@/components/AudioModule/modulesSlice";
 
-import { AppDispatch, RootState } from "store";
-import { removeAllGridNodes, setGridNodes } from "Grid/gridNodesSlice";
+import { AppDispatch, RootState } from "@/store";
+import {
+  removeAllGridNodes,
+  setGridNodes,
+} from "@/components/Grid/gridNodesSlice";
 
 interface PatchProps {
   patch: IPatch;
@@ -68,11 +71,6 @@ export const loadById = createAsyncThunk(
     const patch = await Patch.find(id);
     const patchConfig = await PatchConfig.findByPatchId(id);
     const { modules, gridNodes } = patchConfig.config;
-
-    const url = `/patch/${id}`;
-    if (window.location.pathname !== url) {
-      window.location.href = url;
-    }
 
     dispatch(clearEngine());
     dispatch(loadModules(modules));

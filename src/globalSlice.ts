@@ -1,10 +1,10 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppDispatch, RootState } from "store";
+import { createSlice } from "@reduxjs/toolkit";
 import Engine from "@blibliki/engine";
 
-import { updatePlainModule } from "components/AudioModule/modulesSlice";
-import { initialize as patchInitialize, loadById } from "patchSlice";
-import { getPatchIdFromUrl } from "utils";
+import { AppDispatch, RootState } from "@/store";
+import { updatePlainModule } from "@/components/AudioModule/modulesSlice";
+import { initialize as patchInitialize, loadById } from "@/patchSlice";
+import { getPatchIdFromUrl } from "@/utils";
 
 interface IContext {
   latencyHint: "interactive" | "playback";
@@ -36,13 +36,11 @@ export const globalSlice = createSlice({
 });
 
 export const initialize =
-  () => (dispatch: AppDispatch, getState: () => RootState) => {
+  (patchId?: number) => (dispatch: AppDispatch, getState: () => RootState) => {
     const { context, bpm } = getState().global;
 
     Engine.initialize({ context });
     Engine.bpm = bpm;
-
-    const patchId = getPatchIdFromUrl();
 
     if (patchId) {
       dispatch(loadById(patchId));

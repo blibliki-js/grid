@@ -1,9 +1,11 @@
-import { MouseEvent, ReactNode, useState } from "react";
-import { TriggerModal } from "components/Modal";
+"use client";
 
+import { ReactNode, useState } from "react";
+
+import { TriggerModal } from "@/components/Modal";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { destroy, save } from "@/patchSlice";
 import Export from "./Export";
-import { useAppDispatch, useAppSelector } from "hooks";
-import { destroy, save } from "patchSlice";
 
 export default function Patch() {
   const { patch } = useAppSelector((state) => state.patch);

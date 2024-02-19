@@ -1,12 +1,14 @@
-import { useAppDispatch } from "hooks";
+"use client";
+
 import { ChangeEvent, useState } from "react";
+import { useAppDispatch } from "@/hooks";
 
 import {
   addNewModule,
   AvailableModules,
-} from "components/AudioModule/modulesSlice";
-import Modal from "components/Modal";
-import { Select } from "components/ui";
+} from "@/components/AudioModule/modulesSlice";
+import Modal from "@/components/Modal";
+import { Select } from "@/components/ui";
 
 const Options = Object.values(AvailableModules).map((am) => ({
   name: am.name,

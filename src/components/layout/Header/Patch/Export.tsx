@@ -1,5 +1,5 @@
-import { modulesSelector } from "components/AudioModule/modulesSlice";
-import { useAppSelector } from "hooks";
+import { modulesSelector } from "@/components/AudioModule/modulesSlice";
+import { useAppSelector } from "@/hooks";
 
 export default function Export() {
   const { patch } = useAppSelector((state) => state.patch);

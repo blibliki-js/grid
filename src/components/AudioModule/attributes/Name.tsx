@@ -1,6 +1,6 @@
-import { InputText } from "components/ui";
-import { useAppDispatch } from "hooks";
 import { ChangeEvent } from "react";
+import { InputText } from "@/components/ui";
+import { useAppDispatch } from "@/hooks";
 import { updateModuleName } from "../modulesSlice";
 
 interface NameInterface {

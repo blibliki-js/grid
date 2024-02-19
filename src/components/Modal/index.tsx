@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import PropTypes from "prop-types";
 
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import { close as _close } from "./modalSlice";
-import { useAppDispatch, useAppSelector } from "hooks";
 
 export { open, close } from "./modalSlice";
 export { default as TriggerModal } from "./TriggerModal";

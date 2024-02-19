@@ -1,15 +1,17 @@
+"use client";
+
 import { Connection, EdgeChange, Node, NodeChange } from "reactflow";
 import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
-import type { RootState, AppDispatch } from "store";
 import { useCallback, useEffect, useState } from "react";
+import type { RootState, AppDispatch } from "@/store";
 import {
   onNodesChange as _onNodesChange,
   onEdgesChange as _onEdgesChange,
   onConnect as _onConnect,
   addNode as _addNode,
-} from "Grid/gridNodesSlice";
-import { modulesSelector } from "components/AudioModule/modulesSlice";
+} from "@/components/Grid/gridNodesSlice";
+import { modulesSelector } from "@/components/AudioModule/modulesSlice";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch: () => AppDispatch = useDispatch;

@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect } from "react";
-import { useAppDispatch } from "hooks";
+import { useAppDispatch } from "@/hooks";
 import { initialize, dispose } from "./globalSlice";
 
 export default function EngineInitializer() {

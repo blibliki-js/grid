@@ -1,5 +1,5 @@
-import { ModuleProps } from "components/AudioModule/modulesSlice";
-import { IGridNodes } from "Grid/gridNodesSlice";
+import { ModuleProps } from "@/components/AudioModule/modulesSlice";
+import { IGridNodes } from "@/components/Grid/gridNodesSlice";
 
 import db from "./db";
 

@@ -6,10 +6,10 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
-import { AppDispatch, RootState } from "store";
 import Engine, { IOProps } from "@blibliki/engine";
-import { Optional } from "types";
-import { addNode } from "Grid/gridNodesSlice";
+import { AppDispatch, RootState } from "@/store";
+import { Optional } from "@/types";
+import { addNode } from "@/components/Grid/gridNodesSlice";
 
 interface ModuleInterface {
   name: string;

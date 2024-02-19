@@ -1,13 +1,15 @@
+"use client";
+
 import { ChangeEvent, ReactNode } from "react";
 
-import { useAppDispatch, useAppSelector } from "hooks";
-import { start, stop, setBpm } from "globalSlice";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { start, stop, setBpm } from "@/globalSlice";
+import { setName as setPatchName } from "@/patchSlice";
+import { InputText } from "@/components/ui";
 import Patch from "./Patch";
-import { setName as setPatchName } from "patchSlice";
 
 import LoadModal from "./Patch/LoadModal";
 import AddAudioModuleModal from "./Patch/AddAudioModuleModal";
-import { InputText } from "components/ui";
 
 export default function Header() {
   const dispatch = useAppDispatch();

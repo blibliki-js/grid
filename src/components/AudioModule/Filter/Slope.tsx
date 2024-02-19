@@ -1,4 +1,4 @@
-import Fader, { MarkProps } from "components/Fader";
+import Fader, { MarkProps } from "@/components/Fader";
 
 interface SlopeProps {
   id: string;

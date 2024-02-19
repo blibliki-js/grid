@@ -1,9 +1,10 @@
-import db from "models/db";
-import Modal, { close as closeModal } from "components/Modal";
-import { useAppDispatch } from "hooks";
-import { loadById } from "patchSlice";
 import { useLiveQuery } from "dexie-react-hooks";
 import { ReactNode } from "react";
+
+import db from "@/models/db";
+import Modal, { close as closeModal } from "@/components/Modal";
+import { useAppDispatch } from "@/hooks";
+import { loadById } from "@/patchSlice";
 
 export default function SavePatch() {
   const dispatch = useAppDispatch();

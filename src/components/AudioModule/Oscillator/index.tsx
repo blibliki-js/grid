@@ -1,4 +1,4 @@
-import Fader, { MarkProps } from "components/Fader";
+import Fader, { MarkProps } from "@/components/Fader";
 import Container from "../Container";
 
 const Center: MarkProps[] = [{ value: 0, label: "-" }];

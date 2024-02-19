@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { InputText } from "components/ui";
+import { InputText } from "@/components/ui";
 
 interface IGlobalProps {
   id: string;

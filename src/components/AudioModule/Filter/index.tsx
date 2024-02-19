@@ -1,4 +1,4 @@
-import Fader, { MarkProps } from "components/Fader";
+import Fader, { MarkProps } from "@/components/Fader";
 import Cutoff from "./Cutoff";
 import Resonance from "./Resonance";
 import FilterType from "./FilterType";

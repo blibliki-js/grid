@@ -2,7 +2,7 @@ import { useEffect, useState, ChangeEvent } from "react";
 import { INote } from "@blibliki/engine";
 
 import { SequenceProps } from ".";
-import { InputText } from "components/ui";
+import { InputText } from "@/components/ui";
 
 const INITIAL_DURATION = "16n";
 
