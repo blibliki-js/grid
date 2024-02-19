@@ -1,4 +1,5 @@
 import Fader, { MarkProps } from "@/components/Fader";
+import { TUpdateProps } from "..";
 import Container from "../Container";
 
 const Center: MarkProps[] = [{ value: 0, label: "-" }];
@@ -23,7 +24,7 @@ export default function Oscillator(props: {
   id: string;
   name: string;
   props: { range: number; coarse: number; fine: number; wave: string };
-  updateProps: Function;
+  updateProps: TUpdateProps;
 }) {
   const {
     id,

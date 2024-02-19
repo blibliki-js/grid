@@ -14,13 +14,16 @@ import Distortion from "./Distortion";
 import BitCrusher from "./BitCrusher";
 import Sequencer from "./Sequencer";
 import Master from "./Master";
+import { AnyObject } from "@/types";
 
 export interface AudioModuleProps {
   id: string;
   name: string;
   type: string;
-  props?: any;
+  props?: AnyObject;
 }
+
+export type TUpdateProps = (id: string, props?: AnyObject) => void;
 
 export default function AudioModule(audioModuleProps: {
   audioModule: AudioModuleProps;
@@ -32,7 +35,7 @@ export default function AudioModule(audioModuleProps: {
 
   let Component;
 
-  const updateProps = (id: string, props: any) => {
+  const updateProps = (id: string, props: AnyObject) => {
     dispatch(updateModule({ id, changes: { props } }));
   };
 

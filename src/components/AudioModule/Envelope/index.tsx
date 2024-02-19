@@ -1,9 +1,10 @@
 import Fader from "@/components/Fader";
+import { TUpdateProps } from "..";
 import Container from "../Container";
 
 interface EnvelopeProps {
   id: string;
-  updateProps: Function;
+  updateProps: TUpdateProps;
   props: { attack: number; decay: number; sustain: number; release: number };
 }
 

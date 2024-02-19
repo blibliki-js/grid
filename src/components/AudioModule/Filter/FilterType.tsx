@@ -1,9 +1,10 @@
 import Fader, { MarkProps } from "@/components/Fader";
+import { TUpdateProps } from "..";
 
 interface FilterTypeProps {
   id: string;
   value: BiquadFilterType;
-  updateProps: (id: string, props: any) => void;
+  updateProps: TUpdateProps;
 }
 
 const FILTER_TYPES: MarkProps[] = [

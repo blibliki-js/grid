@@ -1,9 +1,10 @@
 import Fader from "@/components/Fader";
+import { TUpdateProps } from ".";
 import Container from "./Container";
 
 interface BitCrusherProps {
   id: string;
-  updateProps: Function;
+  updateProps: TUpdateProps;
   props: { bits: number; wet: number };
 }
 

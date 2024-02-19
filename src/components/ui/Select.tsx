@@ -23,14 +23,14 @@ export default function Select(props: SelectProps) {
     if (!options.length) return options as TDefOption[];
 
     if (options[0] instanceof Object) {
-      if (options[0].hasOwnProperty("value")) return options as TDefOption[];
+      if ("value" in options[0]) return options as TDefOption[];
 
       return (options as TIDOption[]).map((opt) => ({
         name: opt.name,
         value: opt.id,
       }));
     } else {
-      return options.map((opt) => ({
+      return (options as string[]).map((opt) => ({
         name: opt.toString(),
         value: opt.toString(),
       }));

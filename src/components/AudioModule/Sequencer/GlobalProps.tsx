@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
 import { InputText } from "@/components/ui";
+import { TUpdateProps } from "..";
 
 interface IGlobalProps {
   id: string;
@@ -7,7 +8,7 @@ interface IGlobalProps {
   bars: number;
   steps: number;
   setCurrentBar: (bar: number) => void;
-  updateProps: Function;
+  updateProps: TUpdateProps;
 }
 
 export default function GlobalProps(props: IGlobalProps) {
@@ -26,7 +27,7 @@ export default function GlobalProps(props: IGlobalProps) {
   );
 }
 
-function Bars(props: { id: string; bars: number; updateProps: Function }) {
+function Bars(props: { id: string; bars: number; updateProps: TUpdateProps }) {
   const { id, bars, updateProps } = props;
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +45,11 @@ function Bars(props: { id: string; bars: number; updateProps: Function }) {
   );
 }
 
-function Steps(props: { id: string; steps: number; updateProps: Function }) {
+function Steps(props: {
+  id: string;
+  steps: number;
+  updateProps: TUpdateProps;
+}) {
   const { id, steps, updateProps } = props;
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {

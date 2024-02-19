@@ -2,19 +2,18 @@ import {
   createSlice,
   createSelector,
   createEntityAdapter,
-  EntityState,
   PayloadAction,
 } from "@reduxjs/toolkit";
 
 import Engine, { IOProps } from "@blibliki/engine";
 import { AppDispatch, RootState } from "@/store";
-import { Optional } from "@/types";
+import { AnyObject, Optional } from "@/types";
 import { addNode } from "@/components/Grid/gridNodesSlice";
 
 interface ModuleInterface {
   name: string;
   type: string;
-  props: any;
+  props: AnyObject;
 }
 
 export interface ModuleProps extends ModuleInterface {
@@ -65,7 +64,10 @@ export const modulesSlice = createSlice({
   initialState: modulesAdapter.getInitialState(),
   reducers: {
     addModule: modulesAdapter.addOne,
-    updateModule: (state: EntityState<any>, update: PayloadAction<any>) => {
+    updateModule: (
+      state,
+      update: PayloadAction<{ id: string; changes: { props: AnyObject } }>,
+    ) => {
       const {
         id,
         changes: { props: changedProps },
@@ -79,7 +81,7 @@ export const modulesSlice = createSlice({
     removeModule: modulesAdapter.removeOne,
     updatePlainModule: modulesAdapter.updateOne,
     updateModuleName: (
-      state: EntityState<any>,
+      state,
       update: PayloadAction<{ id: string; name: string }>,
     ) => {
       const { id, name } = update.payload;

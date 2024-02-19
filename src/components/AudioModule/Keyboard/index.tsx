@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TUpdateProps } from "..";
 import ComputerMidiKeyboard from "./ComputerMidiKeyboard";
 import Octave from "./Octave";
 
@@ -6,7 +7,7 @@ export default function Keyboard(params: {
   id: string;
   name: string;
   props: { activeNotes: string[] };
-  updateProps: any;
+  updateProps: TUpdateProps;
 }) {
   const { id, props } = params;
   const [triggerable, setTriggerable] = useState(false);

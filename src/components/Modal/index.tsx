@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import PropTypes from "prop-types";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { close as _close } from "./modalSlice";
@@ -11,7 +10,7 @@ interface ModalProps {
   children: ReactNode;
   modalName: string;
   className?: string;
-  onClose?: Function;
+  onClose?(): void;
 }
 
 export default function Modal(props: ModalProps) {
@@ -43,10 +42,3 @@ export default function Modal(props: ModalProps) {
     </div>
   );
 }
-
-Modal.propTypes = {
-  children: PropTypes.node.isRequired,
-  modalName: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  onClose: PropTypes.func,
-};

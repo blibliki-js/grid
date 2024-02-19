@@ -1,9 +1,10 @@
 import Fader, { MarkProps } from "@/components/Fader";
+import { TUpdateProps } from "..";
 
 interface SlopeProps {
   id: string;
   value: number;
-  updateProps: (id: string, props: any) => void;
+  updateProps: TUpdateProps;
 }
 
 const SLOPES: MarkProps[] = [

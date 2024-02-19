@@ -4,10 +4,11 @@ import Resonance from "./Resonance";
 import FilterType from "./FilterType";
 import Slope from "./Slope";
 import Container from "../Container";
+import { TUpdateProps } from "..";
 
 interface FilterProps {
   id: string;
-  updateProps: (id: string, props: any) => void;
+  updateProps: TUpdateProps;
   props: {
     cutoff: number;
     resonance: number;

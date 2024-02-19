@@ -1,9 +1,10 @@
 import Fader from "@/components/Fader";
+import { TUpdateProps } from ".";
 import Container from "./Container";
 
 interface ReverbProps {
   id: string;
-  updateProps: Function;
+  updateProps: TUpdateProps;
   props: { decay: number; preDelay: number; wet: number };
 }
 

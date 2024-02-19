@@ -3,11 +3,12 @@ import { useAppSelector, useAppDispatch } from "@/hooks";
 import { initialize, devicesSelector } from "./midiDevicesSlice";
 import Container from "../Container";
 import { Select } from "@/components/ui";
+import { TUpdateProps } from "..";
 
 export default function MidiDeviceSelector(props: {
   id: string;
   props: { selectedId: string };
-  updateProps: Function;
+  updateProps: TUpdateProps;
 }) {
   const {
     id,

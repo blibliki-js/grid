@@ -1,9 +1,10 @@
 import Fader from "@/components/Fader";
+import { TUpdateProps } from "..";
 
 interface ResonanceProps {
   id: string;
   value: number;
-  updateProps: (id: string, props: any) => void;
+  updateProps: TUpdateProps;
 }
 
 export default function Resonance(props: ResonanceProps) {

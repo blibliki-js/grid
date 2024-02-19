@@ -5,6 +5,7 @@ import GlobalProps from "./GlobalProps";
 import StepProps from "./StepProps";
 import Step from "./Step";
 import Container from "../Container";
+import { TUpdateProps } from "..";
 
 export interface SequenceProps extends ISequence {
   duration: string;
@@ -13,7 +14,7 @@ export interface SequenceProps extends ISequence {
 export default function Sequencer(props: {
   id: string;
   props: { bars: number; steps: number; sequences: SequenceProps[][] };
-  updateProps: Function;
+  updateProps: TUpdateProps;
 }) {
   const {
     id,

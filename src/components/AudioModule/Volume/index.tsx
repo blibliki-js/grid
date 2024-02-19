@@ -1,11 +1,12 @@
 import Fader from "@/components/Fader";
+import { TUpdateProps } from "..";
 import Container from "../Container";
 
 interface VolumeProps {
   id: string;
   name: string;
-  updateProps: Function;
-  props: any;
+  updateProps: TUpdateProps;
+  props: { volume: number };
 }
 
 export default function Volume(props: VolumeProps) {

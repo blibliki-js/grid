@@ -4,7 +4,6 @@ import Engine from "@blibliki/engine";
 import { AppDispatch, RootState } from "@/store";
 import { updatePlainModule } from "@/components/AudioModule/modulesSlice";
 import { initialize as patchInitialize, loadById } from "@/patchSlice";
-import { getPatchIdFromUrl } from "@/utils";
 
 interface IContext {
   latencyHint: "interactive" | "playback";

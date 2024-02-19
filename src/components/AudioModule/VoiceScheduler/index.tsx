@@ -1,5 +1,6 @@
 import { Select } from "@/components/ui";
 import { ChangeEvent } from "react";
+import { TUpdateProps } from "..";
 import Container from "../Container";
 
 const VOICE_SELECTIONS = [1, 2, 3, 4, 5, 6];
@@ -7,7 +8,7 @@ const VOICE_SELECTIONS = [1, 2, 3, 4, 5, 6];
 export default function VoiceScheduler(props: {
   id: string;
   props: { polyNumber: number };
-  updateProps: Function;
+  updateProps: TUpdateProps;
 }) {
   const {
     id,

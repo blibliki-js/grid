@@ -1,9 +1,10 @@
 import Fader from "@/components/Fader";
+import { TUpdateProps } from ".";
 import Container from "./Container";
 
 interface DelayProps {
   id: string;
-  updateProps: Function;
+  updateProps: TUpdateProps;
   props: { delayTime: number; feedback: number; wet: number };
 }
 
