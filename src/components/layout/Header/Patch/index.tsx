@@ -1,66 +1,69 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 
 import { TriggerModal } from "@/components/Modal";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { destroy, save } from "@/patchSlice";
 import Export from "./Export";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  Button,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuSeparator,
+} from "@/components/ui";
+import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 
 export default function Patch() {
   const { patch } = useAppSelector((state) => state.patch);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
-    <div className="relative">
-      <button onClick={handleClick} className="px-4 py-2 text-blue-700">
-        Patch
-      </button>
-      {isOpen && (
-        <div className="absolute -left-[15px] w-40 z-10 mt-3 bg-white border shadow-xl">
-          <MenuItem>
-            <Save asNew={false} disabled={Boolean(patch.staticId)}>
-              Save
-            </Save>
-          </MenuItem>
-          <MenuItem>
-            <Save asNew={true} disabled={!patch.id}>
-              Copy
-            </Save>
-          </MenuItem>
-          <MenuItem>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline">Patch</Button>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent className="w-56 p-3">
+        <DropdownMenuGroup>
+          {patch.id && (
+            <DropdownMenuItem>
+              <Save asNew={true} disabled={!patch.id}>
+                Copy
+              </Save>
+            </DropdownMenuItem>
+          )}
+          <DropdownMenuItem>
             <TriggerModal modalName="patch" type="open">
-              Load
+              <span>Load</span>
             </TriggerModal>
-          </MenuItem>
-          <MenuItem>
-            <Destroy disabled={!patch.id || Boolean(patch.staticId)}>
-              Delete
-            </Destroy>
-          </MenuItem>
-          <MenuItem>
+          </DropdownMenuItem>
+
+          {patch.id && (
+            <DropdownMenuItem>
+              <Destroy disabled={!patch.id}>Delete</Destroy>
+            </DropdownMenuItem>
+          )}
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
             <Export />
-          </MenuItem>
-          <MenuItem>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
             <TriggerModal modalName="addAudioModule" type="open">
               Add module
             </TriggerModal>
-          </MenuItem>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function MenuItem({ children }: { children: ReactNode }) {
-  return (
-    <button className="block w-full py-2 text-sm text-gray-700 hover:bg-blue-100">
-      {children}
-    </button>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
 

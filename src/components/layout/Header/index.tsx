@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent } from "react";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { start, stop, setBpm } from "@/globalSlice";
@@ -25,53 +25,41 @@ export default function Header() {
 
   return (
     <div className="flex items-center justify-between p-2 border-b-2 bg-gray-50 dark:bg-gray-800 dark:border-gray-900">
-      <div className="flex">
-        <HeaderItem>
-          <Patch />
-        </HeaderItem>
-        <HeaderItem>
-          <Input
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              dispatch(setPatchName(event.target.value))
-            }
-            value={patchName}
-          />
-        </HeaderItem>
-        <HeaderItem>
-          <Input
-            type="number"
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              dispatch(setBpm(+event.target.value))
-            }
-            value={bpm}
-          />
-        </HeaderItem>
-        <HeaderItem>
-          <button className="btn secondary border-2" onClick={togglePlay}>
-            {isStarted ? "Stop" : "Start"}
-          </button>
-        </HeaderItem>
+      <div className="flex gap-2">
+        <Patch />
+        <Input
+          className="w-40"
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            dispatch(setPatchName(event.target.value))
+          }
+          value={patchName}
+        />
+        <Input
+          className="w-20"
+          type="number"
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            dispatch(setBpm(+event.target.value))
+          }
+          value={bpm}
+        />
       </div>
       <div>
-        <HeaderItem>
-          <a
-            href="https://github.com/blibliki-js/grid"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Github
-          </a>
-        </HeaderItem>
+        <button className="btn secondary border-2" onClick={togglePlay}>
+          {isStarted ? "Stop" : "Start"}
+        </button>
+      </div>
+      <div>
+        <a
+          href="https://github.com/blibliki-js/grid"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>
       </div>
 
       <LoadModal />
       <AddAudioModuleModal />
     </div>
   );
-}
-
-function HeaderItem(props: { children: ReactNode }) {
-  const { children } = props;
-
-  return <div className="mx-2">{children}</div>;
 }
