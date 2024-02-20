@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { InputText } from "@/components/ui";
+import { Input } from "@/components/ui";
 import { useAppDispatch } from "@/hooks";
 import { updateModuleName } from "../modulesSlice";
 
@@ -18,7 +18,7 @@ export default function Name(props: NameInterface) {
 
   return (
     <div className="p-2">
-      <InputText value={value} onChange={updateProp} />
+      <Input value={value} onChange={updateProp} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { ChangeEvent, ReactNode } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { start, stop, setBpm } from "@/globalSlice";
 import { setName as setPatchName } from "@/patchSlice";
-import { InputText } from "@/components/ui";
+import { Input } from "@/components/ui";
 import Patch from "./Patch";
 
 import LoadModal from "./Patch/LoadModal";
@@ -30,7 +30,7 @@ export default function Header() {
           <Patch />
         </HeaderItem>
         <HeaderItem>
-          <InputText
+          <Input
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               dispatch(setPatchName(event.target.value))
             }
@@ -38,7 +38,7 @@ export default function Header() {
           />
         </HeaderItem>
         <HeaderItem>
-          <InputText
+          <Input
             type="number"
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               dispatch(setBpm(+event.target.value))

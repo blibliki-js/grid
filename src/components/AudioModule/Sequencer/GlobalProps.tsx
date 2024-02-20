@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { InputText } from "@/components/ui";
+import { Input, Label } from "@/components/ui";
 import { TUpdateProps } from "..";
 
 interface IGlobalProps {
@@ -35,13 +35,16 @@ function Bars(props: { id: string; bars: number; updateProps: TUpdateProps }) {
   };
 
   return (
-    <InputText
-      label="Number of Bars"
-      type="number"
-      onChange={onChange}
-      className="w-[120px] mr-2"
-      value={bars.toString()}
-    />
+    <div>
+      <Label htmlFor={`bars-${id}`}>Number of Bars</Label>
+      <Input
+        id={`bars-${id}`}
+        type="number"
+        onChange={onChange}
+        className="w-[120px] mr-2"
+        value={bars.toString()}
+      />
+    </div>
   );
 }
 
@@ -57,13 +60,16 @@ function Steps(props: {
   };
 
   return (
-    <InputText
-      label="Number of Steps"
-      type="number"
-      onChange={onChange}
-      className="w-[120px] mr-2"
-      value={steps}
-    />
+    <div>
+      <Label htmlFor={`steps-${id}`}>Number of Steps</Label>
+      <Input
+        id={`steps-${id}`}
+        type="number"
+        onChange={onChange}
+        className="w-[120px] mr-2"
+        value={steps}
+      />
+    </div>
   );
 }
 
@@ -80,12 +86,14 @@ function CurrenrBar(props: {
   };
 
   return (
-    <InputText
-      label="Current bar"
-      type="number"
-      onChange={onChange}
-      className="w-[100px]"
-      value={currentBar + 1}
-    />
+    <div>
+      <Label>Current Bar</Label>
+      <Input
+        type="number"
+        onChange={onChange}
+        className="w-[100px]"
+        value={currentBar + 1}
+      />
+    </div>
   );
 }
