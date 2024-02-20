@@ -1,8 +1,6 @@
 # Blibliki Grid
 
-This is a front-end based on [blibliki engine](https://github.com/blibliki-js/engine).
-
-You can play with grid [here](https://blibliki-js.github.io/grid)
+Blibliki Grid is acting as the visual counterpart to the [Blibliki Engine](https://github.com/blibliki-js/engine), it bridges the gap between the technical complexity of synthesizer creation and the intuitive ease of visual interaction.  Blibliki Grid enhances this by offering a way to visually orchestrate and manipulate your sonic experiments.
 
 ## ⚠️ Important Notice
 
@@ -10,16 +8,16 @@ We are currently in the process of refactoring the codebase to improve functiona
 
 ## Development
 
-Requires Node.js and yarn `1.22.19`
+Requires Node.js and PNPM
 
 Install dependencies
 
 ```
-yarn install
+pnpm install
 ```
 
 Start server
 
 ```
-yarn start
+pnpm dev
 ```
