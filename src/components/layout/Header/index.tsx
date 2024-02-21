@@ -5,13 +5,14 @@ import { ChangeEvent, ReactNode } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { start, stop, setBpm } from "@/globalSlice";
 import { setName as setPatchName } from "@/patchSlice";
-import { Input, buttonVariants } from "@/components/ui";
+import { Button, Input, buttonVariants } from "@/components/ui";
 
 import ColorSchemeToggle from "./ColorSchemeToggle";
 import Patch from "./Patch";
 import LoadModal from "./Patch/LoadModal";
 import AddAudioModuleModal from "./Patch/AddAudioModuleModal";
 import Link from "next/link";
+import { Octagon, Play } from "lucide-react";
 
 export default function Header() {
   const dispatch = useAppDispatch();
@@ -46,9 +47,9 @@ export default function Header() {
         />
       </Group>
       <Group>
-        <button className="btn secondary border-2" onClick={togglePlay}>
-          {isStarted ? "Stop" : "Start"}
-        </button>
+        <Button variant="outline" onClick={togglePlay}>
+          {isStarted ? <Octagon /> : <Play />}
+        </Button>
       </Group>
       <Group>
         <ColorSchemeToggle />
