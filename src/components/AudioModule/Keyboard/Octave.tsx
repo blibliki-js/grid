@@ -11,14 +11,14 @@ const semiToneWidthColumn = `${(toneWidth * 1.0) / 3}px`;
 
 const style = {
   display: "inline-grid",
-  "grid-template-columns": `${toneWidthColumn} ${semiToneWidthColumn}
+  gridTemplateColumns: `${toneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${semiToneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${toneWidthColumn}
     ${toneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${semiToneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${semiToneWidthColumn} ${semiToneWidthColumn}
     ${semiToneWidthColumn} ${toneWidthColumn}`,
-  "grid-template-rows": `${semiToneHeight}px`,
+  gridTemplateRows: `${semiToneHeight}px`,
 };
 
 interface OctaveProps {
