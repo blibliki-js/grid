@@ -2,7 +2,7 @@ import { useEffect, useState, ChangeEvent } from "react";
 import { INote } from "@blibliki/engine";
 
 import { SequenceProps } from ".";
-import { InputText } from "@/components/ui";
+import { Input, Label } from "@/components/ui";
 
 const INITIAL_DURATION = "16n";
 
@@ -51,12 +51,14 @@ export default function StepProps(props: IStepProps) {
 
   return (
     <div className="flex ml-2">
-      <InputText
-        label="duration"
-        onChange={onDurationChange}
-        value={sequence.duration || "16n"}
-        className="w-[92px] mr-2"
-      />
+      <div>
+        <Label>Duration</Label>
+        <Input
+          onChange={onDurationChange}
+          value={sequence.duration || "16n"}
+          className="w-[92px] mr-2"
+        />
+      </div>
 
       {Array.from({ length: 7 }, (_, i) => (
         <Note key={i} note={notes[i]} setNote={setNote(i)} />
@@ -83,11 +85,9 @@ function Note(props: {
   };
 
   return (
-    <InputText
-      value={noteName}
-      onChange={onChange}
-      label="Note"
-      className="w-[78px] mr-2"
-    />
+    <div>
+      <Label>Note</Label>
+      <Input value={noteName} onChange={onChange} className="w-[78px] mr-2" />
+    </div>
   );
 }

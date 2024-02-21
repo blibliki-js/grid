@@ -8,6 +8,10 @@ import ReactFlow, {
 import { NodeTypes } from "./AudioNode";
 import { useGridNodes } from "@/hooks";
 
+const DEFAULT_REACT_FLOW_PROPS = {
+  hideAttribution: true,
+};
+
 export default function Grid() {
   const { nodes, edges, onNodesChange, onEdgesChange, onConnect } =
     useGridNodes();
@@ -21,6 +25,7 @@ export default function Grid() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={NodeTypes}
+        proOptions={DEFAULT_REACT_FLOW_PROPS}
       >
         <Controls />
         <MiniMap />

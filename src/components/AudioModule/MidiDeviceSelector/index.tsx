@@ -1,8 +1,8 @@
-import { ChangeEvent, useEffect } from "react";
+import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "@/hooks";
 import { initialize, devicesSelector } from "./midiDevicesSlice";
 import Container from "../Container";
-import { Select } from "@/components/ui";
+import Select from "@/components/Select";
 import { TUpdateProps } from "..";
 
 export default function MidiDeviceSelector(props: {
@@ -23,8 +23,8 @@ export default function MidiDeviceSelector(props: {
     dispatch(initialize());
   }, [dispatch]);
 
-  const updateSelectedId = (event: ChangeEvent<HTMLSelectElement>) => {
-    updateProps(id, { selectedId: event.target.value });
+  const updateSelectedId = (value: string) => {
+    updateProps(id, { selectedId: value });
   };
 
   return (

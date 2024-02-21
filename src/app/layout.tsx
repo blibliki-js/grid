@@ -5,6 +5,7 @@ import Providers from "@/Providers";
 
 import "reactflow/dist/style.css";
 import "@/index.css";
+import "@/app.css";
 
 export const metadata: Metadata = {
   title: "Blibliki Grid",

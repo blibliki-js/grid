@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { close as _close } from "./modalSlice";
 
@@ -30,15 +32,12 @@ export default function Modal(props: ModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
-      <div className="bg-white p-4 rounded-lg shadow-lg max-w-sm w-full dark:bg-gray-800">
-        <div className="flex justify-end">
-          <button onClick={close} className="text-black">
-            <span className="text-xl">&times;</span>
-          </button>
+    <Dialog open={isOpen} onOpenChange={close}>
+      <DialogContent className="sm:max-w-md">
+        <div className="flex flex-col justify-cent items-center space-x-2">
+          {children}
         </div>
-        {children}
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }

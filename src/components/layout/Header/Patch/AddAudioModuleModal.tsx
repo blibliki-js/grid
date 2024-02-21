@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { useAppDispatch } from "@/hooks";
 
 import {
@@ -8,7 +8,7 @@ import {
   AvailableModules,
 } from "@/components/AudioModule/modulesSlice";
 import Modal from "@/components/Modal";
-import { Select } from "@/components/ui";
+import Select from "@/components/Select";
 
 const Options = Object.values(AvailableModules).map((am) => ({
   name: am.name,
@@ -19,8 +19,8 @@ export default function AddAudioModule() {
   const dispatch = useAppDispatch();
   const [type, setType] = useState("");
 
-  const onSelect = (event: ChangeEvent<HTMLSelectElement>) => {
-    setType(event.target.value);
+  const onSelect = (value: string) => {
+    setType(value);
   };
 
   const addAudioModule = () => {
