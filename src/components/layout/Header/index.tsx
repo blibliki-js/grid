@@ -6,8 +6,9 @@ import { useAppDispatch, useAppSelector } from "@/hooks";
 import { start, stop, setBpm } from "@/globalSlice";
 import { setName as setPatchName } from "@/patchSlice";
 import { Input } from "@/components/ui";
-import Patch from "./Patch";
 
+import ColorSchemeToggle from "./ColorSchemeToggle";
+import Patch from "./Patch";
 import LoadModal from "./Patch/LoadModal";
 import AddAudioModuleModal from "./Patch/AddAudioModuleModal";
 
@@ -56,6 +57,7 @@ export default function Header() {
         >
           Github
         </a>
+        <ColorSchemeToggle />
       </div>
 
       <LoadModal />
