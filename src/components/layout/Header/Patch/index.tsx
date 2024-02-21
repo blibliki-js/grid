@@ -27,11 +27,12 @@ export default function Patch() {
 
       <DropdownMenuContent className="w-56 p-3">
         <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <Save asNew={false}>Save</Save>
+          </DropdownMenuItem>
           {patch.id && (
             <DropdownMenuItem>
-              <Save asNew={true} disabled={!patch.id}>
-                Copy
-              </Save>
+              <Save asNew={true}>Copy</Save>
             </DropdownMenuItem>
           )}
           <DropdownMenuItem>
@@ -67,23 +68,15 @@ export default function Patch() {
   );
 }
 
-function Save(props: {
-  asNew: boolean;
-  disabled: boolean;
-  children: ReactNode;
-}) {
+function Save(props: { asNew: boolean; children: ReactNode }) {
   const dispatch = useAppDispatch();
-  const { asNew, disabled, children } = props;
+  const { asNew, children } = props;
 
   const onSave = () => {
     dispatch(save(asNew));
   };
 
-  return (
-    <button onClick={onSave} disabled={disabled}>
-      {children}
-    </button>
-  );
+  return <button onClick={onSave}>{children}</button>;
 }
 
 function Destroy(props: { disabled: boolean; children: ReactNode }) {
