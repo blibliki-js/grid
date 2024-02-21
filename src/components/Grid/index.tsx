@@ -27,8 +27,8 @@ export default function Grid() {
         nodeTypes={NodeTypes}
         proOptions={DEFAULT_REACT_FLOW_PROPS}
       >
-        <Controls />
-        <MiniMap />
+        <Controls className="dark:bg-gray-500" />
+        <MiniMap className="dark:bg-gray-700" />
         <Background
           className="dark:bg-gray-700"
           variant={BackgroundVariant.Dots}
