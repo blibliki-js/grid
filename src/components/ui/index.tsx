@@ -29,7 +29,19 @@ export {
   DialogTitle,
   DialogDescription,
 } from "./dialog";
-export { Button, buttonVariants } from "./button";
 
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton,
+} from "./select";
+
+export { Button, buttonVariants } from "./button";
 export { default as Slider } from "./Slider";
-export { default as Select } from "./Select";

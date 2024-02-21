@@ -1,5 +1,4 @@
-import { Select } from "@/components/ui";
-import { ChangeEvent } from "react";
+import Select from "@/components/Select";
 import { TUpdateProps } from "..";
 import Container from "../Container";
 
@@ -15,8 +14,9 @@ export default function VoiceScheduler(props: {
     updateProps,
     props: { polyNumber },
   } = props;
-  const updateSelectedId = (event: ChangeEvent<HTMLSelectElement>) => {
-    updateProps(id, { polyNumber: Number(event.target.value) });
+
+  const updateSelectedId = (value: string) => {
+    updateProps(id, { polyNumber: Number(value) });
   };
 
   return (
