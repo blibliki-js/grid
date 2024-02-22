@@ -1,10 +1,10 @@
 import { useLiveQuery } from "dexie-react-hooks";
-import { ReactNode } from "react";
 
 import { getDb } from "@/models/db";
 import Modal, { close as closeModal } from "@/components/Modal";
 import { useAppDispatch } from "@/hooks";
 import { loadById } from "@/patchSlice";
+import Link from "next/link";
 
 export default function SavePatch() {
   const dispatch = useAppDispatch();
@@ -28,23 +28,15 @@ export default function SavePatch() {
       <div>
         <ul>
           <li onClick={close}>
-            <MenuItem>New patch</MenuItem>
+            <span>New patch</span>
           </li>
           {patches.map(({ id, name }) => (
             <li key={id} className="w-full" onClick={select(id)}>
-              <MenuItem>{name}</MenuItem>
+              <Link href={`/patch/${id}`}>{name}</Link>
             </li>
           ))}
         </ul>
       </div>
     </Modal>
-  );
-}
-
-function MenuItem({ children }: { children: ReactNode }) {
-  return (
-    <button className="block w-full py-2 text-sm text-gray-700 hover:bg-blue-100">
-      {children}
-    </button>
   );
 }
