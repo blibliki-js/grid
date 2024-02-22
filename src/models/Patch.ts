@@ -4,14 +4,12 @@ import PatchConfig, { IConfig } from "./PatchConfig";
 export interface IPatch {
   id?: number;
   name: string;
-  staticId?: string;
   config?: IConfig;
 }
 
 export default class Patch implements IPatch {
   id: number;
   name: string;
-  staticId: string;
   config: IConfig;
 
   static async find(id: number) {
@@ -22,22 +20,16 @@ export default class Patch implements IPatch {
     return patch;
   }
 
-  constructor(props: {
-    id?: number;
-    name: string;
-    staticId?: string;
-    config?: IConfig;
-  }) {
+  constructor(props: { id?: number; name: string; config?: IConfig }) {
     Object.assign(this, props);
   }
 
   async save() {
     const db = getDb();
-    const { id, name, staticId } = this;
-    if (staticId && id) throw Error("Static patch can't be saved");
+    const { id, name } = this;
 
     return await db.transaction("rw", db.patches, db.patchConfigs, async () => {
-      this.id = await db.patches.put(new Patch({ id, name, staticId }));
+      this.id = await db.patches.put(new Patch({ id, name }));
 
       await (await this.patchConfig()).save();
     });

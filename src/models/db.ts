@@ -12,7 +12,7 @@ export class GridDatabase extends Dexie {
     super("GridDatabase");
 
     this.version(1).stores({
-      patches: "++id, name, staticId",
+      patches: "++id, name",
       patchConfigs: "++id, patchId, config",
     });
 

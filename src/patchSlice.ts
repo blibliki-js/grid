@@ -76,7 +76,7 @@ export const loadById = createAsyncThunk(
     dispatch(loadModules(modules));
     dispatch(setGridNodes(gridNodes));
 
-    return { id: patch.id, name: patch.name, staticId: patch.staticId };
+    return { id: patch.id, name: patch.name };
   },
 );
 
