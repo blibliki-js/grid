@@ -2,6 +2,7 @@
 
 import { Provider } from "react-redux";
 import { ReactNode } from "react";
+import { ClerkProvider } from "@clerk/nextjs";
 
 import { store } from "@/store";
 import EngineInitializer from "@/EngineInitializer";
@@ -13,16 +14,18 @@ export default function Providers(props: { children: ReactNode }) {
 
   return (
     <Provider store={store}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <Header />
-        <EngineInitializer />
-        {children}
-      </ThemeProvider>
+      <ClerkProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <EngineInitializer />
+          {children}
+        </ThemeProvider>
+      </ClerkProvider>
     </Provider>
   );
 }
