@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent, ReactNode } from "react";
+import { SignedIn, SignedOut, UserButton, useClerk } from "@clerk/nextjs";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { start, stop, setBpm } from "@/globalSlice";
@@ -12,10 +13,12 @@ import Patch from "./Patch";
 import LoadModal from "./Patch/LoadModal";
 import AddAudioModuleModal from "./Patch/AddAudioModuleModal";
 import Link from "next/link";
-import { Octagon, Play } from "lucide-react";
+import { LogIn, Octagon, Play } from "lucide-react";
 
 export default function Header() {
   const dispatch = useAppDispatch();
+  const { openSignIn } = useClerk();
+
   const { isStarted, bpm } = useAppSelector((state) => state.global);
   const {
     patch: { name: patchName },
@@ -61,6 +64,15 @@ export default function Header() {
         >
           <Github />
         </Link>
+
+        <SignedIn>
+          <UserButton userProfileUrl="/user" afterSignOutUrl="/" />
+        </SignedIn>
+        <SignedOut>
+          <Button variant="outline" onClick={() => openSignIn()}>
+            <LogIn />
+          </Button>
+        </SignedOut>
       </Group>
 
       <LoadModal />
