@@ -1,29 +1,18 @@
-import Dexie from "dexie";
-import Patch from "./Patch";
-import PatchConfig from "./PatchConfig";
+import { FirebaseApp, initializeApp } from "firebase/app";
+import { Firestore, getFirestore } from "firebase/firestore";
 
-let db: GridDatabase;
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+};
 
-export class GridDatabase extends Dexie {
-  patches!: Dexie.Table<Patch, number>;
-  patchConfigs!: Dexie.Table<PatchConfig, number>;
+const app: FirebaseApp = initializeApp(firebaseConfig);
+export const db: Firestore = getFirestore(app);
 
-  constructor() {
-    super("GridDatabase");
-
-    this.version(1).stores({
-      patches: "++id, name",
-      patchConfigs: "++id, patchId, config",
-    });
-
-    this.patches.mapToClass(Patch);
-    this.patchConfigs.mapToClass(PatchConfig);
-  }
-}
-
-export function getDb(): GridDatabase {
-  if (db) return db;
-
-  db = new GridDatabase();
+export function getDb(): Firestore {
   return db;
 }

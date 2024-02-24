@@ -1,26 +1,20 @@
-import { useLiveQuery } from "dexie-react-hooks";
-
-import { getDb } from "@/models/db";
 import Modal, { close as closeModal } from "@/components/Modal";
-import { useAppDispatch } from "@/hooks";
+import { useAppDispatch, usePatches } from "@/hooks";
 import { loadById } from "@/patchSlice";
 import Link from "next/link";
 
 export default function SavePatch() {
   const dispatch = useAppDispatch();
-
-  const patches = useLiveQuery(() => getDb().patches.toArray(), []);
+  const patches = usePatches();
 
   const close = () => {
     dispatch(closeModal("patch"));
   };
 
-  const select = (id: number) => () => {
+  const select = (id: string) => () => {
     dispatch(loadById(id));
     dispatch(closeModal("patch"));
   };
-
-  if (!patches) return null;
 
   return (
     <Modal modalName="patch">

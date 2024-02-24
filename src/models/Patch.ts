@@ -1,59 +1,93 @@
-import { getDb } from "./db";
-import PatchConfig, { IConfig } from "./PatchConfig";
+import { db, getDb } from "./db";
+import { ModuleProps } from "@/components/AudioModule/modulesSlice";
+import { IGridNodes } from "@/components/Grid/gridNodesSlice";
+import { Optional } from "@/types";
+import {
+  collection,
+  addDoc,
+  getDoc,
+  doc,
+  updateDoc,
+  getDocs,
+  deleteDoc,
+} from "firebase/firestore";
+import { pick } from "lodash";
 
 export interface IPatch {
-  id?: number;
+  id: string;
   name: string;
-  config?: IConfig;
+  userId: string;
+  config: IConfig;
+}
+
+export interface IConfig {
+  modules: ModuleProps[];
+  gridNodes: IGridNodes;
 }
 
 export default class Patch implements IPatch {
-  id: number;
+  id: string;
   name: string;
+  userId: string;
   config: IConfig;
 
-  static async find(id: number) {
-    const patch = await getDb().patches.where("id").equals(id).first();
+  static async find(id: string): Promise<Patch> {
+    const docRef = doc(db, "patches", id);
+    const docSnap = await getDoc(docRef);
 
-    if (!patch) throw Error("Patch not found");
-
-    return patch;
+    if (docSnap.exists()) {
+      const data = { id: docSnap.id, ...docSnap.data() } as IPatch;
+      return new Patch(data);
+    } else {
+      throw Error(`Patch ${id} not found`);
+    }
   }
 
-  constructor(props: { id?: number; name: string; config?: IConfig }) {
-    Object.assign(this, props);
+  static async all(): Promise<Patch[]> {
+    const querySnapshot = await getDocs(collection(db, "patches"));
+
+    return querySnapshot.docs.map((doc) => {
+      return new Patch({
+        id: doc.id,
+        ...doc.data(),
+      } as IPatch);
+    });
+  }
+
+  constructor(props: Optional<IPatch, "id">) {
+    Object.assign(this, pick(props, ["id", "name", "userId", "config"]));
   }
 
   async save() {
     const db = getDb();
-    const { id, name } = this;
 
-    return await db.transaction("rw", db.patches, db.patchConfigs, async () => {
-      this.id = await db.patches.put(new Patch({ id, name }));
-
-      await (await this.patchConfig()).save();
-    });
+    if (this.id) {
+      return await updateDoc(this.docRef, this.props);
+    } else {
+      const docRef = await addDoc(collection(db, "patches"), this.props);
+      this.id = docRef.id;
+      return docRef;
+    }
   }
 
-  async delete() {
-    const db = getDb();
-    return await db.transaction("rw", db.patches, db.patchConfigs, async () => {
-      await db.patches.where("id").equals(this.id).delete();
-      await db.patchConfigs.where("patchId").equals(this.id).delete();
-    });
+  async delete(): Promise<void> {
+    if (this.id) throw Error("Cannot delete a patch without id");
+
+    await deleteDoc(this.docRef);
   }
 
-  private async patchConfig() {
-    if (!this.id) throw Error("Patch not initialized");
+  serialize(): IPatch {
+    return {
+      id: this.id,
+      ...this.props,
+    };
+  }
 
-    const existedConfig = await getDb()
-      .patchConfigs.where("patchId")
-      .equals(this.id)
-      .first();
+  private get docRef() {
+    return doc(db, "patches", this.id);
+  }
 
-    const conf = existedConfig || new PatchConfig({ patchId: this.id });
-    conf.config = this.config;
-
-    return conf;
+  private get props(): Omit<IPatch, "id"> {
+    return { name: this.name, userId: this.userId, config: this.config };
   }
 }

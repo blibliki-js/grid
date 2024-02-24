@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Engine from "@blibliki/engine";
 
 import Patch, { IPatch } from "@/models/Patch";
-import PatchConfig from "@/models/PatchConfig";
 
 import {
   addModule,
@@ -18,13 +17,13 @@ import {
 } from "@/components/Grid/gridNodesSlice";
 
 interface PatchProps {
-  patch: IPatch;
+  patch: Omit<IPatch, "config">;
   status: "idle" | "loading" | "succeeded" | "failed";
   error?: string;
 }
 
 const initialState: PatchProps = {
-  patch: { name: "Init patch" },
+  patch: { id: "", userId: "", name: "Init patch" },
   status: "idle",
 };
 
@@ -34,9 +33,6 @@ export const patchSlice = createSlice({
   reducers: {
     setAttributes: (state, action: PayloadAction<PatchProps>) => {
       return { ...state, ...action.payload };
-    },
-    setId: (state, action: PayloadAction<number>) => {
-      state.patch.id = action.payload;
     },
     setName: (state, action: PayloadAction<string>) => {
       state.patch.name = action.payload;
@@ -67,22 +63,22 @@ export const initialize = createAsyncThunk(
 
 export const loadById = createAsyncThunk(
   "patch/loadById",
-  async (id: number, { dispatch }) => {
-    const patch = await Patch.find(id);
-    const patchConfig = await PatchConfig.findByPatchId(id);
-    const { modules, gridNodes } = patchConfig.config;
+  async (id: string, { dispatch }) => {
+    const { name, config, userId } = await Patch.find(id);
+    const { modules, gridNodes } = config;
 
     dispatch(clearEngine());
     dispatch(loadModules(modules));
     dispatch(setGridNodes(gridNodes));
 
-    return { id: patch.id, name: patch.name };
+    return { id, name, userId };
   },
 );
 
 export const save = createAsyncThunk(
   "patch/save",
-  async (asNew: boolean, { dispatch, getState }) => {
+  async (props: { userId: string; asNew: boolean }, { dispatch, getState }) => {
+    const { asNew } = props;
     const state = getState() as RootState;
     const { patch: originalPatch } = state.patch;
     const modules = modulesSelector.selectAll(state);
@@ -90,7 +86,8 @@ export const save = createAsyncThunk(
     const config = { modules, gridNodes };
 
     const id = asNew ? undefined : originalPatch.id;
-    const patch = new Patch({ id, name: originalPatch.name, config });
+    const userId = id ? originalPatch.userId : props.userId;
+    const patch = new Patch({ id, userId, name: originalPatch.name, config });
     await patch.save();
 
     dispatch(loadById(patch.id));
@@ -111,7 +108,7 @@ export const destroy = createAsyncThunk(
   },
 );
 
-export const { setAttributes, setId, setName } = patchSlice.actions;
+export const { setAttributes, setName } = patchSlice.actions;
 
 const clearEngine = createAsyncThunk(
   "patch/clearEngine",

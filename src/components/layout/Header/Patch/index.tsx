@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 
 import { TriggerModal } from "@/components/Modal";
-import { useAppDispatch, useAppSelector } from "@/hooks";
+import { useAppDispatch, usePatch } from "@/hooks";
 import { destroy, save } from "@/patchSlice";
 import Export from "./Export";
 import {
@@ -15,9 +15,10 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui";
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
+import { useUser } from "@clerk/nextjs";
 
 export default function Patch() {
-  const { patch } = useAppSelector((state) => state.patch);
+  const { patch, canEdit } = usePatch();
 
   return (
     <DropdownMenu>
@@ -27,10 +28,12 @@ export default function Patch() {
 
       <DropdownMenuContent className="w-56 p-3">
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Save asNew={false}>Save</Save>
-          </DropdownMenuItem>
-          {patch.id && (
+          {canEdit && (
+            <DropdownMenuItem>
+              <Save asNew={false}>Save</Save>
+            </DropdownMenuItem>
+          )}
+          {patch && (
             <DropdownMenuItem>
               <Save asNew={true}>Copy</Save>
             </DropdownMenuItem>
@@ -41,7 +44,7 @@ export default function Patch() {
             </TriggerModal>
           </DropdownMenuItem>
 
-          {patch.id && (
+          {canEdit && (
             <DropdownMenuItem>
               <Destroy disabled={!patch.id}>Delete</Destroy>
             </DropdownMenuItem>
@@ -70,10 +73,13 @@ export default function Patch() {
 
 function Save(props: { asNew: boolean; children: ReactNode }) {
   const dispatch = useAppDispatch();
+  const { user } = useUser();
   const { asNew, children } = props;
 
   const onSave = () => {
-    dispatch(save(asNew));
+    if (!user) throw Error("You can't save without login");
+
+    dispatch(save({ userId: user.id, asNew }));
   };
 
   return <button onClick={onSave}>{children}</button>;

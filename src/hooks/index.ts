@@ -4,6 +4,9 @@ import { Connection, EdgeChange, Node, NodeChange } from "reactflow";
 import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
 import { useCallback, useEffect, useState } from "react";
+import { useAuth, useUser } from "@clerk/nextjs";
+import { getAuth, signInWithCustomToken } from "firebase/auth";
+
 import type { RootState, AppDispatch } from "@/store";
 import {
   onNodesChange as _onNodesChange,
@@ -12,10 +15,50 @@ import {
   addNode as _addNode,
 } from "@/components/Grid/gridNodesSlice";
 import { modulesSelector } from "@/components/AudioModule/modulesSlice";
+import Patch, { IPatch } from "@/models/Patch";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+export function useFirebase() {
+  const { user } = useUser();
+  const { getToken } = useAuth();
+
+  useEffect(() => {
+    if (!user?.id) return;
+
+    const signInWithClerk = async () => {
+      const auth = getAuth();
+      const token = await getToken({ template: "integration_firebase" });
+      if (!token) throw Error("Token is empty");
+      await signInWithCustomToken(auth, token);
+    };
+
+    signInWithClerk();
+  }, [getToken, user?.id]);
+}
+
+export function usePatches(): IPatch[] {
+  const [patches, setPatches] = useState<IPatch[]>([]);
+
+  useEffect(() => {
+    Patch.all().then((data) => {
+      setPatches(data.map((patch) => patch.serialize()));
+    });
+  }, []);
+
+  return patches;
+}
+
+export function usePatch() {
+  const { patch } = useAppSelector((state) => state.patch);
+  const { user } = useUser();
+
+  const canEdit = patch && user && patch.userId === user.id;
+
+  return { patch, canEdit };
+}
 
 export const useAudioModule = (id: string) => {
   const audioModule = useAppSelector((state) =>
