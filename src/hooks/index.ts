@@ -51,6 +51,15 @@ export function usePatches(): IPatch[] {
   return patches;
 }
 
+export function usePatch() {
+  const { patch } = useAppSelector((state) => state.patch);
+  const { user } = useUser();
+
+  const canEdit = patch && user && patch.userId === user.id;
+
+  return { patch, canEdit };
+}
+
 export const useAudioModule = (id: string) => {
   const audioModule = useAppSelector((state) =>
     modulesSelector.selectById(state, id),
