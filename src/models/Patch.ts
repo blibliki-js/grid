@@ -16,6 +16,7 @@ import { pick } from "lodash";
 export interface IPatch {
   id: string;
   name: string;
+  userId: string;
   config: IConfig;
 }
 
@@ -27,6 +28,7 @@ export interface IConfig {
 export default class Patch implements IPatch {
   id: string;
   name: string;
+  userId: string;
   config: IConfig;
 
   static async find(id: string): Promise<Patch> {
@@ -53,19 +55,21 @@ export default class Patch implements IPatch {
   }
 
   constructor(props: Optional<IPatch, "id">) {
-    Object.assign(this, pick(props, ["id", "name", "config"]));
+    Object.assign(this, pick(props, ["id", "name", "userId", "config"]));
   }
 
   async save() {
     const db = getDb();
 
     if (this.id) {
-      await updateDoc(this.docRef, this.props);
+      return await updateDoc(this.docRef, this.props);
     } else {
       const docRef = await addDoc(collection(db, "patches"), this.props);
       this.id = docRef.id;
+      return docRef;
     }
   }
+
   async delete(): Promise<void> {
     if (this.id) throw Error("Cannot delete a patch without id");
 
@@ -84,6 +88,6 @@ export default class Patch implements IPatch {
   }
 
   private get props(): Omit<IPatch, "id"> {
-    return { name: this.name, config: this.config };
+    return { name: this.name, userId: this.userId, config: this.config };
   }
 }

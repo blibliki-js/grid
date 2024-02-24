@@ -23,7 +23,7 @@ interface PatchProps {
 }
 
 const initialState: PatchProps = {
-  patch: { id: "", name: "Init patch" },
+  patch: { id: "", userId: "", name: "Init patch" },
   status: "idle",
 };
 
@@ -64,20 +64,21 @@ export const initialize = createAsyncThunk(
 export const loadById = createAsyncThunk(
   "patch/loadById",
   async (id: string, { dispatch }) => {
-    const { name, config } = await Patch.find(id);
+    const { name, config, userId } = await Patch.find(id);
     const { modules, gridNodes } = config;
 
     dispatch(clearEngine());
     dispatch(loadModules(modules));
     dispatch(setGridNodes(gridNodes));
 
-    return { id, name };
+    return { id, name, userId };
   },
 );
 
 export const save = createAsyncThunk(
   "patch/save",
-  async (asNew: boolean, { dispatch, getState }) => {
+  async (props: { userId: string; asNew: boolean }, { dispatch, getState }) => {
+    const { asNew } = props;
     const state = getState() as RootState;
     const { patch: originalPatch } = state.patch;
     const modules = modulesSelector.selectAll(state);
@@ -85,7 +86,8 @@ export const save = createAsyncThunk(
     const config = { modules, gridNodes };
 
     const id = asNew ? undefined : originalPatch.id;
-    const patch = new Patch({ id, name: originalPatch.name, config });
+    const userId = id ? originalPatch.userId : props.userId;
+    const patch = new Patch({ id, userId, name: originalPatch.name, config });
     await patch.save();
 
     dispatch(loadById(patch.id));

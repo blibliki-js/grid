@@ -15,6 +15,7 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui";
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
+import { useUser } from "@clerk/nextjs";
 
 export default function Patch() {
   const { patch } = useAppSelector((state) => state.patch);
@@ -70,10 +71,13 @@ export default function Patch() {
 
 function Save(props: { asNew: boolean; children: ReactNode }) {
   const dispatch = useAppDispatch();
+  const { user } = useUser();
   const { asNew, children } = props;
 
   const onSave = () => {
-    dispatch(save(asNew));
+    if (!user) throw Error("You can't save without login");
+
+    dispatch(save({ userId: user.id, asNew }));
   };
 
   return <button onClick={onSave}>{children}</button>;
