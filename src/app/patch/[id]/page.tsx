@@ -11,7 +11,7 @@ export default function RoomComponent() {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(loadById(Number(id)));
+    dispatch(loadById(id as string));
   }, [dispatch, id]);
 
   return <Grid />;

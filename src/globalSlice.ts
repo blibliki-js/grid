@@ -35,7 +35,7 @@ export const globalSlice = createSlice({
 });
 
 export const initialize =
-  (patchId?: number) => (dispatch: AppDispatch, getState: () => RootState) => {
+  (patchId?: string) => (dispatch: AppDispatch, getState: () => RootState) => {
     const { context, bpm } = getState().global;
 
     Engine.initialize({ context });
