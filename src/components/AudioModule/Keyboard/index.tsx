@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { TUpdateProps } from "..";
-import ComputerMidiKeyboard from "./ComputerMidiKeyboard";
 import Octave from "./Octave";
 
 export default function Keyboard(params: {
@@ -25,7 +24,6 @@ export default function Keyboard(params: {
       onMouseUp={disableTriggering}
       onMouseLeave={disableTriggering}
     >
-      <ComputerMidiKeyboard id={id} />
       <Octave id={id} props={props} triggerable={triggerable} octave={2} />
       <Octave id={id} props={props} triggerable={triggerable} octave={3} />
       <Octave id={id} props={props} triggerable={triggerable} octave={4} />
