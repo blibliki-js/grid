@@ -27,6 +27,10 @@ export const AvailableModules: {
 } = {
   Master: { name: "Master", type: "Master" },
   Oscillator: { name: "Oscilator", type: "Oscillator" },
+  Envelope: {
+    name: "Envelope",
+    type: "Envelope",
+  },
   AmpEnvelope: {
     name: "Amp Envelope",
     type: "AmpEnvelope",
