@@ -35,10 +35,6 @@ export const AvailableModules: {
     name: "Amp Envelope",
     type: "AmpEnvelope",
   },
-  FreqEnvelope: {
-    name: "Frequency Envelope",
-    type: "FreqEnvelope",
-  },
   Filter: { name: "Filter", type: "Filter" },
   Volume: { name: "Volume", type: "Volume" },
   MidiSelector: {
