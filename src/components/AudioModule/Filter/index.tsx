@@ -38,9 +38,9 @@ export default function Filter(props: FilterProps) {
       <Fader
         name="Amount"
         marks={AmountCenter}
-        min={-8}
-        max={8}
-        step={0.2}
+        min={-1}
+        max={1}
+        step={0.01}
         onChange={updateProp("envelopeAmount")}
         value={envelopeAmount}
       />
