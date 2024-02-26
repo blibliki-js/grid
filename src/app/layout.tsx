@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 
 import Providers from "@/Providers";
+import Header from "@/components/layout/Header";
 
 import "reactflow/dist/style.css";
 import "@/index.css";
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <div id="root">
           <Providers>
+            <Header />
             <div>{children}</div>
           </Providers>
         </div>

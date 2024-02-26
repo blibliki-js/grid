@@ -6,7 +6,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import { store } from "@/store";
 import EngineInitializer from "@/EngineInitializer";
-import Header from "@/components/layout/Header";
 import { ThemeProvider } from "./components/ThemeProvider";
 import FirebaseInitializer from "./FirebaseInitializer";
 
@@ -22,7 +21,6 @@ export default function Providers(props: { children: ReactNode }) {
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
           <FirebaseInitializer />
           <EngineInitializer />
           {children}
