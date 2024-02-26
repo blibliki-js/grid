@@ -58,14 +58,6 @@ export default function Patch() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <TriggerModal modalName="addAudioModule" type="open">
-              Add module
-            </TriggerModal>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );

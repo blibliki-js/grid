@@ -11,7 +11,6 @@ import { Button, Input, buttonVariants } from "@/components/ui";
 import ColorSchemeToggle from "./ColorSchemeToggle";
 import Patch from "./Patch";
 import LoadModal from "./Patch/LoadModal";
-import AddAudioModuleModal from "./Patch/AddAudioModuleModal";
 import Link from "next/link";
 import { LogIn, Octagon, Play } from "lucide-react";
 
@@ -76,7 +75,6 @@ export default function Header() {
       </Group>
 
       <LoadModal />
-      <AddAudioModuleModal />
     </div>
   );
 }
