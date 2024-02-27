@@ -1,5 +1,5 @@
 import Engine, { Note } from "@blibliki/engine";
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 interface StyleProps {
   toneWidth: number;
@@ -31,22 +31,24 @@ interface KeyProps extends StyleProps {
 }
 
 export default function Key(props: KeyProps) {
+  const [mouseDown, setMouseDown] = useState<boolean>();
   const { id, note, active, triggerable } = props;
 
   const className = useMemo(() => {
     const names = [Keys[note.name]];
+    names.push("nodrag");
 
-    if (active) names.push("active");
+    if (active || mouseDown) names.push("active");
 
     return names.join(" ");
-  }, [active, note.name]);
+  }, [active, mouseDown, note.name]);
 
-  const trigger = useMemo(
-    () =>
-      (type: "noteOn" | "noteOff", force: boolean = false) =>
+  const trigger = useCallback(
+    (type: "noteOn" | "noteOff", force: boolean = false) =>
       () => {
-        if (type === "noteOn" && !triggerable && !force) return;
+        if (!triggerable && !force) return;
 
+        setMouseDown(type === "noteOn");
         Engine.triggerVirtualMidi(id, note.fullName, type);
       },
     [id, triggerable, note.fullName],
