@@ -5,7 +5,7 @@ import { updateModule } from "../modulesSlice";
 
 interface NameInterface {
   id: string;
-  value: string;
+  value: number;
 }
 
 export default function Voices(props: NameInterface) {

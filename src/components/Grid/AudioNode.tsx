@@ -48,7 +48,9 @@ export default function AudioNode(props: NodeProps) {
         <Card>
           <CardContent>
             <Name id={audioModule.id} value={audioModule.name} />
-            <Voices id={audioModule.id} value={audioModule.numberOfVoices} />
+            {audioModule.numberOfVoices && (
+              <Voices id={audioModule.id} value={audioModule.numberOfVoices} />
+            )}
           </CardContent>
         </Card>
       </ContextMenuContent>
