@@ -26,7 +26,7 @@ export default function AudioNode(props: NodeProps) {
 
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="flex gap-3 items-stretch shadow-md rounded-md bg-white dark:bg-gray-800 border-2 border-stone-400">
+      <ContextMenuTrigger className="flex cursor-grab gap-3 items-stretch shadow-md rounded-md bg-white dark:bg-gray-800 border-2 border-stone-400">
         <IOContainer>
           {inputs.map((io) => (
             <IO key={io.id} io={io} />

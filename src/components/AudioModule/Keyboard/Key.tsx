@@ -36,7 +36,7 @@ export default function Key(props: KeyProps) {
 
   const className = useMemo(() => {
     const names = [Keys[note.name]];
-    names.push("nodrag");
+    names.push("nodrag cursor-pointer");
 
     if (active || mouseDown) names.push("active");
 
