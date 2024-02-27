@@ -14,6 +14,7 @@ import { UpdateModuleProps } from "@blibliki/engine/dist/build/Engine";
 interface ModuleInterface {
   name: string;
   type: string;
+  numberOfVoices?: number;
   props: AnyObject;
 }
 

@@ -61,5 +61,13 @@ export {
   ContextMenuRadioGroup,
 } from "./context-menu";
 
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "./card";
 export { Button, buttonVariants } from "./button";
 export { default as Slider } from "./Slider";

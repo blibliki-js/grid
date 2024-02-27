@@ -3,6 +3,15 @@ import AudioModule from "@/components/AudioModule";
 import { useAudioModule } from "@/hooks";
 import { ReactNode, useMemo } from "react";
 import { Handle, HandleType, NodeProps, Position } from "reactflow";
+import {
+  Card,
+  CardContent,
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuTrigger,
+} from "../ui";
+import Name from "../AudioModule/attributes/Name";
+import Voices from "../AudioModule/attributes/Voices";
 
 export const NodeTypes = {
   audioNode: AudioNode,
@@ -16,23 +25,34 @@ export default function AudioNode(props: NodeProps) {
   const { inputs, outputs, ...audioModuleProps } = audioModule;
 
   return (
-    <div className="flex gap-3 items-stretch shadow-md rounded-md bg-white dark:bg-gray-800 border-2 border-stone-400">
-      <IOContainer>
-        {inputs.map((io) => (
-          <IO key={io.id} io={io} />
-        ))}
-      </IOContainer>
+    <ContextMenu>
+      <ContextMenuTrigger className="flex gap-3 items-stretch shadow-md rounded-md bg-white dark:bg-gray-800 border-2 border-stone-400">
+        <IOContainer>
+          {inputs.map((io) => (
+            <IO key={io.id} io={io} />
+          ))}
+        </IOContainer>
 
-      <div className="py-2">
-        <AudioModule audioModule={audioModuleProps} />
-      </div>
+        <div className="py-2">
+          <AudioModule audioModule={audioModuleProps} />
+        </div>
 
-      <IOContainer>
-        {outputs.map((io) => (
-          <IO key={io.id} io={io} />
-        ))}
-      </IOContainer>
-    </div>
+        <IOContainer>
+          {outputs.map((io) => (
+            <IO key={io.id} io={io} />
+          ))}
+        </IOContainer>
+      </ContextMenuTrigger>
+
+      <ContextMenuContent className="p-0 border-0">
+        <Card>
+          <CardContent>
+            <Name id={audioModule.id} value={audioModule.name} />
+            <Voices id={audioModule.id} value={audioModule.numberOfVoices} />
+          </CardContent>
+        </Card>
+      </ContextMenuContent>
+    </ContextMenu>
   );
 }
 

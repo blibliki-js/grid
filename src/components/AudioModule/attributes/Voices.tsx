@@ -8,18 +8,23 @@ interface NameInterface {
   value: string;
 }
 
-export default function Name(props: NameInterface) {
+export default function Voices(props: NameInterface) {
   const dispatch = useAppDispatch();
   const { id, value } = props;
 
-  const updateProp = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(updateModule({ id, changes: { name: event.target.value } }));
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(
+      updateModule({
+        id,
+        changes: { numberOfVoices: Number(event.target.value) },
+      }),
+    );
   };
 
   return (
     <div className="p-2">
-      <Label>Name</Label>
-      <Input value={value} onChange={updateProp} />
+      <Label>Voices</Label>
+      <Input type="number" value={value} onChange={onChange} />
     </div>
   );
 }
