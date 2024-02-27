@@ -29,6 +29,9 @@ dependencies:
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.56)(react@18.2.0)
+  '@reactflow/node-resizer':
+    specifier: ^2.2.9
+    version: 2.2.9(@types/react@18.2.56)(react-dom@18.2.0)(react@18.2.0)
   '@reduxjs/toolkit':
     specifier: ^2.2.0
     version: 2.2.1(react-redux@9.1.0)(react@18.2.0)
