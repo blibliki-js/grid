@@ -18,7 +18,7 @@ import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 import { useUser } from "@clerk/nextjs";
 
 export default function Patch() {
-  const { patch, canEdit } = usePatch();
+  const { patch, canCreate, canUpdate, canDelete } = usePatch();
 
   return (
     <DropdownMenu>
@@ -28,12 +28,12 @@ export default function Patch() {
 
       <DropdownMenuContent className="w-56 p-3">
         <DropdownMenuGroup>
-          {canEdit && (
+          {(canCreate || canUpdate) && (
             <DropdownMenuItem>
               <Save asNew={false}>Save</Save>
             </DropdownMenuItem>
           )}
-          {patch && (
+          {patch.id && canCreate && (
             <DropdownMenuItem>
               <Save asNew={true}>Copy</Save>
             </DropdownMenuItem>
@@ -44,7 +44,7 @@ export default function Patch() {
             </TriggerModal>
           </DropdownMenuItem>
 
-          {canEdit && (
+          {canDelete && (
             <DropdownMenuItem>
               <Destroy disabled={!patch.id}>Delete</Destroy>
             </DropdownMenuItem>

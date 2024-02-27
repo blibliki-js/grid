@@ -53,11 +53,13 @@ export function usePatches(): IPatch[] {
 
 export function usePatch() {
   const { patch } = useAppSelector((state) => state.patch);
-  const { user } = useUser();
+  const { isSignedIn, user } = useUser();
 
-  const canEdit = patch && user && patch.userId === user.id;
+  const canCreate = isSignedIn && !patch.id;
+  const canUpdate = patch && user && patch.userId === user.id;
+  const canDelete = canUpdate;
 
-  return { patch, canEdit };
+  return { patch, canCreate, canUpdate, canDelete };
 }
 
 export const useAudioModule = (id: string) => {
