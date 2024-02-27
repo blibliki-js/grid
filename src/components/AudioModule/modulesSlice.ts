@@ -9,6 +9,7 @@ import Engine, { IOProps } from "@blibliki/engine";
 import { AppDispatch, RootState } from "@/store";
 import { AnyObject, Optional } from "@/types";
 import { addNode } from "@/components/Grid/gridNodesSlice";
+import { UpdateModuleProps } from "@blibliki/engine/dist/build/Engine";
 
 interface ModuleInterface {
   name: string;
@@ -64,46 +65,24 @@ export const modulesSlice = createSlice({
   initialState: modulesAdapter.getInitialState(),
   reducers: {
     addModule: modulesAdapter.addOne,
-    updateModule: (
-      state,
-      update: PayloadAction<{ id: string; changes: { props: AnyObject } }>,
-    ) => {
-      const {
-        id,
-        changes: { props: changedProps },
-      } = update.payload;
-      const audioModule = Engine.updatePropsModule(id, changedProps);
+    updateModule: (state, update: PayloadAction<UpdateModuleProps>) => {
+      const { id, changes } = update.payload;
+      Engine.updateModule({ id, changes });
       return modulesAdapter.updateOne(state, {
         id,
-        changes: audioModule,
+        changes,
       });
     },
     removeModule: modulesAdapter.removeOne,
     updatePlainModule: modulesAdapter.updateOne,
-    updateModuleName: (
-      state,
-      update: PayloadAction<{ id: string; name: string }>,
-    ) => {
-      const { id, name } = update.payload;
-      const audioModule = Engine.updateNameModule(id, name);
-
-      return modulesAdapter.updateOne(state, {
-        id,
-        changes: audioModule,
-      });
-    },
     removeAllModules: modulesAdapter.removeAll,
   },
 });
 
 const { addModule: _addModule } = modulesSlice.actions;
 
-export const {
-  updateModule,
-  updatePlainModule,
-  updateModuleName,
-  removeAllModules,
-} = modulesSlice.actions;
+export const { updateModule, updatePlainModule, removeAllModules } =
+  modulesSlice.actions;
 
 export const addModule =
   (props: ModuleInterface) => (dispatch: AppDispatch) => {

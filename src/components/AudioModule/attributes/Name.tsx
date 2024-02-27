@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import { Input } from "@/components/ui";
 import { useAppDispatch } from "@/hooks";
-import { updateModuleName } from "../modulesSlice";
+import { updateModule } from "../modulesSlice";
 
 interface NameInterface {
   id: string;
@@ -13,7 +13,7 @@ export default function Name(props: NameInterface) {
   const { id, value } = props;
 
   const updateProp = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(updateModuleName({ id, name: event.target.value }));
+    dispatch(updateModule({ id, changes: { name: event.target.value } }));
   };
 
   return (
