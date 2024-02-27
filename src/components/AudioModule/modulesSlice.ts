@@ -67,8 +67,7 @@ export const modulesSlice = createSlice({
   reducers: {
     addModule: modulesAdapter.addOne,
     updateModule: (state, update: PayloadAction<UpdateModuleProps>) => {
-      const { id, changes } = update.payload;
-      Engine.updateModule({ id, changes });
+      const { id, ...changes } = Engine.updateModule(update.payload);
       return modulesAdapter.updateOne(state, {
         id,
         changes,
