@@ -11,6 +11,7 @@ import ReactFlow, {
 import { NodeTypes } from "./AudioNode";
 import { useAppDispatch, useGridNodes, usePatch } from "@/hooks";
 import { setViewport } from "./gridNodesSlice";
+import useDrag from "./useDrag";
 import { useEffect } from "react";
 
 const DEFAULT_REACT_FLOW_PROPS = {
@@ -20,6 +21,7 @@ const DEFAULT_REACT_FLOW_PROPS = {
 export default function Grid() {
   const { nodes, edges, viewport, onNodesChange, onEdgesChange, onConnect } =
     useGridNodes();
+  const { onDrop, onDragOver } = useDrag();
 
   return (
     <div className="grid-container">
@@ -31,6 +33,8 @@ export default function Grid() {
         onConnect={onConnect}
         nodeTypes={NodeTypes}
         minZoom={0.3}
+        onDrop={onDrop}
+        onDragOver={onDragOver}
         proOptions={DEFAULT_REACT_FLOW_PROPS}
       >
         <Controls className="dark:bg-gray-500" />

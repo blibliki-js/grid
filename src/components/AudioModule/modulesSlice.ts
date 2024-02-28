@@ -10,6 +10,7 @@ import { AppDispatch, RootState } from "@/store";
 import { AnyObject, Optional } from "@/types";
 import { addNode } from "@/components/Grid/gridNodesSlice";
 import { UpdateModuleProps } from "@blibliki/engine/dist/build/Engine";
+import { XYPosition } from "reactflow";
 
 interface ModuleInterface {
   name: string;
@@ -85,24 +86,31 @@ export const { updateModule, updatePlainModule, removeAllModules } =
   modulesSlice.actions;
 
 export const addModule =
-  (props: ModuleInterface) => (dispatch: AppDispatch) => {
-    const serializedModule = Engine.addModule(props);
+  (params: { audioModule: ModuleInterface; position?: XYPosition }) =>
+  (dispatch: AppDispatch) => {
+    const { audioModule, position = { x: 0, y: 0 } } = params;
+    const serializedModule = Engine.addModule(audioModule);
     dispatch(_addModule(serializedModule));
 
     dispatch(
       addNode({
         id: serializedModule.id,
         type: "audioNode",
-        position: { x: 0, y: 0 },
+        position,
         data: {},
       }),
     );
   };
 
-export const addNewModule = (type: string) => (dispatch: AppDispatch) => {
-  const modulePayload = AvailableModules[type];
-  dispatch(addModule({ props: {}, ...modulePayload }));
-};
+export const addNewModule =
+  (params: { type: string; position?: XYPosition }) =>
+  (dispatch: AppDispatch) => {
+    const { type, position } = params;
+    const modulePayload = AvailableModules[type];
+    dispatch(
+      addModule({ audioModule: { props: {}, ...modulePayload }, position }),
+    );
+  };
 
 export const removeModule =
   (id: string) => (dispatch: AppDispatch, getState: () => RootState) => {

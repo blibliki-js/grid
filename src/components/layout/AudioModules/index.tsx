@@ -1,22 +1,16 @@
 "use client";
-import {
-  AvailableModules,
-  addNewModule,
-} from "@/components/AudioModule/modulesSlice";
+import { AvailableModules } from "@/components/AudioModule/modulesSlice";
+import useDrag from "@/components/Grid/useDrag";
 import { Button } from "@/components/ui";
-import { useAppDispatch } from "@/hooks";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
-import { useState } from "react";
+import { useState, DragEvent } from "react";
 
 export default function AudioModules() {
-  const dispatch = useAppDispatch();
   const [visible, setVisible] = useState<boolean>(true);
+  const { onDragStart } = useDrag();
+
   const onClick = () => setVisible(!visible);
   const left = visible ? "0px" : "-150px";
-
-  const addAudioModule = (type: string) => () => {
-    dispatch(addNewModule(type));
-  };
 
   return (
     <div
@@ -36,8 +30,11 @@ export default function AudioModules() {
             <li key={moduleName} className="mb-1">
               <Button
                 variant="outline"
-                className="w-full"
-                onClick={addAudioModule(moduleName)}
+                className="w-full cursor-move"
+                onDragStart={(event: DragEvent) =>
+                  onDragStart(event, moduleName)
+                }
+                draggable
               >
                 {moduleName}
               </Button>

@@ -8,6 +8,7 @@ import { store } from "@/store";
 import EngineInitializer from "@/EngineInitializer";
 import { ThemeProvider } from "./components/ThemeProvider";
 import FirebaseInitializer from "./FirebaseInitializer";
+import { ReactFlowProvider } from "reactflow";
 
 export default function Providers(props: { children: ReactNode }) {
   const { children } = props;
@@ -21,9 +22,11 @@ export default function Providers(props: { children: ReactNode }) {
           enableSystem
           disableTransitionOnChange
         >
-          <FirebaseInitializer />
-          <EngineInitializer />
-          {children}
+          <ReactFlowProvider>
+            <FirebaseInitializer />
+            <EngineInitializer />
+            {children}
+          </ReactFlowProvider>
         </ThemeProvider>
       </ClerkProvider>
     </Provider>

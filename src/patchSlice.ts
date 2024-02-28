@@ -123,7 +123,7 @@ const loadModules = createAsyncThunk(
   "patch/loadModules",
   async (modules: ModuleProps[], { dispatch }) => {
     modules.forEach((m) => {
-      (dispatch as AppDispatch)(addModule(m));
+      (dispatch as AppDispatch)(addModule({ audioModule: m }));
     });
   },
 );
