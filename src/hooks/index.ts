@@ -74,7 +74,7 @@ export const useAudioModule = (id: string) => {
 
 export function useGridNodes() {
   const dispatch = useAppDispatch();
-  const { nodes, edges } = useAppSelector((state) => state.gridNodes);
+  const { nodes, edges, viewport } = useAppSelector((state) => state.gridNodes);
 
   const onNodesChange = useCallback(
     (changes: NodeChange[]) => dispatch(_onNodesChange(changes)),
@@ -96,7 +96,15 @@ export function useGridNodes() {
     [dispatch],
   );
 
-  return { nodes, edges, addNode, onNodesChange, onEdgesChange, onConnect };
+  return {
+    nodes,
+    edges,
+    viewport,
+    addNode,
+    onNodesChange,
+    onEdgesChange,
+    onConnect,
+  };
 }
 
 export enum ColorScheme {

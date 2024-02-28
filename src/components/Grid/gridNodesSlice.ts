@@ -9,6 +9,7 @@ import {
   addEdge,
   applyNodeChanges,
   applyEdgeChanges,
+  Viewport,
 } from "reactflow";
 
 import { AppDispatch, RootState } from "@/store";
@@ -17,11 +18,13 @@ import { removeModule } from "@/components/AudioModule/modulesSlice";
 export interface IGridNodes {
   nodes: Node[];
   edges: Edge[];
+  viewport: Viewport;
 }
 
 const initialState: IGridNodes = {
   nodes: [],
   edges: [],
+  viewport: { x: 0, y: 0, zoom: 1 },
 };
 
 export const gridNodesSlice = createSlice({
@@ -39,7 +42,7 @@ export const gridNodesSlice = createSlice({
       return action.payload;
     },
     removeAllGridNodes: () => {
-      return { nodes: [], edges: [] };
+      return { nodes: [], edges: [], viewport: { x: 0, y: 0, zoom: 1 } };
     },
     setNodes: (state, action: PayloadAction<Node[]>) => {
       state.nodes = action.payload;
@@ -61,6 +64,9 @@ export const gridNodesSlice = createSlice({
       const route = Engine.addRoute(connectionToRoute(action.payload));
       state.edges = addEdge({ id: route.id, ...action.payload }, state.edges);
     },
+    setViewport: (state, action: PayloadAction<Viewport>) => {
+      state.viewport = action.payload;
+    },
   },
 });
 
@@ -72,6 +78,7 @@ export const {
   addNode,
   onEdgesChange,
   onConnect,
+  setViewport,
 } = gridNodesSlice.actions;
 
 export const onNodesChange =

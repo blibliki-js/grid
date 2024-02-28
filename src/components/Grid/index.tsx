@@ -3,17 +3,22 @@ import ReactFlow, {
   Controls,
   Background,
   BackgroundVariant,
+  useOnViewportChange,
+  Viewport,
+  useReactFlow,
 } from "reactflow";
 
 import { NodeTypes } from "./AudioNode";
-import { useGridNodes } from "@/hooks";
+import { useAppDispatch, useGridNodes, usePatch } from "@/hooks";
+import { setViewport } from "./gridNodesSlice";
+import { useEffect } from "react";
 
 const DEFAULT_REACT_FLOW_PROPS = {
   hideAttribution: true,
 };
 
 export default function Grid() {
-  const { nodes, edges, onNodesChange, onEdgesChange, onConnect } =
+  const { nodes, edges, viewport, onNodesChange, onEdgesChange, onConnect } =
     useGridNodes();
 
   return (
@@ -25,6 +30,7 @@ export default function Grid() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={NodeTypes}
+        minZoom={0.3}
         proOptions={DEFAULT_REACT_FLOW_PROPS}
       >
         <Controls className="dark:bg-gray-500" />
@@ -35,7 +41,27 @@ export default function Grid() {
           gap={12}
           size={1}
         />
+        <OnViewportChange viewport={viewport} />
       </ReactFlow>
     </div>
   );
+}
+
+function OnViewportChange({ viewport }: { viewport: Viewport }) {
+  const dispatch = useAppDispatch();
+  const { patch } = usePatch();
+  const { setViewport: setInitialViewport } = useReactFlow();
+
+  useOnViewportChange({
+    onEnd: (viewport: Viewport) => dispatch(setViewport(viewport)),
+  });
+
+  // Set the initial viewport from saved patch
+  useEffect(() => {
+    if (!patch?.id) return;
+
+    setInitialViewport(viewport);
+  }, [setInitialViewport, patch?.id]);
+
+  return null;
 }
