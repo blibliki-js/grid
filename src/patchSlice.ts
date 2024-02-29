@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Engine from "@blibliki/engine";
 
 import Patch, { IPatch } from "@/models/Patch";
@@ -38,52 +38,32 @@ export const patchSlice = createSlice({
       state.patch.name = action.payload;
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(loadById.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(loadById.fulfilled, (state, action) => {
-        state.status = "succeeded";
-        state.patch = action.payload;
-      })
-      .addCase(loadById.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error.message;
-      });
-  },
 });
 
-export const initialize = createAsyncThunk(
-  "patch/initialze",
-  async (_, { dispatch }) => {
-    dispatch(setAttributes(initialState));
-  },
-);
+export const initialize = () => (dispatch: AppDispatch) => {
+  dispatch(setAttributes(initialState));
+};
 
-export const loadById = createAsyncThunk(
-  "patch/loadById",
-  async (id: string, { dispatch }) => {
-    if (id === "new") {
-      dispatch(clearEngine());
-
-      return { ...initialState.patch };
-    }
-
-    const { name, config, userId } = await Patch.find(id);
-    const { modules, gridNodes } = config;
-
+export const loadById = (id: string) => async (dispatch: AppDispatch) => {
+  if (id === "new") {
     dispatch(clearEngine());
-    dispatch(loadModules(modules));
-    dispatch(setGridNodes(gridNodes));
 
-    return { id, name, userId };
-  },
-);
+    return { ...initialState.patch };
+  }
 
-export const save = createAsyncThunk(
-  "patch/save",
-  async (props: { userId: string; asNew: boolean }, { dispatch, getState }) => {
+  const { name, config, userId } = await Patch.find(id);
+  const { modules, gridNodes } = config;
+
+  dispatch(clearEngine());
+  dispatch(loadModules(modules));
+  dispatch(setGridNodes(gridNodes));
+
+  return { id, name, userId };
+};
+
+export const save =
+  (props: { userId: string; asNew: boolean }) =>
+  async (dispatch: AppDispatch, getState: () => RootState) => {
     const { asNew } = props;
     const state = getState() as RootState;
     const { patch: originalPatch } = state.patch;
@@ -97,12 +77,10 @@ export const save = createAsyncThunk(
     await patch.save();
 
     dispatch(loadById(patch.id));
-  },
-);
+  };
 
-export const destroy = createAsyncThunk(
-  "patch/delete",
-  async (_, { dispatch, getState }) => {
+export const destroy =
+  () => async (dispatch: AppDispatch, getState: () => RootState) => {
     const state = getState() as RootState;
     const { patch } = state.patch;
     if (!patch.id) throw Error("This patch isn't saved yet");
@@ -111,27 +89,20 @@ export const destroy = createAsyncThunk(
 
     dispatch(clearEngine());
     dispatch(initialize());
-  },
-);
+  };
 
 export const { setAttributes, setName } = patchSlice.actions;
 
-const clearEngine = createAsyncThunk(
-  "patch/clearEngine",
-  async (_, { dispatch }) => {
-    Engine.dispose();
-    dispatch(removeAllModules());
-    dispatch(removeAllGridNodes());
-  },
-);
+const clearEngine = () => (dispatch: AppDispatch) => {
+  Engine.dispose();
+  dispatch(removeAllModules());
+  dispatch(removeAllGridNodes());
+};
 
-const loadModules = createAsyncThunk(
-  "patch/loadModules",
-  async (modules: ModuleProps[], { dispatch }) => {
-    modules.forEach((m) => {
-      (dispatch as AppDispatch)(addModule({ audioModule: m }));
-    });
-  },
-);
+const loadModules = (modules: ModuleProps[]) => (dispatch: AppDispatch) => {
+  modules.forEach((m) => {
+    (dispatch as AppDispatch)(addModule({ audioModule: m }));
+  });
+};
 
 export default patchSlice.reducer;
