@@ -1,4 +1,5 @@
 import Modal, { close as closeModal } from "@/components/Modal";
+import { buttonVariants } from "@/components/ui";
 import { useAppDispatch, usePatches } from "@/hooks";
 import Link from "next/link";
 
@@ -17,7 +18,11 @@ export default function SavePatch() {
         <ul>
           {patches.map(({ id, name }) => (
             <li key={id} className="w-full">
-              <Link onClick={close} href={`/patch/${id}`}>
+              <Link
+                className={buttonVariants({ variant: "link" })}
+                onClick={close}
+                href={`/patch/${id}`}
+              >
                 {name}
               </Link>
             </li>
