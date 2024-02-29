@@ -16,6 +16,7 @@ import {
 } from "@/components/ui";
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function Patch() {
   const { patch, canCreate, canUpdate, canDelete } = usePatch();
@@ -28,6 +29,10 @@ export default function Patch() {
 
       <DropdownMenuContent className="w-56 p-3">
         <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <Link href="/patch/new">New</Link>
+          </DropdownMenuItem>
+
           {(canCreate || canUpdate) && (
             <DropdownMenuItem>
               <Save asNew={false}>Save</Save>

@@ -64,6 +64,12 @@ export const initialize = createAsyncThunk(
 export const loadById = createAsyncThunk(
   "patch/loadById",
   async (id: string, { dispatch }) => {
+    if (id === "new") {
+      dispatch(clearEngine());
+
+      return { ...initialState.patch };
+    }
+
     const { name, config, userId } = await Patch.find(id);
     const { modules, gridNodes } = config;
 
