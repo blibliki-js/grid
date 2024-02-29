@@ -58,7 +58,7 @@ export const loadById = (id: string) => async (dispatch: AppDispatch) => {
   dispatch(loadModules(modules));
   dispatch(setGridNodes(gridNodes));
 
-  return { id, name, userId };
+  dispatch(setAttributes({ patch: { id, name, userId }, status: "succeeded" }));
 };
 
 export const save =
