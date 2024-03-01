@@ -13,10 +13,6 @@ import {
 import Name from "../AudioModule/attributes/Name";
 import Voices from "../AudioModule/attributes/Voices";
 
-export const NodeTypes = {
-  audioNode: AudioNode,
-};
-
 export default function AudioNode(props: NodeProps) {
   const { id } = props;
   const audioModule = useAudioModule(id);

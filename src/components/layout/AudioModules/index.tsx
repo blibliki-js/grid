@@ -40,6 +40,18 @@ export default function AudioModules() {
               </Button>
             </li>
           ))}
+          <li className="mb-1">
+            <Button
+              variant="outline"
+              className="w-full cursor-move"
+              onDragStart={(event: DragEvent) =>
+                onDragStart(event, "groupNode")
+              }
+              draggable
+            >
+              Voice Group
+            </Button>
+          </li>
         </ul>
       </nav>
     </div>

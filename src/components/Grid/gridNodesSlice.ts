@@ -14,6 +14,7 @@ import {
 
 import { AppDispatch, RootState } from "@/store";
 import { removeModule } from "@/components/AudioModule/modulesSlice";
+import { cloneDeep } from "lodash";
 
 export interface IGridNodes {
   nodes: Node[];
@@ -50,6 +51,12 @@ export const gridNodesSlice = createSlice({
     addNode: (state, action: PayloadAction<Node>) => {
       state.nodes.push(action.payload);
     },
+    updateNode: (state, action: PayloadAction<Node>) => {
+      const node = action.payload;
+      const nodes = state.nodes.filter((n) => n.id !== node.id);
+
+      state.nodes = [...nodes, node];
+    },
     onEdgesChange: (state, action: PayloadAction<EdgeChange[]>) => {
       const changes = action.payload;
       state.edges = applyEdgeChanges(changes, state.edges);
@@ -76,6 +83,7 @@ export const {
   setGridNodes,
   removeAllGridNodes,
   addNode,
+  updateNode,
   onEdgesChange,
   onConnect,
   setViewport,
@@ -84,7 +92,7 @@ export const {
 export const onNodesChange =
   (changes: NodeChange[]) =>
   (dispatch: AppDispatch, getState: () => RootState) => {
-    const nodes = getState().gridNodes.nodes;
+    const nodes = cloneDeep(getState().gridNodes.nodes);
     dispatch(setNodes(applyNodeChanges(changes, nodes)));
 
     changes.forEach((change) => {

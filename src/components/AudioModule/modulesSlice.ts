@@ -86,9 +86,14 @@ export const { updateModule, updatePlainModule, removeAllModules } =
   modulesSlice.actions;
 
 export const addModule =
-  (params: { audioModule: ModuleInterface; position?: XYPosition }) =>
+  (params: {
+    audioModule: ModuleInterface;
+    position?: XYPosition;
+    parentNode?: string;
+    expandParent?: boolean;
+  }) =>
   (dispatch: AppDispatch) => {
-    const { audioModule, position = { x: 0, y: 0 } } = params;
+    const { audioModule, ...nodeProps } = params;
     const serializedModule = Engine.addModule(audioModule);
     dispatch(_addModule(serializedModule));
 
@@ -96,19 +101,26 @@ export const addModule =
       addNode({
         id: serializedModule.id,
         type: "audioNode",
-        position,
         data: {},
+        position: { x: 0, y: 0 },
+        style: {},
+        ...nodeProps,
       }),
     );
   };
 
 export const addNewModule =
-  (params: { type: string; position?: XYPosition }) =>
+  (params: {
+    type: string;
+    position?: XYPosition;
+    parentNode?: string;
+    expandParent?: boolean;
+  }) =>
   (dispatch: AppDispatch) => {
-    const { type, position } = params;
+    const { type, ...nodeProps } = params;
     const modulePayload = AvailableModules[type];
     dispatch(
-      addModule({ audioModule: { props: {}, ...modulePayload }, position }),
+      addModule({ audioModule: { props: {}, ...modulePayload }, ...nodeProps }),
     );
   };
 

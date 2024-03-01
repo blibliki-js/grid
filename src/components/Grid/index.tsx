@@ -8,11 +8,17 @@ import ReactFlow, {
   useReactFlow,
 } from "reactflow";
 
-import { NodeTypes } from "./AudioNode";
 import { useAppDispatch, useGridNodes, usePatch } from "@/hooks";
 import { setViewport } from "./gridNodesSlice";
 import useDrag from "./useDrag";
 import { useEffect } from "react";
+import GroupNode from "./GroupNode";
+import AudioNode from "./AudioNode";
+
+export const NodeTypes = {
+  audioNode: AudioNode,
+  groupNode: GroupNode,
+};
 
 const DEFAULT_REACT_FLOW_PROPS = {
   hideAttribution: true,
@@ -21,7 +27,7 @@ const DEFAULT_REACT_FLOW_PROPS = {
 export default function Grid() {
   const { nodes, edges, viewport, onNodesChange, onEdgesChange, onConnect } =
     useGridNodes();
-  const { onDrop, onDragOver } = useDrag();
+  const { onDrop, onDragOver, onNodeDragStop } = useDrag();
 
   return (
     <div className="grid-container">
@@ -35,6 +41,7 @@ export default function Grid() {
         minZoom={0.3}
         onDrop={onDrop}
         onDragOver={onDragOver}
+        onNodeDragStop={onNodeDragStop}
         proOptions={DEFAULT_REACT_FLOW_PROPS}
       >
         <Controls className="dark:bg-gray-500" />
