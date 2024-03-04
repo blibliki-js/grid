@@ -24,7 +24,7 @@ export interface AudioModuleProps {
   props?: AnyObject;
 }
 
-export type TUpdateProps = (id: string, props?: any) => void;
+export type TUpdateProps = (id: string, props?: object) => void;
 
 export default function AudioModule(audioModuleProps: {
   audioModule: AudioModuleProps;
@@ -36,7 +36,7 @@ export default function AudioModule(audioModuleProps: {
 
   let Component;
 
-  const updateProps = (id: string, props: any) => {
+  const updateProps = (id: string, props: object) => {
     dispatch(updateModule({ id, changes: { props } }));
   };
 
