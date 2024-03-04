@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://blibliki-js.github.io/grid",
   "dependencies": {
-    "@blibliki/engine": "^0.1.23",
+    "@blibliki/engine": "^0.1.24",
     "@clerk/nextjs": "^4.29.7",
     "@radix-ui/react-context-menu": "^2.1.5",
     "@radix-ui/react-dialog": "^1.0.5",

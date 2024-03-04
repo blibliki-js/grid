@@ -54,6 +54,7 @@ export const AvailableModules: {
   Delay: { name: "Delay", type: "Delay" },
   Distortion: { name: "Distortion", type: "Distortion" },
   BitCrusher: { name: "BitCrusher", type: "BitCrusher" },
+  LFO: { name: "LFO", type: "LFO" },
   Sequencer: {
     name: "Sequencer",
     type: "Sequencer",

@@ -14,6 +14,7 @@ import Distortion from "./Distortion";
 import BitCrusher from "./BitCrusher";
 import Sequencer from "./Sequencer";
 import Master from "./Master";
+import LFO from "./LFO";
 import { AnyObject } from "@/types";
 
 export interface AudioModuleProps {
@@ -23,7 +24,7 @@ export interface AudioModuleProps {
   props?: AnyObject;
 }
 
-export type TUpdateProps = (id: string, props?: AnyObject) => void;
+export type TUpdateProps = (id: string, props?: any) => void;
 
 export default function AudioModule(audioModuleProps: {
   audioModule: AudioModuleProps;
@@ -35,7 +36,7 @@ export default function AudioModule(audioModuleProps: {
 
   let Component;
 
-  const updateProps = (id: string, props: AnyObject) => {
+  const updateProps = (id: string, props: any) => {
     dispatch(updateModule({ id, changes: { props } }));
   };
 
@@ -80,6 +81,9 @@ export default function AudioModule(audioModuleProps: {
       break;
     case "Sequencer":
       Component = Sequencer;
+      break;
+    case "LFO":
+      Component = LFO;
       break;
     default:
       throw Error(`Unknown audio module type ${type}`);
