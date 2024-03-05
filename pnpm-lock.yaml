@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@blibliki/engine':
-    specifier: ^0.1.24
-    version: 0.1.24
+    specifier: ^0.1.25
+    version: 0.1.25
   '@clerk/nextjs':
     specifier: ^4.29.7
     version: 4.29.7(next@14.1.0)(react-dom@18.2.0)(react@18.2.0)
@@ -149,8 +149,8 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  /@blibliki/engine@0.1.24:
-    resolution: {integrity: sha512-k3+Sr1N+469M0HDBZlsbWo6kVZxgnBeX/YzCflHpUAIpkXVUU6oSLwcS/1a0tUJbCw4bEwyS3vum0XZ3BuLFjA==}
+  /@blibliki/engine@0.1.25:
+    resolution: {integrity: sha512-benhHCI09ovT25ff1Or4a516Zuc1BzN70PRsehkDtggzoTzSh1b6rfJV6yuNEOKvDQYh2Mo1Pzx7nMdcsqkiXQ==}
     dependencies:
       '@types/lodash': 4.14.202
       crypto-js: 4.2.0
