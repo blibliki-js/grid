@@ -19,8 +19,15 @@ const DEFAULT_REACT_FLOW_PROPS = {
 };
 
 export default function Grid() {
-  const { nodes, edges, viewport, onNodesChange, onEdgesChange, onConnect } =
-    useGridNodes();
+  const {
+    nodes,
+    edges,
+    viewport,
+    onNodesChange,
+    onEdgesChange,
+    onConnect,
+    isValidConnection,
+  } = useGridNodes();
   const { onDrop, onDragOver } = useDrag();
 
   return (
@@ -35,6 +42,7 @@ export default function Grid() {
         minZoom={0.3}
         onDrop={onDrop}
         onDragOver={onDragOver}
+        isValidConnection={isValidConnection}
         proOptions={DEFAULT_REACT_FLOW_PROPS}
       >
         <Controls className="dark:bg-gray-500" />

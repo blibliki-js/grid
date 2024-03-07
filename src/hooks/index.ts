@@ -6,6 +6,7 @@ import type { TypedUseSelectorHook } from "react-redux";
 import { useCallback, useEffect, useState } from "react";
 import { useAuth, useUser } from "@clerk/nextjs";
 import { getAuth, signInWithCustomToken } from "firebase/auth";
+import Engine from "@blibliki/engine";
 
 import type { RootState, AppDispatch } from "@/store";
 import {
@@ -96,6 +97,18 @@ export function useGridNodes() {
     [dispatch],
   );
 
+  const isValidConnection = useCallback((connection: Connection): boolean => {
+    const { source, sourceHandle, target, targetHandle } = connection;
+    if (!source || !sourceHandle || !target || !targetHandle) return false;
+
+    return Engine.validRoute({
+      sourceId: source,
+      sourceIOId: sourceHandle,
+      destinationId: target,
+      destinationIOId: targetHandle,
+    });
+  }, []);
+
   return {
     nodes,
     edges,
@@ -104,6 +117,7 @@ export function useGridNodes() {
     onNodesChange,
     onEdgesChange,
     onConnect,
+    isValidConnection,
   };
 }
 
