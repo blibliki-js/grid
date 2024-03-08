@@ -1,7 +1,5 @@
 "use client";
 
-import Grid from "@/components/Grid";
-
 export default function Page() {
-  return <Grid />;
+  return <div>Hello from Blibliki</div>;
 }
