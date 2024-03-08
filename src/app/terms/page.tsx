@@ -13,7 +13,7 @@ export default function Page() {
           </div>
           <div>
             Please read these Terms of Service carefully before using the
-            blibliki.com website (the "Service") operated by blibliki
+            blibliki.com website (the &quot;Service&quot;) operated by blibliki
             organization (us, we, or our).
           </div>
           <div className="space-y-4">
