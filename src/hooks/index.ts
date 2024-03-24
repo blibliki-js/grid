@@ -18,6 +18,8 @@ import {
 import { modulesSelector } from "@/components/AudioModule/modulesSlice";
 import Patch, { IPatch } from "@/models/Patch";
 
+export { default as useCodeHighlighter } from "./useCodeHighlighter";
+
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
