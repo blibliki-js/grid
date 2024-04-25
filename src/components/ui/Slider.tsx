@@ -13,6 +13,9 @@ interface SliderProps {
 
 type TOrientation = "vertical" | "horizontal";
 
+const InputClassName =
+  "bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700";
+
 interface MarkProps {
   value: number;
   label: string;
@@ -38,6 +41,12 @@ export default function Slider(props: SliderProps) {
     return rules.join(" ");
   }, [orientation]);
 
+  const inputClassName = useMemo(() => {
+    return orientation === "horizontal"
+      ? InputClassName
+      : `${InputClassName} slider-vertical`;
+  }, [orientation]);
+
   const _onChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(Number(event.target.value));
   };
@@ -51,12 +60,8 @@ export default function Slider(props: SliderProps) {
         value={value}
         defaultValue={defaultValue}
         step={step}
-        className="bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+        className={inputClassName}
         onChange={_onChange}
-        style={{
-          writingMode:
-            orientation === "vertical" ? "vertical-lr" : "horizontal-tb",
-        }}
       />
 
       <Labels marks={marks} orientation={orientation} onClick={onChange} />

@@ -104,3 +104,8 @@
   grid-column: 16 / span 2;
   grid-row: 1 / span 2;
 }
+
+.slider-vertical {
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+}
