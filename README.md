@@ -4,15 +4,22 @@ Blibliki Grid is acting as the visual counterpart to the [Blibliki Engine](https
 
 ## Development
 
-Requires Node.js and PNPM
+Requires Node.js, PNPM and a [Clerk](https://clerk.com/) account.
 
-Install dependencies
+### Install dependencies
 
 ```
 pnpm install
 ```
 
-Start server
+### Setup Clerk account
+
+- Go to cleck.com and create an account
+- Create a new Application
+- Select Next.js framework
+- Follow the instructions and create a `.env.local` file with the `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` variables
+
+### Start server
 
 ```
 pnpm dev
