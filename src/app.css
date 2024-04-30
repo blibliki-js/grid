@@ -109,3 +109,11 @@
   writing-mode: tb-rl;
   transform: rotate(-180deg);
 }
+
+g path.react-flow__edge-path {
+  stroke-width: 4;
+}
+
+g.selected path.react-flow__edge-path {
+  stroke: #6793c6 !important;
+}
