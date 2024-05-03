@@ -9,8 +9,8 @@ import Engine, { IOProps } from "@blibliki/engine";
 import { AppDispatch, RootState } from "@/store";
 import { AnyObject, Optional } from "@/types";
 import { addNode } from "@/components/Grid/gridNodesSlice";
-import { UpdateModuleProps } from "@blibliki/engine/dist/build/Engine";
 import { XYPosition } from "reactflow";
+import { UpdateModuleProps } from "@blibliki/engine/dist/src/Engine";
 
 interface ModuleInterface {
   name: string;
