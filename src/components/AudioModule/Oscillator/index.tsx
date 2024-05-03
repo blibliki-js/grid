@@ -61,8 +61,9 @@ export default function Oscillator(props: {
       <Fader
         name="Fine"
         marks={Center}
-        min={-100}
-        max={100}
+        min={-1}
+        max={1}
+        step={0.01}
         onChange={updateProp("fine")}
         value={fine}
       />
